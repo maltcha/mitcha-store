@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chanarra Store — Order Digital</title>
+<style>
+:root{--berry:#d94f70;--berry-dark:#b93458;--pink:#fff0f3;--pink2:#fbd8e0;--matcha:#dce8c8;--matcha-dark:#637b4b;--cream:#fffdf8;--ink:#33372f;--muted:#777b70;--line:#e9e8df;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.55 Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 15px;font-weight:750}.wrap{max-width:1080px;margin:auto;padding:20px 16px 42px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0 22px}.brand{display:flex;align-items:center;gap:11px}.logo{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,var(--pink2),var(--matcha));display:grid;place-items:center;font-size:26px}.brand h1 {
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.brand p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+
+/* Tombol testimoni Telegram */
+.testi-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: var(--matcha);
+  color: var(--matcha-dark);
+  border: 1px solid #c5d6ad;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 750;
+  transition: 0.2s;
+}
+
+.testi-button:hover {
+  background: #c5d6ad;
+  transform: translateY(-2px);
+}
+
+.tag {
+  font-size: 12px;
+  border-radius: 999px;
+  background: var(--matcha);
+  color: #50653e;
+  padding: 7px 10px;
+  font-weight: 750;
+}.hero{background:linear-gradient(120deg,#fff0f3,#f1f5e8);border:1px solid #f2e7df;border-radius:24px;padding:28px;margin-bottom:22px;position:relative;overflow:hidden}.hero h2{font-size:clamp(25px,5vw,38px);line-height:1.15;margin:0 0 10px;max-width:620px}.hero p{margin:0;color:#65685e;max-width:600px}.hero .decor{position:absolute;right:26px;top:18px;font-size:62px;opacity:.8}.section-title{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:25px 0 13px}.section-title h2{font-size:20px;margin:0}.section-title p{font-size:12px;color:var(--muted);margin:3px 0 0}.searchbar{display:grid;grid-template-columns:1.4fr 1fr;gap:10px;margin-bottom:15px}.searchbar input,.searchbar select,.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;background:white;color:var(--ink);outline:none}.searchbar input:focus,.searchbar select:focus,.field input:focus,.field select:focus{border-color:var(--berry)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;align-items:stretch}.catalog-group{margin:25px 0 0}.catalog-heading{display:flex;align-items:center;gap:12px;margin:0 0 13px}.catalog-heading h3{font-size:17px;margin:0;white-space:nowrap}.catalog-heading:after{content:"";height:1px;background:var(--line);flex:1}.catalog-group+.catalog-group{border-top:1px solid var(--line);padding-top:22px}.catalog-group .grid{margin-bottom:6px}.product{background:white;border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;min-height:190px;box-shadow:0 5px 18px #46351a05}.product-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}.app-icon{width:43px;height:43px;border-radius:14px;background:#fff7f8;display:grid;place-items:center;font-size:23px;flex-shrink:0;overflow:hidden;border:1px solid #f4e7e8}.app-icon img{width:28px;height:28px;object-fit:contain}.product{min-width:0}.product h3{overflow-wrap:anywhere}.product h3{font-size:16px;margin:0}.category{font-size:11px;color:var(--muted)}.product .desc{font-size:12px;color:var(--muted);margin:0 0 12px}.price{font-size:19px;font-weight:850;color:var(--berry-dark);margin-top:auto}.duration{font-size:12px;color:var(--muted);margin:2px 0 12px}.buy{background:var(--berry);color:white;width:100%}.buy:hover,.primary:hover{background:var(--berry-dark)}.empty{grid-column:1/-1;text-align:center;padding:30px;color:var(--muted);background:white;border:1px dashed var(--line);border-radius:16px}.how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}.step{background:white;border:1px solid var(--line);border-radius:16px;padding:15px}.step strong{display:block;margin-bottom:5px}.step span{font-size:12px;color:var(--muted)}.foot{text-align:center;color:#8a8c82;font-size:12px;padding:30px 0 0}.modal{position:fixed;inset:0;background:#29261f99;display:grid;place-items:center;padding:14px;z-index:4}.modal.hidden{display:none}.box{width:min(520px,100%);max-height:92vh;overflow:auto;background:var(--cream);border-radius:22px;padding:20px}.modal-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:14px}.modal-head h2{font-size:19px;margin:0}.close{background:var(--pink);color:var(--berry-dark)}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}.field label{font-size:12px;font-weight:750;color:#64685e}.order-summary{background:#f3f6ec;border-radius:13px;padding:12px;margin-bottom:14px}.order-summary strong{display:block;color:var(--berry-dark);font-size:20px}.primary{background:var(--berry);color:white;width:100%}.small{font-size:11px;color:var(--muted)}.note{background:#fff4e5;color:#7a5520;padding:10px 12px;border-radius:12px;font-size:12px;margin:10px 0 14px}
+@media(max-width:760px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{padding:23px}.hero .decor{right:12px;top:12px;font-size:45px;opacity:.45}.how{grid-template-columns:1fr}.brand h1{font-size:19px}.tag{font-size:10px}}@media(max-width:480px){.wrap{padding:14px 11px 30px}.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.searchbar{grid-template-columns:1fr}.top{align-items:flex-start}.product{min-height:0;padding:11px;border-radius:15px}.product-top{align-items:flex-start;gap:8px}.app-icon{width:36px;height:36px;border-radius:11px}.app-icon img{width:24px;height:24px}.product h3{font-size:14px;line-height:1.3}.product .desc{font-size:11px}.price{font-size:15px}.duration{font-size:10px}.buy{padding:9px 7px;font-size:12px}}
+</style></head>
+<body><div class="wrap">
+<header class="top">
+  <div class="brand">
+    <div class="logo">🍓</div>
+    <div>
+      <h1>Chanarra Store</h1>
+      <p>little things, lovely digital treats 🍵</p>
+      <a href="https://t.me/chaxium"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="testi-button">
+        ♡ lihat testimoni pelanggan ♡
+      </a>
+    </div>
+  </div>
+  <span class="tag">DIGITAL SHOP</span>
+</header>
+<section class="hero"><div class="decor">🐾</div><h2>Find your little<br>digital happiness.</h2><p>Premium apps, streaming, top-up game, pulsa, kuota, dan produk digital lainnya. Pilih produk favoritmu, lalu pesan melalui WhatsApp. 💗</p></section>
+<div class="section-title"><div><h2>♡ Katalog produk</h2><p>Pilih produk untuk melihat pilihan paket dan memesan.</p></div></div>
+<div class="searchbar"><input id="search" placeholder="Cari produk, mis. Spotify…" aria-label="Cari produk"><select id="category" aria-label="Kategori"><option value="">Semua kategori</option></select></div>
+<div id="products"></div>
+<section class="section-title"><div><h2>♡ Cara order</h2><p>Gampang, cuma beberapa langkah.</p></div></section><div class="how"><div class="step"><strong>🍓 01. Pilih produk</strong><span>Cari produk dan pilih paket/durasi yang kamu inginkan.</span></div><div class="step"><strong>🍵 02. Isi detail order</strong><span>Masukkan nama dan detail yang diperlukan. Cek kembali sebelum mengirim.</span></div><div class="step"><strong>💌 03. Chat admin</strong><span>Detail pesanan akan disiapkan di WhatsApp. Admin mengirim instruksi pembayaran.</span></div></div>
+<footer class="foot">find me on X @seontuh</footer></div>
+<div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="box"><div class="modal-head"><h2 id="modalTitle">Pesan produk 🍓</h2><button class="close" id="close">Tutup</button></div><form id="orderForm"><div class="field"><label>Produk</label><input id="chosenProduct" readonly></div><div class="field"><label>Paket / durasi *</label><select id="chosenPackage" required></select></div><div class="order-summary"><span>Harga produk</span><strong id="chosenPrice">Pilih paket</strong><span class="small">Harga dapat dikonfirmasi kembali oleh admin sebelum pembayaran.</span></div><div class="field"><label>Nama customer *</label><input id="customer" required maxlength="80" placeholder="Nama kamu"></div><div class="field"><label>Email / User ID (jika diperlukan)</label><input id="customerDetail" maxlength="160" placeholder="Isi jika diperlukan oleh produk"></div><div class="field"><label>Catatan (opsional)</label><textarea id="customerNote" rows="2" maxlength="300" placeholder="Contoh: email sendiri, server game, dll."></textarea></div><div class="note">Setelah menekan tombol, WhatsApp akan terbuka dengan ringkasan pesanan. Pembayaran dilakukan setelah mendapat instruksi admin.</div><button class="primary" type="submit">Lanjut ke WhatsApp ♡</button></form></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./config.js"></script>
+<script>
+// KATALOG AWAL: edit daftar PRODUCTS di bawah untuk menambah/mengubah produk dan harga.
+// Isi harga dalam angka rupiah tanpa titik/koma. Nomor WA menggunakan format internasional tanpa tanda +.
+const WHATSAPP_NUMBER = '628881780693';
+const DEFAULT_PRODUCTS = [
+ {name:'Adobe',category:'Aplikasi Premium',desc:'Tools kreatif untuk berbagai kebutuhan.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
+ {name:'Apple Music',category:'Aplikasi Premium',desc:'Dengarkan musik favoritmu.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
+ {name:'Canva',category:'Aplikasi Premium',desc:'Bantu kebutuhan desain dan konten.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
+ {name:'CapCut',category:'Aplikasi Premium',desc:'Edit video dan buat konten lebih mudah.',packages:[{name:'Standard · 1 bulan',price:24000},{name:'Pro · 1 bulan',price:45000}]},
+ {name:'Disney+ Hotstar',category:'Aplikasi Premium',desc:'Film, series, dan hiburan favorit.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
+ {name:'DramaWave',category:'Aplikasi Premium',desc:'Pilihan hiburan drama pendek.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
+ {name:'Getcontact Premium',category:'Aplikasi Premium',desc:'Fitur Premium aplikasi Getcontact.',packages:[{name:'1 bulan',price:0}]},
+ {name:'Google One',category:'Aplikasi Premium',desc:'Pilihan penyimpanan cloud tambahan.',packages:[{name:'Private · 1 bulan',price:25000},{name:'Private · 2 bulan',price:30000},{name:'Private · 3 bulan',price:40000},{name:'Private · 6 bulan',price:45000},{name:'Private · 1 tahun',price:95000}]},
+ {name:'Netflix',category:'Aplikasi Premium',desc:'Paket streaming film dan series.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
+ {name:'Spotify',category:'Aplikasi Premium',desc:'Musik favorit untuk menemani harimu.',packages:[{name:'Family Plan · 1 bulan',price:30000},{name:'Individual Plan · 1 bulan',price:38000}]},
+ {name:'Vidio',category:'Aplikasi Premium',desc:'Hiburan dan tayangan pilihan.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
+ {name:'YouTube Premium',category:'Aplikasi Premium',desc:'Nikmati video dengan pengalaman Premium.',packages:[{name:'Family Plan · 1 bulan',price:30000},{name:'Individual Plan · 1 bulan',price:38000}]},
+ {name:'Pulsa',category:'Pulsa & Kuota',desc:'Tersedia berbagai operator dan nominal.',packages:[{name:'Tanyakan operator & nominal',price:0}]},
+ {name:'Paket Data / Kuota',category:'Pulsa & Kuota',desc:'Pilih operator dan paket data.',packages:[{name:'Tanyakan operator & paket',price:0}]},
+ {name:'Top Up Mobile Legends',category:'Game',desc:'Top up diamond. Tanyakan nominal yang tersedia.',packages:[{name:'Tanyakan nominal',price:0}]},
+ {name:'Top Up PUBG Mobile',category:'Game',desc:'Top up UC game. Tanyakan nominal yang tersedia.',packages:[{name:'Tanyakan nominal',price:0}]},
+ {name:'Token Listrik',category:'Token Listrik',desc:'Token listrik prabayar.',packages:[{name:'Tanyakan nominal',price:0}]}
+];
+let PRODUCTS = [...DEFAULT_PRODUCTS];
+const CATEGORY_ORDER=['Aplikasi Premium','Pulsa & Kuota','Game','Token Listrik'];
+const $=id=>document.getElementById(id); let selected=null;
+const rupiah=n=>n>0?new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n):'Tanya admin';
+async function loadProductsFromDatabase(){try{if(!window.CHANARRA_SUPABASE_URL||!window.CHANARRA_SUPABASE_KEY)return;const client=window.supabase.createClient(window.CHANARRA_SUPABASE_URL,window.CHANARRA_SUPABASE_KEY);const {data,error}=await client.from('products').select('name,category,description,note,packages').order('name');if(error)throw error;if(data){
+  PRODUCTS=data.map(p=>({
+    name:p.name,
+    category:p.category,
+    desc:p.description||'',
+    note:p.note||'',
+    packages:Array.isArray(p.packages)&&p.packages.length
+      ?p.packages
+      :[{name:'Tanyakan paket tersedia',price:0}]
+  }));
+  render();
+}}catch(err){console.warn('Katalog database belum dapat dimuat; menggunakan katalog bawaan.',err);}}
+function render(){const cats=CATEGORY_ORDER.filter(c=>PRODUCTS.some(p=>p.category===c));const old=$('category').value;$('category').innerHTML='<option value="">Semua kategori</option>'+cats.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');$('category').value=old;const q=$('search').value.toLowerCase().trim(),cat=$('category').value;const filtered=PRODUCTS.filter(p=>(!cat||p.category===cat)&&(`${p.name} ${p.category} ${p.desc}`.toLowerCase().includes(q)));const groups=CATEGORY_ORDER.filter(c=>filtered.some(p=>p.category===c));$('products').innerHTML=filtered.length?groups.map(group=>{const items=filtered.filter(p=>p.category===group).sort((a,b)=>a.name.localeCompare(b.name,'id',{sensitivity:'base'}));return `<section class="catalog-group"><div class="catalog-heading"><h3>${esc(group)}</h3></div><div class="grid">${items.map(p=>{const prices=p.packages.map(x=>x.price).filter(x=>x>0);const min=prices.length?Math.min(...prices):0;const priceLabel=min?`Mulai ${rupiah(min)}`:'Harga tanya admin';return `<article class="product"><div class="product-top"><div><h3>${esc(p.name)}</h3></div></div><p class="desc">${esc(p.desc)}</p>
+${p.note ? `<div class="note">${esc(p.note)}</div>` : ''}<div class="price">${priceLabel}</div><div class="duration">${p.packages.length} pilihan paket/nominal</div><button class="buy" data-product="${esc(p.name)}">Pilih produk</button></article>`}).join('')}</div></section>`}).join(''):'<div class="empty">Belum ada produk yang cocok. Coba kata kunci lain yaa 🍵</div>';document.querySelectorAll('[data-product]').forEach(b=>b.addEventListener('click',()=>openProduct(b.dataset.product)));}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function openProduct(name) {
+  selected = PRODUCTS.find(p => p.name === name);
+  if (!selected) return;
+
+  $('chosenProduct').value = selected.name;
+
+  $('chosenPackage').innerHTML = selected.packages
+    .map((p, i) =>
+      `<option value="${i}">${esc(p.name)} — ${rupiah(p.price)}</option>`
+    )
+    .join('');
+
+  $('chosenPrice').textContent = rupiah(selected.packages[0].price);
+
+  $('customer').value = '';
+  $('customerDetail').value = '';
+  $('customerNote').value = '';
+
+  $('modal').classList.remove('hidden');
+}
+$('chosenPackage').addEventListener('change',()=>{if(selected)$('chosenPrice').textContent=rupiah(selected.packages[Number($('chosenPackage').value)].price)});$('close').addEventListener('click',()=>$('modal').classList.add('hidden'));$('modal').addEventListener('click',e=>{if(e.target===$('modal'))$('modal').classList.add('hidden')});$('search').addEventListener('input',render);$('category').addEventListener('change',render);
+$('orderForm').addEventListener('submit',e=>{e.preventDefault();if(!selected)return;const pack=selected.packages[Number($('chosenPackage').value)];const msg=['🍓 *ORDER CHANARRA STORE* 🍓','',`Nama: ${$('customer').value.trim()}`,`Produk: ${selected.name}`,`Paket/durasi: ${pack.name}`,`Harga katalog: ${rupiah(pack.price)}`,`Email / User ID: ${$('customerDetail').value.trim()||'-'}`,`Catatan: ${$('customerNote').value.trim()||'-'}`,'','Mohon informasi instruksi pembayaran dan proses selanjutnya ya. Terima kasih! 💗'].join('\n');window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,'_blank','noopener');$('modal').classList.add('hidden');});
+render();loadProductsFromDatabase();
+</script></body></html>
