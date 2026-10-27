@@ -4,36 +4,628 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mitcha Store — Order Digital</title>
 <style>
-:root{--berry:#d94f70;--berry-dark:#b93458;--pink:#fff0f3;--pink2:#fbd8e0;--matcha:#dce8c8;--matcha-dark:#637b4b;--cream:#fffdf8;--ink:#33372f;--muted:#777b70;--line:#e9e8df;--white:#fff}
-*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.55 Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 15px;font-weight:750}.wrap{max-width:1080px;margin:auto;padding:20px 16px 42px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0 22px}.brand{display:flex;align-items:center;gap:11px}.logo{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,var(--pink2),var(--matcha));display:grid;place-items:center;font-size:26px}.brand h1{font-size:22px;line-height:1.2;margin:0}.brand p{font-size:12px;color:var(--muted);margin:4px 0 0}.testi-button{display:inline-block;margin-top:10px;padding:7px 12px;border-radius:20px;background:var(--matcha);color:var(--matcha-dark);border:1px solid #c5d6ad;text-decoration:none;font-size:11px;font-weight:750;transition:.2s}.testi-button:hover{background:#c5d6ad;transform:translateY(-2px)}.tag{font-size:12px;border-radius:999px;background:var(--matcha);color:#50653e;padding:7px 10px;font-weight:750}.hero{background:linear-gradient(120deg,#fff0f3,#f1f5e8);border:1px solid #f2e7df;border-radius:24px;padding:28px;margin-bottom:22px;position:relative;overflow:hidden}.hero h2{font-size:clamp(25px,5vw,38px);line-height:1.15;margin:0 0 10px;max-width:620px}.hero p{margin:0;color:#65685e;max-width:600px}.hero .decor{position:absolute;right:26px;top:18px;font-size:62px;opacity:.8}.section-title{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:25px 0 13px}.section-title h2{font-size:20px;margin:0}.section-title p{font-size:12px;color:var(--muted);margin:3px 0 0}.searchbar{display:grid;grid-template-columns:1.4fr 1fr;gap:10px;margin-bottom:15px}.searchbar input,.searchbar select,.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;background:white;color:var(--ink);outline:none}.searchbar input:focus,.searchbar select:focus,.field input:focus,.field select:focus{border-color:var(--berry)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;align-items:stretch}.catalog-group{margin:25px 0 0}.catalog-heading{display:flex;align-items:center;gap:12px;margin:0 0 13px}.catalog-heading h3{font-size:17px;margin:0;white-space:nowrap}.catalog-heading:after{content:"";height:1px;background:var(--line);flex:1}.catalog-group+.catalog-group{border-top:1px solid var(--line);padding-top:22px}.catalog-group .grid{margin-bottom:6px}.product{background:white;border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;min-height:190px;box-shadow:0 5px 18px #46351a05;min-width:0}.product-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}.product h3{overflow-wrap:anywhere;font-size:16px;margin:0}.desc{font-size:12px;color:var(--muted);margin:0 0 12px}.price{font-size:19px;font-weight:850;color:var(--berry-dark);margin-top:auto}.duration{font-size:12px;color:var(--muted);margin:2px 0 12px}.buy{background:var(--berry);color:white;width:100%}.buy:hover,.primary:hover{background:var(--berry-dark)}.empty{grid-column:1/-1;text-align:center;padding:30px;color:var(--muted);background:white;border:1px dashed var(--line);border-radius:16px}.how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}.step{background:white;border:1px solid var(--line);border-radius:16px;padding:15px}.step strong{display:block;margin-bottom:5px}.step span{font-size:12px;color:var(--muted)}.foot{text-align:center;color:#8a8c82;font-size:12px;padding:30px 0 0}.modal{position:fixed;inset:0;background:#29261f99;display:grid;place-items:center;padding:14px;z-index:4}.modal.hidden{display:none}.box{width:min(520px,100%);max-height:92vh;overflow:auto;background:var(--cream);border-radius:22px;padding:20px}.modal-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:14px}.modal-head h2{font-size:19px;margin:0}.close{background:var(--pink);color:var(--berry-dark)}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}.field label{font-size:12px;font-weight:750;color:#64685e}.order-summary{background:#f3f6ec;border-radius:13px;padding:12px;margin-bottom:14px}.order-summary strong{display:block;color:var(--berry-dark);font-size:20px}.primary{background:var(--berry);color:white;width:100%}.small{font-size:11px;color:var(--muted)}.note{background:#fff4e5;color:#7a5520;padding:10px 12px;border-radius:12px;font-size:12px;margin:10px 0 14px}.product-note{background:#fff4e5;color:#7a5520;padding:10px 12px;border-radius:12px;font-size:12px;margin:0 0 12px;white-space:pre-line}.plan-list{display:grid;gap:10px;margin-bottom:14px}.plan-card{border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}.plan-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;padding:14px;background:#fff;color:var(--ink);text-align:left;border-radius:0}.plan-toggle strong{font-size:15px}.plan-toggle .plus{color:var(--berry);font-size:22px;line-height:1}.plan-options{display:none;padding:0 10px 10px;gap:8px}.plan-card.open .plan-options{display:grid}.package-option{display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;background:#fff8fa;border:1px solid #f4d6df;color:var(--ink);padding:11px 12px;border-radius:11px}.package-option span:last-child{color:var(--berry-dark);font-weight:800;white-space:nowrap}.package-option.selected{background:var(--matcha);border-color:#bdcfa6}.plan-hint{font-size:12px;color:var(--muted);margin:0 0 10px}
-@media(max-width:760px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{padding:23px}.hero .decor{right:12px;top:12px;font-size:45px;opacity:.45}.how{grid-template-columns:1fr}.brand h1{font-size:19px}.tag{font-size:10px}}@media(max-width:480px){.wrap{padding:14px 11px 30px}.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.searchbar{grid-template-columns:1fr}.top{align-items:flex-start}.product{min-height:0;padding:11px;border-radius:15px}.product-top{align-items:flex-start;gap:8px}.product h3{font-size:14px;line-height:1.3}.desc{font-size:11px}.price{font-size:15px}.duration{font-size:10px}.buy{padding:9px 7px;font-size:12px}}
-</style></head>
-<body><div class="wrap">
-<header class="top"><div class="brand"><div class="logo">🍓</div><div><h1>Mitcha Store</h1><p>little things, lovely digital treats 🍵</p><a href="https://t.me/chaxium" target="_blank" rel="noopener noreferrer" class="testi-button">♡ lihat testimoni pelanggan ♡</a></div></div><span class="tag">DIGITAL SHOP</span></header>
-<section class="hero"><div class="decor">🐾</div><h2>Find your little<br>digital happiness.</h2><p>Premium apps, streaming, top-up game, pulsa, kuota, dan produk digital lainnya. Pilih produk favoritmu, lalu pesan melalui WhatsApp. 💗</p></section>
-<div class="section-title"><div><h2>♡ Katalog produk</h2><p>Pilih produk untuk melihat pilihan plan dan paket.</p></div></div>
-<div class="searchbar"><input id="search" placeholder="Cari produk, mis. Spotify…" aria-label="Cari produk"><select id="category" aria-label="Kategori"><option value="">Semua kategori</option></select></div>
-<div id="products"></div>
-<section class="section-title"><div><h2>♡ Cara order</h2><p>Gampang, cuma beberapa langkah.</p></div></section><div class="how"><div class="step"><strong>🍓 01. Pilih produk</strong><span>Cari produk dan pilih plan serta paket/durasi yang kamu inginkan.</span></div><div class="step"><strong>🍵 02. Isi detail order</strong><span>Masukkan nama dan detail yang diperlukan. Cek kembali sebelum mengirim.</span></div><div class="step"><strong>💌 03. Chat admin</strong><span>Detail pesanan akan disiapkan di WhatsApp. Admin mengirim instruksi pembayaran.</span></div></div>
-<footer class="foot">find me on X @seontuh</footer></div>
-<div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="box"><div class="modal-head"><h2 id="modalTitle">Pesan produk 🍓</h2><button class="close" id="close" type="button">Tutup</button></div><form id="orderForm"><div class="field"><label>Produk</label><input id="chosenProduct" readonly></div><div class="field"><label>Pilih plan dan harga *</label><p class="plan-hint">Ketuk nama plan untuk membuka daftar harga, lalu pilih durasi yang kamu mau.</p><div id="planChoices" class="plan-list"></div><select id="chosenPlan" hidden></select><select id="chosenPackage" hidden></select></div><div class="order-summary"><span>Harga produk</span><strong id="chosenPrice">Pilih paket</strong><span class="small">Harga dapat dikonfirmasi kembali oleh admin sebelum pembayaran.</span></div><div id="chosenProductNote" class="product-note" hidden></div><div class="field"><label>Nama customer *</label><input id="customer" required maxlength="80" placeholder="Nama kamu"></div><div class="field"><label>Email / User ID (jika diperlukan)</label><input id="customerDetail" maxlength="160" placeholder="Isi jika diperlukan oleh produk"></div><div class="field"><label>Catatan (opsional)</label><textarea id="customerNote" rows="2" maxlength="300" placeholder="Contoh: email sendiri, server game, dll."></textarea></div><div class="note">Setelah menekan tombol, WhatsApp akan terbuka dengan ringkasan pesanan. Pembayaran dilakukan setelah mendapat instruksi admin.</div><button class="primary" type="submit">Lanjut ke WhatsApp ♡</button></form></div></div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./config.js"></script>
-<script>
-const WHATSAPP_NUMBER='628881780693';
-const DEFAULT_PRODUCTS=[
-{name:'Adobe',category:'Aplikasi Premium',desc:'Tools kreatif untuk berbagai kebutuhan.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
-{name:'Apple Music',category:'Aplikasi Premium',desc:'Dengarkan musik favoritmu.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
-{name:'Canva',category:'Aplikasi Premium',desc:'Bantu kebutuhan desain dan konten.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
-{name:'CapCut',category:'Aplikasi Premium',desc:'Edit video dan buat konten lebih mudah.',packages:[{name:'Standard · 1 bulan',price:24000},{name:'Pro · 1 bulan',price:45000}]},
-{name:'Disney+ Hotstar',category:'Aplikasi Premium',desc:'Film, series, dan hiburan favorit.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
-{name:'DramaWave',category:'Aplikasi Premium',desc:'Pilihan hiburan drama pendek.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
-{name:'Getcontact Premium',category:'Aplikasi Premium',desc:'Fitur Premium aplikasi Getcontact.',packages:[{name:'1 bulan',price:0}]},
-{name:'Google One',category:'Aplikasi Premium',desc:'Pilihan penyimpanan cloud tambahan.',packages:[{name:'Private · 1 bulan',price:25000},{name:'Private · 2 bulan',price:30000},{name:'Private · 3 bulan',price:40000},{name:'Private · 6 bulan',price:45000},{name:'Private · 1 tahun',price:95000}]},
-{name:'Netflix',category:'Aplikasi Premium',desc:'Paket streaming film dan series.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
-{name:'Spotify',category:'Aplikasi Premium',desc:'Musik favorit untuk menemani harimu.',packages:[{name:'Family Plan · 1 bulan',price:30000},{name:'Individual Plan · 1 bulan',price:38000}]},
-{name:'Vidio',category:'Aplikasi Premium',desc:'Hiburan dan tayangan pilihan.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
-{name:'YouTube Premium',category:'Aplikasi Premium',desc:'Nikmati video dengan pengalaman Premium.',packages:[{name:'Family Plan · 1 bulan',price:30000},{name:'Individual Plan · 1 bulan',price:38000}]},
-{name:'Pulsa',category:'Pulsa & Kuota',desc:'Tersedia berbagai operator dan nominal.',packages:[{name:'Tanyakan operator & nominal',price:0}]},
+/* ==================================
+   MITCHA STORE — CAT MATCHA THEME
+   Strawberry Pink × Matcha × Cream
+================================== */
+
+:root {
+  --berry: #d66b82;
+  --berry-dark: #b94d69;
+  --pink: #fff1f3;
+  --pink2: #f8dce2;
+  --matcha: #e5edda;
+  --matcha-dark: #657b51;
+  --cream: #fffdf8;
+  --ink: #383a32;
+  --muted: #858579;
+  --line: #eee9df;
+  --white: #fff;
+}
+
+/* BACKGROUND */
+
+body {
+  background:
+    radial-gradient(
+      circle at 5% 5%,
+      #fcebf0 0,
+      transparent 220px
+    ),
+    var(--cream);
+
+  color: var(--ink);
+  letter-spacing: -0.15px;
+}
+
+.wrap {
+  max-width: 1100px;
+  padding: 22px 18px 45px;
+}
+
+/* HEADER */
+
+.top {
+  padding: 8px 0 28px;
+}
+
+.brand {
+  gap: 13px;
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+  border-radius: 19px;
+
+  background: linear-gradient(
+    145deg,
+    #ffe6eb,
+    #f9d9e1 55%,
+    #e7edda
+  );
+
+  border: 1px solid #f2e1df;
+  box-shadow: 0 5px 14px #d66b8210;
+
+  font-size: 29px;
+  transition: transform .25s ease;
+}
+
+.logo:hover {
+  transform: rotate(-8deg) scale(1.05);
+}
+
+.brand h1 {
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.brand p {
+  font-size: 12px;
+  letter-spacing: .1px;
+}
+
+.testi-button {
+  background: #edf2e5;
+  border: 1px solid #dfe8d3;
+  color: #60754c;
+
+  padding: 8px 13px;
+  font-size: 11px;
+  transition: .2s ease;
+}
+
+.testi-button:hover {
+  background: #dfe9d1;
+  transform: translateY(-2px);
+}
+
+.tag {
+  background: #e8efdc;
+  color: #60754c;
+  border: 1px solid #dce6ce;
+
+  padding: 8px 13px;
+  letter-spacing: .6px;
+  font-size: 10px;
+}
+
+/* HERO BANNER */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    115deg,
+    #fff0f3 0%,
+    #fff8f2 48%,
+    #edf2e4 100%
+  );
+
+  border: 1px solid #f0e5df;
+  border-radius: 27px;
+
+  padding: 34px 30px;
+  margin-bottom: 30px;
+
+  box-shadow: 0 8px 25px #5d4c3010;
+}
+
+.hero::after {
+  content: "matcha time ♡";
+
+  position: absolute;
+  right: 24px;
+  bottom: 19px;
+
+  color: #71855d;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: .7;
+}
+
+.hero h2 {
+  font-size: clamp(27px, 4vw, 39px);
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+  max-width: 580px;
+  margin-bottom: 13px;
+}
+
+.hero p {
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 560px;
+  color: #77776c;
+}
+
+.hero .decor {
+  position: absolute;
+  right: 27px;
+  top: 22px;
+
+  font-size: 56px;
+  opacity: .85;
+
+  transform: rotate(9deg);
+  animation: strawberry-float 3s ease-in-out infinite;
+}
+
+@keyframes strawberry-float {
+  0%, 100% {
+    transform: translateY(0) rotate(8deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(-5deg);
+  }
+}
+
+/* SECTION TITLES */
+
+.section-title {
+  margin: 30px 0 15px;
+}
+
+.section-title h2 {
+  font-size: 21px;
+  letter-spacing: -.6px;
+  font-weight: 800;
+}
+
+.section-title p {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* SEARCH AND FILTER */
+
+.searchbar {
+  gap: 11px;
+  margin-bottom: 20px;
+}
+
+.searchbar input,
+.searchbar select {
+  min-height: 49px;
+  border-radius: 15px;
+  border: 1px solid #eee8df;
+  background: #fff;
+
+  padding: 13px 15px;
+
+  box-shadow: 0 3px 10px #57462b05;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.searchbar input:focus,
+.searchbar select:focus {
+  border-color: #d9a2ae;
+  box-shadow: 0 0 0 3px #f8e4e9;
+}
+
+/* CATEGORY HEADINGS */
+
+.catalog-group {
+  margin-top: 27px;
+}
+
+.catalog-heading {
+  margin-bottom: 15px;
+  gap: 12px;
+}
+
+.catalog-heading h3 {
+  font-size: 16px;
+  color: #535b48;
+  letter-spacing: -.3px;
+}
+
+.catalog-heading::before {
+  content: "✿";
+  color: var(--berry);
+  font-size: 17px;
+}
+
+.catalog-group + .catalog-group {
+  border-top: 1px dashed #e9e4d9;
+  padding-top: 23px;
+}
+
+/* PRODUCT CARDS */
+
+.grid {
+  gap: 14px;
+}
+
+.product {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 205px;
+  padding: 17px;
+
+  background: #fff;
+  border: 1px solid #eee9e2;
+  border-radius: 20px;
+
+  box-shadow: 0 4px 16px #51452c07;
+
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease;
+}
+
+.product::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    #f2cbd4,
+    #dfe9d1,
+    #f2cbd4
+  );
+
+  opacity: .85;
+}
+
+.product:hover {
+  transform: translateY(-4px);
+  border-color: #e8d9d6;
+  box-shadow: 0 10px 24px #51452c0d;
+}
+
+.product-top {
+  margin-top: 3px;
+  margin-bottom: 10px;
+}
+
+.product h3 {
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 800;
+  letter-spacing: -.3px;
+}
+
+.desc {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #858579;
+  margin-bottom: 13px;
+}
+
+.price {
+  color: #b9516b;
+  font-size: 17px;
+  font-weight: 850;
+  letter-spacing: -.4px;
+}
+
+.duration {
+  font-size: 10px;
+  color: #88897d;
+  margin: 4px 0 14px;
+}
+
+/* ORDER BUTTON */
+
+.buy {
+  position: relative;
+  overflow: hidden;
+
+  background: #71865d;
+  color: white;
+
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 12px;
+
+  font-size: 12px;
+  font-weight: 750;
+
+  transition: background .2s, transform .2s;
+}
+
+.buy::after {
+  content: " ♡";
+}
+
+.buy:hover {
+  background: #5c7248;
+  transform: translateY(-1px);
+}
+
+/* HOW TO ORDER */
+
+.how {
+  gap: 13px;
+  margin-top: 20px;
+}
+
+.step {
+  background: #fff;
+  border: 1px solid #eee9e2;
+  border-radius: 18px;
+
+  padding: 17px;
+  box-shadow: 0 4px 15px #51452c05;
+
+  transition: transform .2s;
+}
+
+.step:hover {
+  transform: translateY(-3px);
+}
+
+.step strong {
+  font-size: 13px;
+  color: #505744;
+  margin-bottom: 7px;
+}
+
+.step span {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #858579;
+}
+
+/* EMPTY SEARCH RESULT */
+
+.empty {
+  background: #fff;
+  border: 1px dashed #e6d9d6;
+  border-radius: 18px;
+  padding: 32px 20px;
+  line-height: 1.8;
+}
+
+/* ORDER MODAL */
+
+.modal {
+  background: #34302780;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.box {
+  background: #fffdf9;
+  border: 1px solid #f0e8df;
+  border-radius: 24px;
+  padding: 22px;
+
+  box-shadow: 0 18px 60px #241b1b20;
+}
+
+.modal-head h2 {
+  font-size: 20px;
+  letter-spacing: -.5px;
+}
+
+.close {
+  background: #fcebef;
+  color: #b9516b;
+  border: 1px solid #f4dce2;
+}
+
+.field label {
+  color: #666b5c;
+}
+
+.field input,
+.field select,
+.field textarea {
+  border: 1px solid #eae5dc;
+  border-radius: 13px;
+  padding: 12px 13px;
+  background: #fff;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #d9a2ae;
+  box-shadow: 0 0 0 3px #f8e4e9;
+}
+
+.order-summary {
+  background: linear-gradient(120deg, #f6f5eb, #fdf0f2);
+  border: 1px solid #eee8df;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.order-summary strong {
+  color: #b9516b;
+  font-size: 21px;
+}
+
+.plan-card {
+  border: 1px solid #eae5dc;
+  border-radius: 15px;
+}
+
+.plan-toggle {
+  padding: 15px;
+}
+
+.plan-toggle .plus {
+  color: #b9516b;
+}
+
+.package-option {
+  background: #fff7f8;
+  border-color: #f0dce1;
+  border-radius: 12px;
+}
+
+.package-option.selected {
+  background: #edf2e5;
+  border-color: #d4e0c4;
+}
+
+.primary {
+  background: #71865d;
+  border-radius: 13px;
+  padding: 13px;
+}
+
+.primary:hover {
+  background: #5c7248;
+}
+
+/* FOOTER */
+
+.foot {
+  padding: 30px 0 5px;
+  font-size: 11px;
+  color: #969588;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 760px) {
+  .wrap {
+    padding: 16px 14px 32px;
+  }
+
+  .hero {
+    padding: 27px 22px;
+    border-radius: 23px;
+  }
+
+  .hero h2 {
+    font-size: 29px;
+    max-width: 85%;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .hero .decor {
+    right: 15px;
+    top: 18px;
+    font-size: 39px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+  }
+
+  .product {
+    padding: 14px;
+  }
+
+  .product h3 {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+
+  .brand h1 {
+    font-size: 20px;
+  }
+
+  .tag {
+    font-size: 9px;
+    padding: 7px 9px;
+  }
+
+  .how {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  .wrap {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .product {
+    padding: 11px;
+    border-radius: 16px;
+  }
+
+  .product h3 {
+    font-size: 13px;
+  }
+
+  .desc {
+    font-size: 11px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .buy {
+    font-size: 11px;
+    padding: 10px 6px;
+  }
+
+  .hero h2 {
+    font-size: 25px;
+  }
+
+  .hero::after {
+    right: 13px;
+    bottom: 12px;
+    font-size: 9px;
+  }
+}
+
+/* ACCESSIBILITY: REDUCE ANIMATION */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+  }
 {name:'Paket Data / Kuota',category:'Pulsa & Kuota',desc:'Pilih operator dan paket data.',packages:[{name:'Tanyakan operator & paket',price:0}]},
 {name:'Top Up Mobile Legends',category:'Game',desc:'Top up diamond. Tanyakan nominal yang tersedia.',packages:[{name:'Tanyakan nominal',price:0}]},
 {name:'Top Up PUBG Mobile',category:'Game',desc:'Top up UC game. Tanyakan nominal yang tersedia.',packages:[{name:'Tanyakan nominal',price:0}]},
