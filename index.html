@@ -7,19 +7,19 @@
 <title>Mitcha Store — Digital Boutique</title>
 <style>
 :root{
-  --berry:#c94f70;--berry-dark:#a83b5b;--pink:#fff0f3;--pink-deep:#f7d8e0;
-  --matcha:#e7eddc;--matcha-dark:#64794f;--cream:#fffaf4;--paper:#fffdfb;
-  --ink:#39352f;--muted:#898176;--line:#eee5df;--white:#fff;
-  --shadow:0 12px 32px rgba(91,64,54,.07)
+ --berry:#c94f70;--berry-dark:#a83b5b;--pink:#fff0f3;--pink-deep:#f7d8e0;
+ --matcha:#e7eddc;--matcha-dark:#64794f;--cream:#fffaf4;--paper:#fffdfb;
+ --ink:#39352f;--muted:#898176;--line:#eee5df;--white:#fff;
+ --shadow:0 12px 32px rgba(91,64,54,.07)
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:18px}
 body{
-  margin:0;background:
-    radial-gradient(circle at 0% 10%,rgba(247,216,224,.6),transparent 260px),
-    radial-gradient(circle at 100% 42%,rgba(231,237,220,.65),transparent 300px),var(--cream);
-  color:var(--ink);font:15px/1.6 Inter,ui-rounded,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  letter-spacing:-.15px
+ margin:0;background:
+ radial-gradient(circle at 0% 10%,rgba(247,216,224,.6),transparent 260px),
+ radial-gradient(circle at 100% 42%,rgba(231,237,220,.65),transparent 300px),var(--cream);
+ color:var(--ink);font:15px/1.6 Inter,ui-rounded,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ letter-spacing:-.15px
 }
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
@@ -28,9 +28,9 @@ a{color:inherit}
 .top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:5px 0 24px}
 .brand{display:flex;align-items:center;gap:12px;min-width:0}
 .logo{
-  width:54px;height:54px;flex-shrink:0;border-radius:18px;display:grid;place-items:center;
-  background:linear-gradient(145deg,#ffe7ed,#fff6ef 60%,#e7eddc);border:1px solid #f0dedc;
-  box-shadow:0 7px 18px rgba(201,79,112,.10);font-size:27px;transform:rotate(-3deg)
+ width:54px;height:54px;flex-shrink:0;border-radius:18px;display:grid;place-items:center;
+ background:linear-gradient(145deg,#ffe7ed,#fff6ef 60%,#e7eddc);border:1px solid #f0dedc;
+ box-shadow:0 7px 18px rgba(201,79,112,.10);font-size:27px;transform:rotate(-3deg)
 }
 .brand h1{font-size:23px;font-weight:850;letter-spacing:-.9px;line-height:1.2;margin:0}
 .brand p{font-size:11px;letter-spacing:.35px;color:var(--muted);margin:5px 0 0}
@@ -39,9 +39,9 @@ a{color:inherit}
 .testi-button{display:inline-flex;align-items:center;gap:6px;text-decoration:none;margin-top:9px;padding:7px 11px;border-radius:999px;background:#fff;border:1px solid #f1dce2;color:var(--berry-dark);font-size:11px;font-weight:750;transition:.2s}
 .testi-button:hover{background:var(--pink);transform:translateY(-1px)}
 .hero{
-  position:relative;overflow:hidden;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:20px;
-  background:linear-gradient(112deg,#fff0f3 0%,#fff9f1 54%,#edf2e5 100%);
-  border:1px solid #f0e2dc;border-radius:30px;padding:38px 36px;margin-bottom:30px;box-shadow:var(--shadow)
+ position:relative;overflow:hidden;display:grid;grid-template-columns:1.25fr.75fr;align-items:center;gap:20px;
+ background:linear-gradient(112deg,#fff0f3 0%,#fff9f1 54%,#edf2e5 100%);
+ border:1px solid #f0e2dc;border-radius:30px;padding:38px 36px;margin-bottom:30px;box-shadow:var(--shadow)
 }
 .hero:before{content:"";position:absolute;width:210px;height:210px;border:1px solid #ffffffa8;border-radius:50%;right:10%;top:-120px}
 .hero-copy{position:relative;z-index:1}
@@ -51,9 +51,9 @@ a{color:inherit}
 .hero p{font-size:13px;line-height:1.9;max-width:500px;color:#777268;margin:0}
 .hero-visual{position:relative;min-height:175px;display:grid;place-items:center}
 .sticker{
-  position:relative;display:grid;place-items:center;width:154px;height:154px;border-radius:48% 52% 45% 55%;
-  background:linear-gradient(145deg,#fffdf8,#f9dce4);border:1px solid #fff;box-shadow:0 15px 35px #b66c7820;
-  font-size:64px;transform:rotate(5deg);animation:floaty 4s ease-in-out infinite
+ position:relative;display:grid;place-items:center;width:154px;height:154px;border-radius:48% 52% 45% 55%;
+ background:linear-gradient(145deg,#fffdf8,#f9dce4);border:1px solid #fff;box-shadow:0 15px 35px #b66c7820;
+ font-size:64px;transform:rotate(5deg);animation:floaty 4s ease-in-out infinite
 }
 .sticker:after{content:"MITCHA ♡";position:absolute;bottom:17px;font-size:9px;font-weight:900;letter-spacing:2px;color:var(--berry-dark)}
 .spark{position:absolute;font-size:25px;color:var(--berry)}
@@ -71,33 +71,32 @@ a{color:inherit}
 .searchbox{position:relative}
 .searchbox span{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:17px;color:#a58c8c}
 .catalog-tools input,.catalog-tools select,.field input,.field select,.field textarea{
-  width:100%;border:1px solid #eee5df;border-radius:13px;padding:12px 14px;background:#fff;color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s
+ width:100%;border:1px solid #eee5df;border-radius:13px;padding:12px 14px;background:#fff;color:var(--ink);outline:none;transition:border-color.2s,box-shadow.2s
 }
 .catalog-tools input{padding-left:42px}
 .catalog-tools input,.catalog-tools select{min-height:46px}
 .catalog-tools input:focus,.catalog-tools select:focus,.field input:focus,.field select:focus,.field textarea:focus{border-color:#d9a0b0;box-shadow:0 0 0 3px #f9e5ea}
 .catalog-group{margin:26px 0 0}
 .catalog-heading{display:flex;align-items:center;gap:10px;margin:0 0 13px}
-.catalog-heading .flower{width:31px;height:31px;border-radius:11px;display:grid;place-items:center;background:var(--pink);color:var(--berry);font-size:16px}
+.catalog-heading.flower{width:31px;height:31px;border-radius:11px;display:grid;place-items:center;background:var(--pink);color:var(--berry);font-size:16px}
 .catalog-heading h3{font-size:15px;color:#535c49;letter-spacing:-.2px;margin:0}
-.catalog-heading .rule{height:1px;background:linear-gradient(90deg,#e9dfd6,transparent);flex:1}
+.catalog-heading.rule{height:1px;background:linear-gradient(90deg,#e9dfd6,transparent);flex:1}
 .catalog-count{font-size:10px;color:#989183;white-space:nowrap}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;align-items:stretch}
 .product{
-  position:relative;overflow:hidden;min-height:206px;padding:16px;background:var(--paper);border:1px solid #eee6df;border-radius:20px;
-  box-shadow:0 5px 16px rgba(80,60,45,.035);display:flex;flex-direction:column;min-width:0;transition:transform .2s,box-shadow .2s,border-color .2s
+ position:relative;overflow:hidden;min-height:206px;padding:16px;background:var(--paper);border:1px solid #eee6df;border-radius:20px;
+ box-shadow:0 5px 16px rgba(80,60,45,.035);display:flex;flex-direction:column;min-width:0;transition:transform.2s,box-shadow.2s,border-color.2s
 }
 .product:before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,#f5c7d3,#e6eddc,#f5c7d3)}
 .product:hover{transform:translateY(-4px);border-color:#e6d4d5;box-shadow:0 12px 25px rgba(80,60,45,.08)}
 .product-top{display:flex;align-items:flex-start;gap:9px;margin:3px 0 8px}
-.product-icon{display:grid;place-items:center;width:35px;height:35px;flex-shrink:0;border-radius:12px;background:#f8edf0;font-size:18px}
 .product h3{overflow-wrap:anywhere;font-size:14px;line-height:1.45;font-weight:850;letter-spacing:-.25px;margin:2px 0 0}
 .desc{font-size:11px;line-height:1.75;color:#898277;margin:0 0 13px}
 .product-note{background:#fff4e5;color:#7a5520;padding:8px 10px;border-radius:10px;font-size:10px;line-height:1.6;margin:0 0 11px;white-space:pre-line}
 .price{color:var(--berry-dark);font-size:16px;font-weight:900;letter-spacing:-.4px;margin-top:auto}
 .duration{font-size:10px;color:#938a7f;margin:4px 0 12px}
-.buy{background:var(--matcha-dark);color:#fff;width:100%;padding:10px 12px;border-radius:12px;font-size:11px;font-weight:850;transition:background .2s,transform .2s}
-.buy:after{content:"  ↗"}
+.buy{background:var(--matcha-dark);color:#fff;width:100%;padding:10px 12px;border-radius:12px;font-size:11px;font-weight:850;transition:background.2s,transform.2s}
+.buy:after{content:" ↗"}
 .buy:hover{background:#526740;transform:translateY(-1px)}
 .empty{grid-column:1/-1;text-align:center;padding:32px 20px;line-height:1.8;color:var(--muted);background:#fff;border:1px dashed #e6d9d6;border-radius:18px}
 .how{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:17px}
@@ -127,9 +126,9 @@ a{color:inherit}
 .plan-card{border:1px solid #eae3dc;border-radius:14px;background:#fff;overflow:hidden}
 .plan-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;padding:13px 14px;background:#fff;color:var(--ink);text-align:left;border-radius:0}
 .plan-toggle strong{font-size:13px}
-.plan-toggle .plus{color:var(--berry-dark);font-size:20px;line-height:1}
+.plan-toggle.plus{color:var(--berry-dark);font-size:20px;line-height:1}
 .plan-options{display:none;padding:0 9px 9px;gap:7px}
-.plan-card.open .plan-options{display:grid}
+.plan-card.open.plan-options{display:grid}
 .package-option{display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;background:#fff7f8;border:1px solid #f0dce1;color:var(--ink);padding:10px 11px;border-radius:11px;font-size:12px}
 .package-option span:last-child{color:var(--berry-dark);font-weight:850;white-space:nowrap}
 .package-option.selected{background:#edf2e5;border-color:#d4e0c4}
@@ -137,126 +136,130 @@ a{color:inherit}
 .primary{background:var(--berry);color:#fff;width:100%;border-radius:13px;padding:13px;font-size:13px;font-weight:850;box-shadow:0 5px 12px #c94f7022}
 .primary:hover{background:var(--berry-dark)}
 @media(max-width:760px){
-  .wrap{padding:15px 14px 32px}
-  .top{align-items:flex-start}
-  .hero{padding:27px 23px;border-radius:25px;grid-template-columns:1fr .65fr;gap:8px}
-  .hero h2{font-size:clamp(27px,5vw,36px)}
-  .hero p{font-size:12px}
-  .hero-visual{min-height:145px}
-  .sticker{width:120px;height:120px;font-size:50px}
-  .sticker:after{bottom:13px;font-size:8px}
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .product{padding:13px}
-  .how{grid-template-columns:1fr}
+.wrap{padding:15px 14px 32px}
+.top{align-items:flex-start}
+.hero{padding:27px 23px;border-radius:25px;grid-template-columns:1fr.65fr;gap:8px}
+.hero h2{font-size:clamp(27px,5vw,36px)}
+.hero p{font-size:12px}
+.hero-visual{min-height:145px}
+.sticker{width:120px;height:120px;font-size:50px}
+.sticker:after{bottom:13px;font-size:8px}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.product{padding:13px}
+.how{grid-template-columns:1fr}
 }
 @media(max-width:450px){
-  .wrap{padding-left:11px;padding-right:11px}
-  .brand{gap:9px}
-  .logo{width:46px;height:46px;border-radius:15px;font-size:23px}
-  .brand h1{font-size:19px}
-  .brand p{font-size:10px}
-  .pill{font-size:8px;padding:7px 8px;letter-spacing:.4px}
-  .testi-button{font-size:10px;padding:6px 9px}
-  .hero{display:block;padding:25px 20px 21px}
-  .hero h2{font-size:29px;max-width:85%}
-  .hero p{max-width:100%;padding-right:3px}
-  .hero-visual{position:absolute;right:3px;bottom:7px;min-height:0;opacity:.32;pointer-events:none}
-  .sticker{width:105px;height:105px;font-size:43px}
-  .sticker:after{font-size:7px;bottom:10px}
-  .spark{display:none}
-  .hero-bottom{max-width:80%;gap:6px}
-  .hero-chip{font-size:9px;padding:6px 8px}
-  .section-head h2{font-size:19px}
-  .section-kicker{font-size:9px}
-  .catalog-tools{grid-template-columns:1fr;gap:8px;padding:9px}
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-  .product{padding:11px;border-radius:16px;min-height:0}
-  .product-icon{width:29px;height:29px;border-radius:10px;font-size:15px}
-  .product h3{font-size:12px}
-  .desc{font-size:10px}
-  .price{font-size:14px}
-  .buy{font-size:10px;padding:10px 5px}
-  .duration{font-size:9px}
-  .catalog-heading h3{font-size:14px}
-  .box{padding:16px;border-radius:21px}
+.wrap{padding-left:11px;padding-right:11px}
+.brand{gap:9px}
+.logo{width:46px;height:46px;border-radius:15px;font-size:23px}
+.brand h1{font-size:19px}
+.brand p{font-size:10px}
+.pill{font-size:8px;padding:7px 8px;letter-spacing:.4px}
+.testi-button{font-size:10px;padding:6px 9px}
+.hero{display:block;padding:25px 20px 21px}
+.hero h2{font-size:29px;max-width:85%}
+.hero p{max-width:100%;padding-right:3px}
+.hero-visual{position:absolute;right:3px;bottom:7px;min-height:0;opacity:.32;pointer-events:none}
+.sticker{width:105px;height:105px;font-size:43px}
+.sticker:after{font-size:7px;bottom:10px}
+.spark{display:none}
+.hero-bottom{max-width:80%;gap:6px}
+.hero-chip{font-size:9px;padding:6px 8px}
+.section-head h2{font-size:19px}
+.section-kicker{font-size:9px}
+.catalog-tools{grid-template-columns:1fr;gap:8px;padding:9px}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.product{padding:11px;border-radius:16px;min-height:0}
+.product h3{font-size:12px}
+.desc{font-size:10px}
+.price{font-size:14px}
+.buy{font-size:10px;padding:10px 5px}
+.duration{font-size:9px}
+.catalog-heading h3{font-size:14px}
+.box{padding:16px;border-radius:21px}
 }
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
 }
+.shop-hours{font-size:.88rem;color:var(--berry-dark,#b93458);margin:.45rem 0;font-weight:600}
+.x-account{display:inline-flex;align-items:center;justify-content:center;padding:.65rem 1rem;border:1px solid var(--berry,#d94f70);border-radius:999px;color:var(--berry-dark,#b93458);text-decoration:none;font-weight:600;font-size:.9rem;margin:.35rem}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header class="top">
-    <div class="brand">
-      <div class="logo" aria-hidden="true">🐈</div>
-      <div>
-        <h1>Mitcha Store</h1>
-        <p>your tiny corner of digital happiness ♡</p>
-        <a href="https://t.me/chaxium" target="_blank" rel="noopener noreferrer" class="testi-button">♡ lihat testimoni pelanggan</a>
-      </div>
-    </div>
-    <div class="top-actions"><span class="pill">DIGITAL BOUTIQUE ✿</span></div>
-  </header>
+ <header class="top">
+ <div class="brand">
+ <div class="logo" aria-hidden="true">🐈</div>
+ <div>
+ <h1>Mitcha Store</h1>
+ <p>your tiny corner of digital happiness ♡</p>
+ <a href="https://t.me/chaxium" target="_blank" rel="noopener noreferrer" class="testi-button">♡ lihat testimoni pelanggan</a>
+<a class="social-link x-account" href="https://x.com/seontuh" target="_blank" rel="noopener noreferrer">Akun X</a>
+ </div>
+ </div>
+ <div class="top-actions"><span class="pill">DIGITAL BOUTIQUE ✿</span></div>
+ </header>
 
-  <section class="hero">
-    <div class="hero-copy">
-      <div class="eyebrow">✿ a little treat for you</div>
-      <h2>Little things,<br><em>lovely digital</em> days.</h2>
-      <p>Temukan aplikasi premium, streaming, top-up game, pulsa, kuota, dan kebutuhan digital favoritmu. Pilih yang kamu suka, lalu lanjut order lewat WhatsApp. 🎀</p>
-      <div class="hero-bottom">
-        <span class="hero-chip">♡ easy order</span><span class="hero-chip">🍓 sweet service</span><span class="hero-chip">🍵 digital treats</span>
-      </div>
-    </div>
-    <div class="hero-visual" aria-hidden="true">
-      <span class="spark s1">✦</span><span class="spark s2">♡</span><span class="spark s3">✧</span>
-      <div class="sticker">🍓</div>
-    </div>
-  </section>
+ <section class="hero">
+<p class="shop-hours">Jam buka: 07.00–23.59</p>
 
-  <div class="section-head">
-    <div><h2>Find your favorite ♡</h2><p>Pilih produk, cek paket, lalu pesan dengan mudah.</p></div>
-    <span class="section-kicker">THE CATALOG</span>
-  </div>
-  <div class="catalog-tools">
-    <div class="searchbox"><span aria-hidden="true">⌕</span><input id="search" placeholder="Cari produk favoritmu…" aria-label="Cari produk"></div>
-    <select id="category" aria-label="Kategori"><option value="">Semua kategori</option></select>
-  </div>
-  <div id="products"></div>
+ <div class="hero-copy">
+ <div class="eyebrow">✿ a little treat for you</div>
+ <h2>Little things,<br><em>lovely digital</em> days.</h2>
+ <p>Temukan aplikasi premium, streaming, top-up game, pulsa, kuota, dan kebutuhan digital favoritmu. Pilih yang kamu suka, lalu lanjut order lewat WhatsApp. </p>
+ <div class="hero-bottom">
+ <span class="hero-chip">♡ easy order</span><span class="hero-chip"> sweet service</span><span class="hero-chip"> digital treats</span>
+ </div>
+ </div>
+ <div class="hero-visual" aria-hidden="true">
+ <span class="spark s1">✦</span><span class="spark s2">♡</span><span class="spark s3">✧</span>
+ <div class="sticker"></div>
+ </div>
+ </section>
 
-  <section class="section-head">
-    <div><h2>Order in 3 little steps ✿</h2><p>Nggak perlu bingung, ikuti langkah singkat ini yaa.</p></div>
-  </section>
-  <div class="how">
-    <div class="step"><div class="step-num">01</div><strong>🍓 Pick your treat</strong><span>Cari produk yang kamu mau, lalu pilih plan dan paket atau durasinya.</span></div>
-    <div class="step"><div class="step-num">02</div><strong>💌 Fill the details</strong><span>Isi nama dan detail yang dibutuhkan. Jangan lupa cek pesananmu, ya!</span></div>
-    <div class="step"><div class="step-num">03</div><strong>🎀 Chat the admin</strong><span>Ringkasan pesanan akan dikirim ke WhatsApp. Pembayaran setelah mendapat instruksi admin.</span></div>
-  </div>
-  <div class="footer-card"><strong>Thank you for stopping by ♡</strong><span>Semoga kamu menemukan digital treats yang kamu cari. Have a lovely day! 🍵</span></div>
-  <footer class="foot">Mitcha Store · made with ♡, berries & matcha</footer>
+ <div class="section-head">
+ <div><h2>Find your favorite ♡</h2><p>Pilih produk, cek paket, lalu pesan dengan mudah.</p></div>
+ <span class="section-kicker">THE CATALOG</span>
+ </div>
+ <div class="catalog-tools">
+ <div class="searchbox"><span aria-hidden="true">⌕</span><input id="search" placeholder="Cari produk favoritmu…" aria-label="Cari produk"></div>
+ <select id="category" aria-label="Kategori"><option value="">Semua kategori</option></select>
+ </div>
+ <div id="products"></div>
+
+ <section class="section-head">
+ <div><h2>Order in 3 little steps ✿</h2><p>Nggak perlu bingung, ikuti langkah singkat ini yaa.</p></div>
+ </section>
+ <div class="how">
+ <div class="step"><div class="step-num">01</div><strong> Pick your treat</strong><span>Cari produk yang kamu mau, lalu pilih plan dan paket atau durasinya.</span></div>
+ <div class="step"><div class="step-num">02</div><strong>💌 Fill the details</strong><span>Isi nama dan detail yang dibutuhkan. Jangan lupa cek pesananmu, ya!</span></div>
+ <div class="step"><div class="step-num">03</div><strong> Chat the admin</strong><span>Ringkasan pesanan akan dikirim ke WhatsApp. Pembayaran setelah mendapat instruksi admin.</span></div>
+ </div>
+ <div class="footer-card"><strong>Thank you for stopping by ♡</strong><span>Semoga kamu menemukan digital treats yang kamu cari. Have a lovely day! </span></div>
+ <footer class="foot">Mitcha Store · made with ♡, berries & matcha</footer>
 </div>
 
 <div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="box">
-    <div class="modal-head"><h2 id="modalTitle">Your little order 🍓</h2><button class="close" id="close" type="button">Tutup ✕</button></div>
-    <form id="orderForm">
-      <div class="field"><label for="chosenProduct">Produk</label><input id="chosenProduct" readonly></div>
-      <div class="field">
-        <label>Pilih plan dan harga *</label>
-        <p class="plan-hint">Ketuk nama plan untuk membuka paket, lalu pilih yang kamu mau.</p>
-        <div id="planChoices" class="plan-list"></div>
-        <select id="chosenPlan" hidden></select>
-        <select id="chosenPackage" hidden></select>
-      </div>
-      <div class="order-summary"><span>Harga produk</span><strong id="chosenPrice">Pilih paket</strong><span class="small">Harga dapat dikonfirmasi kembali oleh admin sebelum pembayaran.</span></div>
-      <div id="chosenProductNote" class="product-note" hidden></div>
-      <div class="field"><label for="customer">Nama customer *</label><input id="customer" required maxlength="80" placeholder="Nama kamu"></div>
-      <div class="field"><label for="customerDetail">Email / User ID (jika diperlukan)</label><input id="customerDetail" maxlength="160" placeholder="Isi jika diperlukan oleh produk"></div>
-      <div class="field"><label for="customerNote">Catatan (opsional)</label><textarea id="customerNote" rows="2" maxlength="300" placeholder="Contoh: email sendiri, server game, dll."></textarea></div>
-      <div class="note">Setelah menekan tombol, WhatsApp akan terbuka dengan ringkasan pesanan. Pembayaran dilakukan setelah mendapat instruksi admin.</div>
-      <button class="primary" type="submit">Lanjut ke WhatsApp ♡</button>
-    </form>
-  </div>
+ <div class="box">
+ <div class="modal-head"><h2 id="modalTitle">Your little order </h2><button class="close" id="close" type="button">Tutup ✕</button></div>
+ <form id="orderForm">
+ <div class="field"><label for="chosenProduct">Produk</label><input id="chosenProduct" readonly></div>
+ <div class="field">
+ <label>Pilih plan dan harga *</label>
+ <p class="plan-hint">Ketuk nama plan untuk membuka paket, lalu pilih yang kamu mau.</p>
+ <div id="planChoices" class="plan-list"></div>
+ <select id="chosenPlan" hidden></select>
+ <select id="chosenPackage" hidden></select>
+ </div>
+ <div class="order-summary"><span>Harga produk</span><strong id="chosenPrice">Pilih paket</strong><span class="small">Harga dapat dikonfirmasi kembali oleh admin sebelum pembayaran.</span></div>
+ <div id="chosenProductNote" class="product-note" hidden></div>
+ <div class="field"><label for="customer">Nama customer *</label><input id="customer" required maxlength="80" placeholder="Nama kamu"></div>
+ <div class="field"><label for="customerDetail">Email / User ID (jika diperlukan)</label><input id="customerDetail" maxlength="160" placeholder="Isi jika diperlukan oleh produk"></div>
+ <div class="field"><label for="customerNote">Catatan (opsional)</label><textarea id="customerNote" rows="2" maxlength="300" placeholder="Contoh: email sendiri, server game, dll."></textarea></div>
+ <div class="note">Setelah menekan tombol, WhatsApp akan terbuka dengan ringkasan pesanan. Pembayaran dilakukan setelah mendapat instruksi admin.</div>
+ <button class="primary" type="submit">Lanjut ke WhatsApp ♡</button>
+ </form>
+ </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -267,23 +270,23 @@ a{color:inherit}
 const WHATSAPP_NUMBER = '628881780693';
 
 const DEFAULT_PRODUCTS = [
-  {name:'Adobe',category:'Aplikasi Premium',desc:'Tools kreatif untuk berbagai kebutuhan.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
-  {name:'Apple Music',category:'Aplikasi Premium',desc:'Dengarkan musik favoritmu.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
-  {name:'Canva',category:'Aplikasi Premium',desc:'Bantu kebutuhan desain dan konten.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
-  {name:'CapCut',category:'Aplikasi Premium',desc:'Edit video dan buat konten lebih mudah.',packages:[{name:'Standard · 1 bulan',price:24000},{name:'Pro · 1 bulan',price:45000}]},
-  {name:'Disney+ Hotstar',category:'Aplikasi Premium',desc:'Film, series, dan hiburan favorit.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
-  {name:'DramaWave',category:'Aplikasi Premium',desc:'Pilihan hiburan drama pendek.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
-  {name:'Getcontact Premium',category:'Aplikasi Premium',desc:'Fitur Premium aplikasi Getcontact.',packages:[{name:'1 bulan',price:0}]},
-  {name:'Google One',category:'Aplikasi Premium',desc:'Pilihan penyimpanan cloud tambahan.',packages:[{name:'Private · 1 bulan',price:25000},{name:'Private · 2 bulan',price:30000},{name:'Private · 3 bulan',price:40000},{name:'Private · 6 bulan',price:45000},{name:'Private · 1 tahun',price:95000}]},
-  {name:'Netflix',category:'Aplikasi Premium',desc:'Paket streaming film dan series.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
-  {name:'Spotify',category:'Aplikasi Premium',desc:'Musik favorit untuk menemani harimu.',packages:[{name:'Family Plan · 1 bulan',price:30000},{name:'Individual Plan · 1 bulan',price:38000}]},
-  {name:'Vidio',category:'Aplikasi Premium',desc:'Hiburan dan tayangan pilihan.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
-  {name:'YouTube Premium',category:'Aplikasi Premium',desc:'Nikmati video dengan pengalaman Premium.',packages:[{name:'Family Plan · 1 bulan',price:30000},{name:'Individual Plan · 1 bulan',price:38000}]},
-  {name:'Pulsa',category:'Pulsa & Kuota',desc:'Tersedia berbagai operator dan nominal.',packages:[{name:'Tanyakan operator & nominal',price:0}]},
-  {name:'Paket Data / Kuota',category:'Pulsa & Kuota',desc:'Pilih operator dan paket data.',packages:[{name:'Tanyakan operator & paket',price:0}]},
-  {name:'Top Up Mobile Legends',category:'Game',desc:'Top up diamond. Tanyakan nominal yang tersedia.',packages:[{name:'Tanyakan nominal',price:0}]},
-  {name:'Top Up PUBG Mobile',category:'Game',desc:'Top up UC game. Tanyakan nominal yang tersedia.',packages:[{name:'Tanyakan nominal',price:0}]},
-  {name:'Token Listrik',category:'Token Listrik',desc:'Token listrik prabayar.',packages:[{name:'Tanyakan nominal',price:0}]}
+ {name:'Adobe',category:'Aplikasi Premium',desc:'Tools kreatif untuk berbagai kebutuhan.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
+ {name:'Apple Music',category:'Aplikasi Premium',desc:'Dengarkan musik favoritmu.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
+ {name:'Canva',category:'Aplikasi Premium',desc:'Bantu kebutuhan desain dan konten.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
+ {name:'CapCut',category:'Aplikasi Premium',desc:'Edit video dan buat konten lebih mudah.',packages:[{name:'Standard · 1 bulan',price:24000},{name:'Pro · 1 bulan',price:45000}]},
+ {name:'Disney+ Hotstar',category:'Aplikasi Premium',desc:'Film, series, dan hiburan favorit.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
+ {name:'DramaWave',category:'Aplikasi Premium',desc:'Pilihan hiburan drama pendek.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
+ {name:'Getcontact Premium',category:'Aplikasi Premium',desc:'Fitur Premium aplikasi Getcontact.',packages:[{name:'1 bulan',price:0}]},
+ {name:'Google One',category:'Aplikasi Premium',desc:'Pilihan penyimpanan cloud tambahan.',packages:[{name:'Private · 1 bulan',price:25000},{name:'Private · 2 bulan',price:30000},{name:'Private · 3 bulan',price:40000},{name:'Private · 6 bulan',price:45000},{name:'Private · 1 tahun',price:95000}]},
+ {name:'Netflix',category:'Aplikasi Premium',desc:'Paket streaming film dan series.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
+ {name:'Spotify',category:'Aplikasi Premium',desc:'Musik favorit untuk menemani harimu.',packages:[{name:'Family Plan · 1 bulan',price:30000},{name:'Individual Plan · 1 bulan',price:38000}]},
+ {name:'Vidio',category:'Aplikasi Premium',desc:'Hiburan dan tayangan pilihan.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
+ {name:'YouTube Premium',category:'Aplikasi Premium',desc:'Nikmati video dengan pengalaman Premium.',packages:[{name:'Family Plan · 1 bulan',price:30000},{name:'Individual Plan · 1 bulan',price:38000}]},
+ {name:'Pulsa',category:'Pulsa & Kuota',desc:'Tersedia berbagai operator dan nominal.',packages:[{name:'Tanyakan operator & nominal',price:0}]},
+ {name:'Paket Data / Kuota',category:'Pulsa & Kuota',desc:'Pilih operator dan paket data.',packages:[{name:'Tanyakan operator & paket',price:0}]},
+ {name:'Top Up Mobile Legends',category:'Game',desc:'Top up diamond. Tanyakan nominal yang tersedia.',packages:[{name:'Tanyakan nominal',price:0}]},
+ {name:'Top Up PUBG Mobile',category:'Game',desc:'Top up UC game. Tanyakan nominal yang tersedia.',packages:[{name:'Tanyakan nominal',price:0}]},
+ {name:'Token Listrik',category:'Token Listrik',desc:'Token listrik prabayar.',packages:[{name:'Tanyakan nominal',price:0}]}
 ];
 
 let PRODUCTS = DEFAULT_PRODUCTS.map(normalizeProduct);
@@ -292,207 +295,197 @@ const $ = id => document.getElementById(id);
 let selected = null;
 
 const rupiah = n => Number(n) > 0
-  ? new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(Number(n))
-  : 'Tanya admin';
+? new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(Number(n))
+ : 'Tanya admin';
 
 function esc(s){
-  return String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
-function productIcon(name){
-  const n=String(name||'').toLowerCase();
-  if(/spotify|apple music|vidio|netflix|disney|youtube|dramawave/.test(n)) return '🎧';
-  if(/canva|adobe|capcut/.test(n)) return '🎨';
-  if(/google|getcontact/.test(n)) return '☁️';
-  if(/pulsa|kuota|data/.test(n)) return '📱';
-  if(/game|pubg|mobile legends|top up/.test(n)) return '🎮';
-  if(/listrik|token/.test(n)) return '⚡';
-  return '🎀';
+ return String(s?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 function normalizeProduct(p){
-  const packages = Array.isArray(p.packages) ? p.packages : [];
-  return {
-    ...p,
-    desc:p.desc ?? p.description ?? '',
-    note:p.note || '',
-    packages:packages.map(x=>({
-      ...x,
-      plan:String(x.plan || 'Umum'),
-      name:String(x.name || 'Tanyakan paket tersedia'),
-      price:Number(x.price) || 0
-    }))
-  };
+ const packages = Array.isArray(p.packages)? p.packages : [];
+ return {
+...p,
+ desc:p.desc?? p.description?? '',
+ note:p.note || '',
+ packages:packages.map(x=>({
+...x,
+ plan:String(x.plan || 'Umum'),
+ name:String(x.name || 'Tanyakan paket tersedia'),
+ price:Number(x.price) || 0
+ }))
+ };
 }
 
 async function loadProductsFromDatabase(){
-  try{
-    if(!window.CHANARRA_SUPABASE_URL || !window.CHANARRA_SUPABASE_KEY) return;
-    if(!window.supabase) throw new Error('Library Supabase belum termuat.');
-    const client = window.supabase.createClient(window.CHANARRA_SUPABASE_URL,window.CHANARRA_SUPABASE_KEY);
-    const {data,error} = await client.from('products')
-      .select('name,category,description,note,packages,active').order('name');
-    if(error) throw error;
-    if(data){
-      const activeProducts = data.filter(p=>p.active !== false);
-      PRODUCTS = activeProducts.map(p=>normalizeProduct({
-        name:p.name,category:p.category,desc:p.description || '',note:p.note || '',
-        packages:p.packages?.length ? p.packages : [{name:'Tanyakan paket tersedia',price:0}]
-      }));
-      render();
-    }
-  }catch(err){
-    console.warn('Katalog database belum dapat dimuat; menggunakan katalog bawaan.',err);
-  }
+ try{
+ if(!window.CHANARRA_SUPABASE_URL ||!window.CHANARRA_SUPABASE_KEY) return;
+ if(!window.supabase) throw new Error('Library Supabase belum termuat.');
+ const client = window.supabase.createClient(window.CHANARRA_SUPABASE_URL,window.CHANARRA_SUPABASE_KEY);
+ const {data,error} = await client.from('products')
+.select('name,category,description,note,packages,active').order('name');
+ if(error) throw error;
+ if(data){
+ const activeProducts = data.filter(p=>p.active!== false);
+ PRODUCTS = activeProducts.map(p=>normalizeProduct({
+ name:p.name,category:p.category,desc:p.description || '',note:p.note || '',
+ packages:p.packages?.length? p.packages : [{name:'Tanyakan paket tersedia',price:0}]
+ }));
+ render();
+ }
+ }catch(err){
+ console.warn('Katalog database belum dapat dimuat; menggunakan katalog bawaan.',err);
+ }
 }
 
 function render(){
-  const cats = [...new Set([...CATEGORY_ORDER,...PRODUCTS.map(p=>p.category).filter(Boolean)])]
-    .filter(c=>PRODUCTS.some(p=>p.category===c));
-  const old = $('category').value;
-  $('category').innerHTML = '<option value="">Semua kategori</option>' +
-    cats.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
-  $('category').value = cats.includes(old) ? old : '';
+ const cats = [...new Set([...CATEGORY_ORDER,...PRODUCTS.map(p=>p.category).filter(Boolean)])]
+.filter(c=>PRODUCTS.some(p=>p.category===c));
+ const old = $('category').value;
+ $('category').innerHTML = '<option value="">Semua kategori</option>' +
+ cats.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+ $('category').value = cats.includes(old)? old : '';
 
-  const q = $('search').value.toLowerCase().trim();
-  const cat = $('category').value;
-  const filtered = PRODUCTS.filter(p=>(!cat || p.category===cat) &&
-    (`${p.name} ${p.category} ${p.desc}`.toLowerCase().includes(q)));
-  const groups = cats.filter(c=>filtered.some(p=>p.category===c));
+ const q = $('search').value.toLowerCase().trim();
+ const cat = $('category').value;
+ const filtered = PRODUCTS.filter(p=>(!cat || p.category===cat) &&
+ (`${p.name} ${p.category} ${p.desc}`.toLowerCase().includes(q)));
+ const groups = cats.filter(c=>filtered.some(p=>p.category===c));
 
-  $('products').innerHTML = filtered.length ? groups.map((group,gi)=>{
-    const items = filtered.filter(p=>p.category===group)
-      .sort((a,b)=>a.name.localeCompare(b.name,'id',{sensitivity:'base'}));
-    return `<section class="catalog-group">
-      <div class="catalog-heading"><span class="flower">${['✿','♡','✦','❀'][gi%4]}</span><h3>${esc(group)}</h3><span class="catalog-count">${items.length} produk</span><span class="rule"></span></div>
-      <div class="grid">${items.map(p=>{
-        const prices = p.packages.map(x=>x.price).filter(x=>x>0);
-        const min = prices.length ? Math.min(...prices) : 0;
-        const priceLabel = min ? `Mulai ${rupiah(min)}` : 'Harga tanya admin';
-        const planCount = new Set(p.packages.map(x=>x.plan || 'Umum')).size;
-        return `<article class="product">
-          <div class="product-top"><span class="product-icon" aria-hidden="true">${productIcon(p.name)}</span><div><h3>${esc(p.name)}</h3></div></div>
-          <p class="desc">${esc(p.desc)}</p>
-          ${p.note ? `<div class="product-note">${esc(p.note)}</div>` : ''}
-          <div class="price">${priceLabel}</div>
-          <div class="duration">${planCount} plan · ${p.packages.length} pilihan paket</div>
-          <button class="buy" data-product="${esc(p.name)}" type="button">Pilih produk</button>
-        </article>`;
-      }).join('')}</div>
-    </section>`;
-  }).join('') : '<div class="empty">Belum ada produk yang cocok. Coba kata kunci lain yaa 🍵♡</div>';
+ $('products').innerHTML = filtered.length? groups.map((group,gi)=>{
+ const items = filtered.filter(p=>p.category===group)
+.sort((a,b)=>a.name.localeCompare(b.name,'id',{sensitivity:'base'}));
+ return `<section class="catalog-group">
+ <div class="catalog-heading"><span class="flower">${['✿','♡','✦','❀'][gi%4]}</span><h3>${esc(group)}</h3><span class="catalog-count">${items.length} produk</span><span class="rule"></span></div>
+ <div class="grid">${items.map(p=>{
+ const prices = p.packages.map(x=>x.price).filter(x=>x>0);
+ const min = prices.length? Math.min(...prices) : 0;
+ const priceLabel = min? `Mulai ${rupiah(min)}` : 'Harga tanya admin';
+ const planCount = new Set(p.packages.map(x=>x.plan || 'Umum')).size;
+ return `<article class="product">
+ <div class="product-top"><div><h3>${esc(p.name)}</h3></div></div>
+ <p class="desc">${esc(p.desc)}</p>
+ ${p.note? `<div class="product-note">${esc(p.note)}</div>` : ''}
+ <div class="price">${priceLabel}</div>
+ <div class="duration">${planCount} plan · ${p.packages.length} pilihan paket</div>
+ <button class="buy" data-product="${esc(p.name)}" type="button">Pilih produk</button>
+ </article>`;
+ }).join('')}</div>
+ </section>`;
+ }).join('') : '<div class="empty">Belum ada produk yang cocok. Coba kata kunci lain yaa ♡</div>';
 
-  document.querySelectorAll('[data-product]').forEach(b=>
-    b.addEventListener('click',()=>openProduct(b.dataset.product)));
+ document.querySelectorAll('[data-product]').forEach(b=>
+ b.addEventListener('click',()=>openProduct(b.dataset.product)));
 }
 
 function openProduct(name){
-  selected = PRODUCTS.find(p=>p.name===name);
-  if(!selected) return;
-  $('chosenProduct').value = selected.name;
-  $('chosenPlan').innerHTML = '';
-  $('chosenPackage').innerHTML = '';
-  $('chosenPrice').textContent = 'Pilih paket';
-  $('chosenProductNote').textContent = selected.note || '';
-  $('chosenProductNote').hidden = !selected.note;
-  $('customer').value = '';
-  $('customerDetail').value = '';
-  $('customerNote').value = '';
-  renderPlanChoices();
-  $('modal').classList.remove('hidden');
-  document.body.style.overflow='hidden';
-  $('close').focus();
+ selected = PRODUCTS.find(p=>p.name===name);
+ if(!selected) return;
+ $('chosenProduct').value = selected.name;
+ $('chosenPlan').innerHTML = '';
+ $('chosenPackage').innerHTML = '';
+ $('chosenPrice').textContent = 'Pilih paket';
+ $('chosenProductNote').textContent = selected.note || '';
+ $('chosenProductNote').hidden =!selected.note;
+ $('customer').value = '';
+ $('customerDetail').value = '';
+ $('customerNote').value = '';
+ renderPlanChoices();
+ $('modal').classList.remove('hidden');
+ document.body.style.overflow='hidden';
+ $('close').focus();
 }
 
 function renderPlanChoices(){
-  if(!selected) return;
-  const plans = [...new Set(selected.packages.map(p=>p.plan || 'Umum'))];
-  $('planChoices').innerHTML = plans.map((plan,pi)=>{
-    const packs = selected.packages.filter(p=>(p.plan || 'Umum')===plan);
-    return `<div class="plan-card" data-plan-card="${pi}">
-      <button type="button" class="plan-toggle" aria-expanded="false">
-        <strong>${esc(plan)}</strong><span class="plus">＋</span>
-      </button>
-      <div class="plan-options">${packs.map(pack=>{
-        const globalIndex = selected.packages.indexOf(pack);
-        return `<button type="button" class="package-option" data-package-index="${globalIndex}">
-          <span>${esc(pack.name)}</span><span>${pack.price>0 ? rupiah(pack.price) : 'Tanya admin'}</span>
-        </button>`;
-      }).join('')}</div>
-    </div>`;
-  }).join('');
+ if(!selected) return;
+ const plans = [...new Set(selected.packages.map(p=>p.plan || 'Umum'))];
+ $('planChoices').innerHTML = plans.map((plan,pi)=>{
+ const packs = selected.packages.filter(p=>(p.plan || 'Umum')===plan);
+ return `<div class="plan-card" data-plan-card="${pi}">
+ <button type="button" class="plan-toggle" aria-expanded="false">
+ <strong>${esc(plan)}</strong><span class="plus">＋</span>
+ </button>
+ <div class="plan-options">${packs.map(pack=>{
+ const globalIndex = selected.packages.indexOf(pack);
+ return `<button type="button" class="package-option" data-package-index="${globalIndex}">
+ <span>${esc(pack.name)}</span><span>${pack.price>0? rupiah(pack.price) : 'Tanya admin'}</span>
+ </button>`;
+ }).join('')}</div>
+ </div>`;
+ }).join('');
 
-  document.querySelectorAll('[data-plan-card]').forEach(card=>{
-    card.querySelector('.plan-toggle').addEventListener('click',()=>{
-      const wasOpen = card.classList.contains('open');
-      document.querySelectorAll('[data-plan-card]').forEach(c=>{
-        c.classList.remove('open');
-        c.querySelector('.plan-toggle').setAttribute('aria-expanded','false');
-        c.querySelector('.plus').textContent='＋';
-      });
-      if(!wasOpen){
-        card.classList.add('open');
-        card.querySelector('.plan-toggle').setAttribute('aria-expanded','true');
-        card.querySelector('.plus').textContent='−';
-      }
-    });
-  });
+ document.querySelectorAll('[data-plan-card]').forEach(card=>{
+ card.querySelector('.plan-toggle').addEventListener('click',()=>{
+ const wasOpen = card.classList.contains('open');
+ document.querySelectorAll('[data-plan-card]').forEach(c=>{
+ c.classList.remove('open');
+ c.querySelector('.plan-toggle').setAttribute('aria-expanded','false');
+ c.querySelector('.plus').textContent='＋';
+ });
+ if(!wasOpen){
+ card.classList.add('open');
+ card.querySelector('.plan-toggle').setAttribute('aria-expanded','true');
+ card.querySelector('.plus').textContent='−';
+ }
+ });
+ });
 
-  document.querySelectorAll('[data-package-index]').forEach(button=>{
-    button.addEventListener('click',()=>{
-      const pack = selected.packages[Number(button.dataset.packageIndex)];
-      $('chosenPlan').innerHTML = `<option value="${esc(pack.plan || 'Umum')}">${esc(pack.plan || 'Umum')}</option>`;
-      const planPacks = selected.packages.filter(p=>(p.plan || 'Umum')===(pack.plan || 'Umum'));
-      $('chosenPackage').innerHTML = planPacks.map((p,i)=>
-        `<option value="${i}">${esc(p.name)}</option>`).join('');
-      $('chosenPackage').value = String(planPacks.indexOf(pack));
-      document.querySelectorAll('.package-option').forEach(b=>b.classList.toggle('selected',b===button));
-      $('chosenPrice').textContent = pack.price>0 ? rupiah(pack.price) : 'Tanya admin';
-    });
-  });
+ document.querySelectorAll('[data-package-index]').forEach(button=>{
+ button.addEventListener('click',()=>{
+ const pack = selected.packages[Number(button.dataset.packageIndex)];
+ $('chosenPlan').innerHTML = `<option value="${esc(pack.plan || 'Umum')}">${esc(pack.plan || 'Umum')}</option>`;
+ const planPacks = selected.packages.filter(p=>(p.plan || 'Umum')===(pack.plan || 'Umum'));
+ $('chosenPackage').innerHTML = planPacks.map((p,i)=>
+ `<option value="${i}">${esc(p.name)}</option>`).join('');
+ $('chosenPackage').value = String(planPacks.indexOf(pack));
+ document.querySelectorAll('.package-option').forEach(b=>b.classList.toggle('selected',b===button));
+ $('chosenPrice').textContent = pack.price>0? rupiah(pack.price) : 'Tanya admin';
+ });
+ });
 }
 
 function getChosenPackage(){
-  if(!selected || $('chosenPackage').value==='') return null;
-  const plan = $('chosenPlan').value;
-  const packages = selected.packages.filter(p=>(p.plan || 'Umum')===plan);
-  return packages[Number($('chosenPackage').value)] || null;
+ if(!selected || $('chosenPackage').value==='') return null;
+ const plan = $('chosenPlan').value;
+ const packages = selected.packages.filter(p=>(p.plan || 'Umum')===plan);
+ return packages[Number($('chosenPackage').value)] || null;
 }
 
 function closeModal(){
-  $('modal').classList.add('hidden');
-  document.body.style.overflow='';
+ $('modal').classList.add('hidden');
+ document.body.style.overflow='';
 }
 $('close').addEventListener('click',closeModal);
 $('modal').addEventListener('click',e=>{if(e.target===$('modal')) closeModal();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape' && !$('modal').classList.contains('hidden')) closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape' &&!$('modal').classList.contains('hidden')) closeModal();});
 $('search').addEventListener('input',render);
 $('category').addEventListener('change',render);
 
 $('orderForm').addEventListener('submit',e=>{
-  e.preventDefault();
-  if(!selected) return;
-  const pack = getChosenPackage();
-  if(!pack){alert('Silakan pilih paket terlebih dahulu.');return;}
+ e.preventDefault();
+ if(!selected) return;
+ const pack = getChosenPackage();
+ if(!pack){alert('Silakan pilih paket terlebih dahulu.');return;}
 
-  const msg = [
-    '🍓 *FORM ORDER MITCHA STORE* 🍓','',
-    `Nama: ${$('customer').value.trim()}`,
-    `Produk: ${selected.name}`,
-    `Plan: ${$('chosenPlan').value}`,
-    `Paket/durasi: ${pack.name}`,
-    `Harga katalog: ${rupiah(pack.price)}`,
-    `Email / User ID: ${$('customerDetail').value.trim() || '-'}`,
-    `Catatan: ${$('customerNote').value.trim() || '-'}`,
-    '',
-    '🎀 haloo, kak cha! aku mau order nihh >< boleh bantu cek stocknya dulu? kalau masih ready, kabarin aku buat lanjut payment-nya, yaa. makasih banyak, kak! ♡'
-  ].join('\n');
+ const msg = [
+ ' *🍒 FORM ORDER MITCHA STORE 🍒* ','',
+ `Nama: ${$('customer').value.trim()}`,
+ `Produk: ${selected.name}`,
+ `Plan: ${$('chosenPlan').value}`,
+ `Paket/durasi: ${pack.name}`,
+ `Harga katalog: ${rupiah(pack.price)}`,
+ `Email / User ID: ${$('customerDetail').value.trim() || '-'}`,
+ `Catatan: ${$('customerNote').value.trim() || '-'}`,
+ '',
+ ' haloo, kak cha! 👋🏼 aku mau order nihh >< boleh bantu cek stocknya dulu? kalau masih ready, kabarin aku buat lanjut payment-nya, yaa. makasih banyak, kak! ♡'
+ ].join('\n');
 
-  const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-  window.open(waUrl,'_blank','noopener');
-  closeModal();
+ const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+ window.open(waUrl,'_blank','noopener');
+ closeModal();
 });
 
 render();
 loadProductsFromDatabase();
 </script>
 </body>
-          </html>
+</html>
