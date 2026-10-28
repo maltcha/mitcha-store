@@ -128,7 +128,9 @@ a{color:inherit}
 .plan-toggle strong{font-size:13px}
 .plan-toggle.plus{color:var(--berry-dark);font-size:20px;line-height:1}
 .plan-options{display:none;padding:0 9px 9px;gap:7px}
-.plan-card.open.plan-options{display:grid}
+.plan-card.open .plan-options{
+  display:grid;
+}
 .package-option{display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;background:#fff7f8;border:1px solid #f0dce1;color:var(--ink);padding:10px 11px;border-radius:11px;font-size:12px}
 .package-option span:last-child{color:var(--berry-dark);font-weight:850;white-space:nowrap}
 .package-option.selected{background:#edf2e5;border-color:#d4e0c4}
@@ -492,4 +494,4 @@ render();
 loadProductsFromDatabase();
 </script>
 </body>
-</html>
+  </html>
