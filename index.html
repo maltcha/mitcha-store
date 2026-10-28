@@ -3,151 +3,182 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#fffdf8">
-<title>Mitcha Store — Order Digital</title>
+<meta name="theme-color" content="#fff8f6">
+<title>Mitcha Store — Digital Boutique</title>
 <style>
 :root{
-  --berry:#d66b82;--berry-dark:#b94d69;--pink:#fff1f3;--pink2:#f8dce2;
-  --matcha:#e5edda;--matcha-dark:#657b51;--cream:#fffdf8;--ink:#383a32;
-  --muted:#858579;--line:#eee9df;--white:#fff
+  --berry:#c94f70;--berry-dark:#a83b5b;--pink:#fff0f3;--pink-deep:#f7d8e0;
+  --matcha:#e7eddc;--matcha-dark:#64794f;--cream:#fffaf4;--paper:#fffdfb;
+  --ink:#39352f;--muted:#898176;--line:#eee5df;--white:#fff;
+  --shadow:0 12px 32px rgba(91,64,54,.07)
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:18px}
 body{
-  margin:0;background:radial-gradient(circle at 5% 5%,#fcebf0 0,transparent 220px),var(--cream);
-  color:var(--ink);font:15px/1.55 Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  margin:0;background:
+    radial-gradient(circle at 0% 10%,rgba(247,216,224,.6),transparent 260px),
+    radial-gradient(circle at 100% 42%,rgba(231,237,220,.65),transparent 300px),var(--cream);
+  color:var(--ink);font:15px/1.6 Inter,ui-rounded,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   letter-spacing:-.15px
 }
 button,input,select,textarea{font:inherit}
-button{cursor:pointer;border:0;border-radius:12px;padding:11px 15px;font-weight:750}
-.wrap{max-width:1100px;margin:auto;padding:22px 18px 45px}
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0 28px}
-.brand{display:flex;align-items:center;gap:13px;min-width:0}
+button{cursor:pointer}
+a{color:inherit}
+.wrap{max-width:1120px;margin:auto;padding:20px 20px 46px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:5px 0 24px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
 .logo{
-  width:55px;height:55px;flex-shrink:0;border-radius:19px;display:grid;place-items:center;
-  background:linear-gradient(145deg,#ffe6eb,#f9d9e1 55%,#e7edda);border:1px solid #f2e1df;
-  box-shadow:0 5px 14px #d66b8210;font-size:29px;transition:transform .25s ease
+  width:54px;height:54px;flex-shrink:0;border-radius:18px;display:grid;place-items:center;
+  background:linear-gradient(145deg,#ffe7ed,#fff6ef 60%,#e7eddc);border:1px solid #f0dedc;
+  box-shadow:0 7px 18px rgba(201,79,112,.10);font-size:27px;transform:rotate(-3deg)
 }
-.logo:hover{transform:rotate(-8deg) scale(1.05)}
-.brand h1{font-size:23px;font-weight:800;letter-spacing:-.8px;line-height:1.2;margin:0}
-.brand p{font-size:12px;letter-spacing:.1px;color:var(--muted);margin:4px 0 0}
-.testi-button{
-  display:inline-block;margin-top:10px;padding:8px 13px;border-radius:20px;background:#edf2e5;
-  border:1px solid #dfe8d3;color:#60754c;text-decoration:none;font-size:11px;font-weight:750;transition:.2s ease
-}
-.testi-button:hover{background:#dfe9d1;transform:translateY(-2px)}
-.tag{font-size:10px;border-radius:999px;background:#e8efdc;color:#60754c;border:1px solid #dce6ce;padding:8px 13px;font-weight:750;letter-spacing:.6px;white-space:nowrap}
+.brand h1{font-size:23px;font-weight:850;letter-spacing:-.9px;line-height:1.2;margin:0}
+.brand p{font-size:11px;letter-spacing:.35px;color:var(--muted);margin:5px 0 0}
+.top-actions{display:flex;align-items:center;gap:9px}
+.pill{font-size:10px;border-radius:999px;background:#edf1e5;color:#5f744a;border:1px solid #dfe7d3;padding:8px 12px;font-weight:800;letter-spacing:.7px;white-space:nowrap}
+.testi-button{display:inline-flex;align-items:center;gap:6px;text-decoration:none;margin-top:9px;padding:7px 11px;border-radius:999px;background:#fff;border:1px solid #f1dce2;color:var(--berry-dark);font-size:11px;font-weight:750;transition:.2s}
+.testi-button:hover{background:var(--pink);transform:translateY(-1px)}
 .hero{
-  position:relative;overflow:hidden;background:linear-gradient(115deg,#fff0f3 0%,#fff8f2 48%,#edf2e4 100%);
-  border:1px solid #f0e5df;border-radius:27px;padding:34px 30px;margin-bottom:30px;
-  box-shadow:0 8px 25px #5d4c3010
+  position:relative;overflow:hidden;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:20px;
+  background:linear-gradient(112deg,#fff0f3 0%,#fff9f1 54%,#edf2e5 100%);
+  border:1px solid #f0e2dc;border-radius:30px;padding:38px 36px;margin-bottom:30px;box-shadow:var(--shadow)
 }
-.hero::after{content:"matcha time ♡";position:absolute;right:24px;bottom:19px;color:#71855d;font-size:10px;font-weight:700;letter-spacing:1px;opacity:.7}
-.hero h2{font-size:clamp(27px,4vw,39px);line-height:1.2;letter-spacing:-1.2px;max-width:580px;margin:0 0 13px}
-.hero p{font-size:14px;line-height:1.8;max-width:560px;color:#77776c;margin:0}
-.hero .decor{position:absolute;right:27px;top:22px;font-size:56px;opacity:.85;transform:rotate(9deg);animation:strawberry-float 3s ease-in-out infinite}
-@keyframes strawberry-float{0%,100%{transform:translateY(0) rotate(8deg)}50%{transform:translateY(-5px) rotate(-5deg)}}
-.section-title{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:30px 0 15px}
-.section-title h2{font-size:21px;letter-spacing:-.6px;font-weight:800;margin:0}
-.section-title p{font-size:12px;line-height:1.7;color:var(--muted);margin:3px 0 0}
-.searchbar{display:grid;grid-template-columns:1.4fr 1fr;gap:11px;margin-bottom:20px}
-.searchbar input,.searchbar select,.field input,.field select,.field textarea{
-  width:100%;border:1px solid #eee8df;border-radius:15px;padding:13px 15px;background:#fff;color:var(--ink);outline:none;
-  box-shadow:0 3px 10px #57462b05;transition:border-color .2s,box-shadow .2s
+.hero:before{content:"";position:absolute;width:210px;height:210px;border:1px solid #ffffffa8;border-radius:50%;right:10%;top:-120px}
+.hero-copy{position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;background:#ffffffa8;border:1px solid #f0dfe0;border-radius:999px;padding:7px 11px;color:#9d5367;font-size:10px;font-weight:850;letter-spacing:1px;text-transform:uppercase;margin-bottom:15px}
+.hero h2{font-size:clamp(30px,4.5vw,46px);line-height:1.12;letter-spacing:-1.7px;max-width:570px;margin:0 0 14px}
+.hero h2 em{font-style:normal;color:var(--berry)}
+.hero p{font-size:13px;line-height:1.9;max-width:500px;color:#777268;margin:0}
+.hero-visual{position:relative;min-height:175px;display:grid;place-items:center}
+.sticker{
+  position:relative;display:grid;place-items:center;width:154px;height:154px;border-radius:48% 52% 45% 55%;
+  background:linear-gradient(145deg,#fffdf8,#f9dce4);border:1px solid #fff;box-shadow:0 15px 35px #b66c7820;
+  font-size:64px;transform:rotate(5deg);animation:floaty 4s ease-in-out infinite
 }
-.searchbar input,.searchbar select{min-height:49px}
-.searchbar input:focus,.searchbar select:focus,.field input:focus,.field select:focus,.field textarea:focus{
-  border-color:#d9a2ae;box-shadow:0 0 0 3px #f8e4e9
+.sticker:after{content:"MITCHA ♡";position:absolute;bottom:17px;font-size:9px;font-weight:900;letter-spacing:2px;color:var(--berry-dark)}
+.spark{position:absolute;font-size:25px;color:var(--berry)}
+.spark.s1{top:12px;right:17%;transform:rotate(15deg)}
+.spark.s2{bottom:10px;left:12%;font-size:20px;color:var(--matcha-dark)}
+.spark.s3{top:26px;left:12%;font-size:15px}
+.hero-bottom{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.hero-chip{font-size:10px;color:#686a58;background:#ffffffb8;border:1px solid #e8e6d9;padding:7px 10px;border-radius:10px;font-weight:700}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(5deg)}50%{transform:translateY(-6px) rotate(1deg)}}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:30px 0 15px}
+.section-head h2{font-size:21px;letter-spacing:-.65px;font-weight:850;margin:0}
+.section-head p{font-size:12px;line-height:1.7;color:var(--muted);margin:3px 0 0}
+.section-kicker{font-size:10px;color:var(--berry-dark);font-weight:850;letter-spacing:1px;white-space:nowrap}
+.catalog-tools{background:#ffffffb8;border:1px solid var(--line);border-radius:19px;padding:12px;display:grid;grid-template-columns:1fr 220px;gap:10px;margin-bottom:18px}
+.searchbox{position:relative}
+.searchbox span{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:17px;color:#a58c8c}
+.catalog-tools input,.catalog-tools select,.field input,.field select,.field textarea{
+  width:100%;border:1px solid #eee5df;border-radius:13px;padding:12px 14px;background:#fff;color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s
 }
-.catalog-group{margin:27px 0 0}
-.catalog-heading{display:flex;align-items:center;gap:12px;margin:0 0 15px}
-.catalog-heading h3{font-size:16px;color:#535b48;letter-spacing:-.3px;margin:0;white-space:nowrap}
-.catalog-heading::before{content:"✿";color:var(--berry);font-size:17px}
-.catalog-heading:after{content:"";height:1px;background:var(--line);flex:1}
-.catalog-group+.catalog-group{border-top:1px dashed #e9e4d9;padding-top:23px}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:stretch}
+.catalog-tools input{padding-left:42px}
+.catalog-tools input,.catalog-tools select{min-height:46px}
+.catalog-tools input:focus,.catalog-tools select:focus,.field input:focus,.field select:focus,.field textarea:focus{border-color:#d9a0b0;box-shadow:0 0 0 3px #f9e5ea}
+.catalog-group{margin:26px 0 0}
+.catalog-heading{display:flex;align-items:center;gap:10px;margin:0 0 13px}
+.catalog-heading .flower{width:31px;height:31px;border-radius:11px;display:grid;place-items:center;background:var(--pink);color:var(--berry);font-size:16px}
+.catalog-heading h3{font-size:15px;color:#535c49;letter-spacing:-.2px;margin:0}
+.catalog-heading .rule{height:1px;background:linear-gradient(90deg,#e9dfd6,transparent);flex:1}
+.catalog-count{font-size:10px;color:#989183;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;align-items:stretch}
 .product{
-  position:relative;overflow:hidden;min-height:205px;padding:17px;background:#fff;border:1px solid #eee9e2;border-radius:20px;
-  box-shadow:0 4px 16px #51452c07;display:flex;flex-direction:column;min-width:0;
-  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease
+  position:relative;overflow:hidden;min-height:206px;padding:16px;background:var(--paper);border:1px solid #eee6df;border-radius:20px;
+  box-shadow:0 5px 16px rgba(80,60,45,.035);display:flex;flex-direction:column;min-width:0;transition:transform .2s,box-shadow .2s,border-color .2s
 }
-.product::before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,#f2cbd4,#dfe9d1,#f2cbd4);opacity:.85}
-.product:hover{transform:translateY(-4px);border-color:#e8d9d6;box-shadow:0 10px 24px #51452c0d}
-.product-top{display:flex;align-items:center;gap:10px;margin:3px 0 10px}
-.product h3{overflow-wrap:anywhere;font-size:15px;line-height:1.45;font-weight:800;letter-spacing:-.3px;margin:0}
-.desc{font-size:12px;line-height:1.7;color:#858579;margin:0 0 13px}
-.price{color:#b9516b;font-size:17px;font-weight:850;letter-spacing:-.4px;margin-top:auto}
-.duration{font-size:10px;color:#88897d;margin:4px 0 14px}
-.buy{position:relative;overflow:hidden;background:#71865d;color:#fff;width:100%;padding:11px 12px;border-radius:12px;font-size:12px;font-weight:750;transition:background .2s,transform .2s}
-.buy::after{content:" ♡"}
-.buy:hover{background:#5c7248;transform:translateY(-1px)}
+.product:before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,#f5c7d3,#e6eddc,#f5c7d3)}
+.product:hover{transform:translateY(-4px);border-color:#e6d4d5;box-shadow:0 12px 25px rgba(80,60,45,.08)}
+.product-top{display:flex;align-items:flex-start;gap:9px;margin:3px 0 8px}
+.product-icon{display:grid;place-items:center;width:35px;height:35px;flex-shrink:0;border-radius:12px;background:#f8edf0;font-size:18px}
+.product h3{overflow-wrap:anywhere;font-size:14px;line-height:1.45;font-weight:850;letter-spacing:-.25px;margin:2px 0 0}
+.desc{font-size:11px;line-height:1.75;color:#898277;margin:0 0 13px}
+.product-note{background:#fff4e5;color:#7a5520;padding:8px 10px;border-radius:10px;font-size:10px;line-height:1.6;margin:0 0 11px;white-space:pre-line}
+.price{color:var(--berry-dark);font-size:16px;font-weight:900;letter-spacing:-.4px;margin-top:auto}
+.duration{font-size:10px;color:#938a7f;margin:4px 0 12px}
+.buy{background:var(--matcha-dark);color:#fff;width:100%;padding:10px 12px;border-radius:12px;font-size:11px;font-weight:850;transition:background .2s,transform .2s}
+.buy:after{content:"  ↗"}
+.buy:hover{background:#526740;transform:translateY(-1px)}
 .empty{grid-column:1/-1;text-align:center;padding:32px 20px;line-height:1.8;color:var(--muted);background:#fff;border:1px dashed #e6d9d6;border-radius:18px}
-.how{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:20px}
-.step{background:#fff;border:1px solid #eee9e2;border-radius:18px;padding:17px;box-shadow:0 4px 15px #51452c05;transition:transform .2s}
-.step:hover{transform:translateY(-3px)}
-.step strong{display:block;font-size:13px;color:#505744;margin-bottom:7px}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:17px}
+.step{position:relative;background:#fffdfb;border:1px solid #eee6df;border-radius:19px;padding:18px;box-shadow:0 5px 15px #51452c05}
+.step-num{display:grid;place-items:center;width:34px;height:34px;border-radius:12px;background:var(--pink);color:var(--berry-dark);font-size:12px;font-weight:900;margin-bottom:12px}
+.step strong{display:block;font-size:13px;color:#505744;margin-bottom:6px}
 .step span{font-size:11px;line-height:1.8;color:#858579}
-.foot{text-align:center;color:#969588;font-size:11px;padding:30px 0 5px}
-.modal{position:fixed;inset:0;background:#34302780;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);display:grid;place-items:center;padding:14px;z-index:10}
+.footer-card{margin-top:30px;padding:20px;border-radius:22px;background:linear-gradient(110deg,#fff0f3,#fffaf4 55%,#edf2e5);border:1px solid #eee2dc;text-align:center}
+.footer-card strong{display:block;font-size:14px;margin-bottom:5px}
+.footer-card span{font-size:11px;color:var(--muted)}
+.foot{text-align:center;color:#999084;font-size:10px;padding:18px 0 0}
+.modal{position:fixed;inset:0;background:#302a2780;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);display:grid;place-items:center;padding:14px;z-index:10}
 .modal.hidden{display:none}
-.box{width:min(520px,100%);max-height:92vh;overflow:auto;background:#fffdf9;border:1px solid #f0e8df;border-radius:24px;padding:22px;box-shadow:0 18px 60px #241b1b20}
-.modal-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:14px}
-.modal-head h2{font-size:20px;letter-spacing:-.5px;margin:0}
-.close{background:#fcebef;color:#b9516b;border:1px solid #f4dce2}
+.box{width:min(530px,100%);max-height:92vh;overflow:auto;background:#fffaf6;border:1px solid #f0e4dd;border-radius:25px;padding:22px;box-shadow:0 18px 60px #241b1b25}
+.modal-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:15px}
+.modal-head h2{font-size:20px;letter-spacing:-.6px;margin:0}
+.close{background:#fcebef;color:var(--berry-dark);border:1px solid #f2dce1;border-radius:11px;padding:8px 12px;font-size:11px}
 .field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
-.field label{font-size:12px;font-weight:750;color:#666b5c}
-.field input,.field select,.field textarea{border-radius:13px;padding:12px 13px;box-shadow:none}
-.order-summary{background:linear-gradient(120deg,#f6f5eb,#fdf0f2);border:1px solid #eee8df;border-radius:15px;padding:15px;margin-bottom:14px}
-.order-summary strong{display:block;color:#b9516b;font-size:21px}
-.small{font-size:11px;color:var(--muted)}
-.note{background:#fff4e5;color:#7a5520;padding:10px 12px;border-radius:12px;font-size:12px;margin:10px 0 14px}
-.product-note{background:#fff4e5;color:#7a5520;padding:10px 12px;border-radius:12px;font-size:12px;margin:0 0 12px;white-space:pre-line}
-.plan-list{display:grid;gap:10px;margin-bottom:14px}
-.plan-card{border:1px solid #eae5dc;border-radius:15px;background:#fff;overflow:hidden}
-.plan-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;padding:15px;background:#fff;color:var(--ink);text-align:left;border-radius:0}
-.plan-toggle strong{font-size:15px}
-.plan-toggle .plus{color:#b9516b;font-size:22px;line-height:1}
-.plan-options{display:none;padding:0 10px 10px;gap:8px}
+.field label{font-size:11px;font-weight:850;color:#666b5c}
+.field input,.field select,.field textarea{border-radius:12px;padding:11px 13px;box-shadow:none;font-size:13px}
+.order-summary{background:linear-gradient(120deg,#edf2e5,#fff0f3);border:1px solid #e8e8dc;border-radius:15px;padding:14px;margin-bottom:13px}
+.order-summary span:first-child{font-size:11px;font-weight:750;color:#666b5c}
+.order-summary strong{display:block;color:var(--berry-dark);font-size:22px;letter-spacing:-.6px;margin:2px 0}
+.small{font-size:10px;color:var(--muted)}
+.note{background:#fff4e5;color:#7a5520;padding:10px 12px;border-radius:12px;font-size:11px;line-height:1.7;margin:10px 0 14px}
+.plan-list{display:grid;gap:9px;margin-bottom:13px}
+.plan-card{border:1px solid #eae3dc;border-radius:14px;background:#fff;overflow:hidden}
+.plan-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;padding:13px 14px;background:#fff;color:var(--ink);text-align:left;border-radius:0}
+.plan-toggle strong{font-size:13px}
+.plan-toggle .plus{color:var(--berry-dark);font-size:20px;line-height:1}
+.plan-options{display:none;padding:0 9px 9px;gap:7px}
 .plan-card.open .plan-options{display:grid}
-.package-option{display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;background:#fff7f8;border:1px solid #f0dce1;color:var(--ink);padding:11px 12px;border-radius:12px}
-.package-option span:last-child{color:var(--berry-dark);font-weight:800;white-space:nowrap}
+.package-option{display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;background:#fff7f8;border:1px solid #f0dce1;color:var(--ink);padding:10px 11px;border-radius:11px;font-size:12px}
+.package-option span:last-child{color:var(--berry-dark);font-weight:850;white-space:nowrap}
 .package-option.selected{background:#edf2e5;border-color:#d4e0c4}
-.plan-hint{font-size:12px;color:var(--muted);margin:0 0 10px}
-.primary{background:#71865d;color:#fff;width:100%;border-radius:13px;padding:13px}
-.primary:hover{background:#5c7248}
+.plan-hint{font-size:11px;color:var(--muted);margin:0 0 9px}
+.primary{background:var(--berry);color:#fff;width:100%;border-radius:13px;padding:13px;font-size:13px;font-weight:850;box-shadow:0 5px 12px #c94f7022}
+.primary:hover{background:var(--berry-dark)}
 @media(max-width:760px){
-  .wrap{padding:16px 14px 32px}
+  .wrap{padding:15px 14px 32px}
   .top{align-items:flex-start}
-  .hero{padding:27px 22px;border-radius:23px}
-  .hero h2{font-size:29px;max-width:85%}
-  .hero p{font-size:13px}
-  .hero .decor{right:15px;top:18px;font-size:39px}
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
-  .product{padding:14px}
-  .product h3{font-size:14px}
-  .price{font-size:16px}
-  .brand h1{font-size:20px}
-  .tag{font-size:9px;padding:7px 9px}
+  .hero{padding:27px 23px;border-radius:25px;grid-template-columns:1fr .65fr;gap:8px}
+  .hero h2{font-size:clamp(27px,5vw,36px)}
+  .hero p{font-size:12px}
+  .hero-visual{min-height:145px}
+  .sticker{width:120px;height:120px;font-size:50px}
+  .sticker:after{bottom:13px;font-size:8px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .product{padding:13px}
   .how{grid-template-columns:1fr}
 }
-@media(max-width:420px){
+@media(max-width:450px){
   .wrap{padding-left:11px;padding-right:11px}
   .brand{gap:9px}
-  .logo{width:47px;height:47px;border-radius:16px;font-size:25px}
-  .brand h1{font-size:18px}
-  .brand p{font-size:11px}
-  .testi-button{font-size:10px;padding:7px 10px}
-  .tag{white-space:normal;text-align:center;max-width:88px}
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .logo{width:46px;height:46px;border-radius:15px;font-size:23px}
+  .brand h1{font-size:19px}
+  .brand p{font-size:10px}
+  .pill{font-size:8px;padding:7px 8px;letter-spacing:.4px}
+  .testi-button{font-size:10px;padding:6px 9px}
+  .hero{display:block;padding:25px 20px 21px}
+  .hero h2{font-size:29px;max-width:85%}
+  .hero p{max-width:100%;padding-right:3px}
+  .hero-visual{position:absolute;right:3px;bottom:7px;min-height:0;opacity:.32;pointer-events:none}
+  .sticker{width:105px;height:105px;font-size:43px}
+  .sticker:after{font-size:7px;bottom:10px}
+  .spark{display:none}
+  .hero-bottom{max-width:80%;gap:6px}
+  .hero-chip{font-size:9px;padding:6px 8px}
+  .section-head h2{font-size:19px}
+  .section-kicker{font-size:9px}
+  .catalog-tools{grid-template-columns:1fr;gap:8px;padding:9px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .product{padding:11px;border-radius:16px;min-height:0}
-  .product h3{font-size:13px}
-  .desc{font-size:11px}
+  .product-icon{width:29px;height:29px;border-radius:10px;font-size:15px}
+  .product h3{font-size:12px}
+  .desc{font-size:10px}
   .price{font-size:14px}
-  .buy{font-size:11px;padding:10px 6px}
-  .hero h2{font-size:25px}
-  .hero::after{right:13px;bottom:12px;font-size:9px}
-  .hero .decor{font-size:33px;right:12px}
-  .box{padding:17px}
+  .buy{font-size:10px;padding:10px 5px}
+  .duration{font-size:9px}
+  .catalog-heading h3{font-size:14px}
+  .box{padding:16px;border-radius:21px}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
@@ -161,47 +192,58 @@ button{cursor:pointer;border:0;border-radius:12px;padding:11px 15px;font-weight:
       <div class="logo" aria-hidden="true">🐈</div>
       <div>
         <h1>Mitcha Store</h1>
-        <p>little things, lovely digital treats 🍵</p>
-        <a href="https://t.me/chaxium" target="_blank" rel="noopener noreferrer" class="testi-button">♡ lihat testimoni pelanggan ♡</a>
+        <p>your tiny corner of digital happiness ♡</p>
+        <a href="https://t.me/chaxium" target="_blank" rel="noopener noreferrer" class="testi-button">♡ lihat testimoni pelanggan</a>
       </div>
     </div>
-    <span class="tag">DIGITAL SHOP</span>
+    <div class="top-actions"><span class="pill">DIGITAL BOUTIQUE ✿</span></div>
   </header>
 
   <section class="hero">
-    <div class="decor" aria-hidden="true">🍓</div>
-    <h2>Find your little<br>digital happiness.</h2>
-    <p>Premium apps, streaming, top-up game, pulsa, kuota, dan produk digital lainnya. Pilih produk favoritmu, lalu pesan melalui WhatsApp. 💗</p>
+    <div class="hero-copy">
+      <div class="eyebrow">✿ a little treat for you</div>
+      <h2>Little things,<br><em>lovely digital</em> days.</h2>
+      <p>Temukan aplikasi premium, streaming, top-up game, pulsa, kuota, dan kebutuhan digital favoritmu. Pilih yang kamu suka, lalu lanjut order lewat WhatsApp. 🎀</p>
+      <div class="hero-bottom">
+        <span class="hero-chip">♡ easy order</span><span class="hero-chip">🍓 sweet service</span><span class="hero-chip">🍵 digital treats</span>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <span class="spark s1">✦</span><span class="spark s2">♡</span><span class="spark s3">✧</span>
+      <div class="sticker">🍓</div>
+    </div>
   </section>
 
-  <div class="section-title">
-    <div><h2>♡ Katalog produk</h2><p>Pilih produk untuk melihat pilihan plan dan paket.</p></div>
+  <div class="section-head">
+    <div><h2>Find your favorite ♡</h2><p>Pilih produk, cek paket, lalu pesan dengan mudah.</p></div>
+    <span class="section-kicker">THE CATALOG</span>
   </div>
-  <div class="searchbar">
-    <input id="search" placeholder="Cari produk, mis. Spotify…" aria-label="Cari produk">
+  <div class="catalog-tools">
+    <div class="searchbox"><span aria-hidden="true">⌕</span><input id="search" placeholder="Cari produk favoritmu…" aria-label="Cari produk"></div>
     <select id="category" aria-label="Kategori"><option value="">Semua kategori</option></select>
   </div>
   <div id="products"></div>
 
-  <section class="section-title">
-    <div><h2>♡ Cara order</h2><p>Gampang, cuma beberapa langkah.</p></div>
+  <section class="section-head">
+    <div><h2>Order in 3 little steps ✿</h2><p>Nggak perlu bingung, ikuti langkah singkat ini yaa.</p></div>
   </section>
   <div class="how">
-    <div class="step"><strong>🍓 01. Pilih produk</strong><span>Cari produk dan pilih plan serta paket/durasi yang kamu inginkan.</span></div>
-    <div class="step"><strong>🍵 02. Isi detail order</strong><span>Masukkan nama dan detail yang diperlukan. Cek kembali sebelum mengirim.</span></div>
-    <div class="step"><strong>💌 03. Chat admin</strong><span>Detail pesanan akan disiapkan di WhatsApp. Admin mengirim instruksi pembayaran.</span></div>
+    <div class="step"><div class="step-num">01</div><strong>🍓 Pick your treat</strong><span>Cari produk yang kamu mau, lalu pilih plan dan paket atau durasinya.</span></div>
+    <div class="step"><div class="step-num">02</div><strong>💌 Fill the details</strong><span>Isi nama dan detail yang dibutuhkan. Jangan lupa cek pesananmu, ya!</span></div>
+    <div class="step"><div class="step-num">03</div><strong>🎀 Chat the admin</strong><span>Ringkasan pesanan akan dikirim ke WhatsApp. Pembayaran setelah mendapat instruksi admin.</span></div>
   </div>
-  <footer class="foot">find me on X @seontuh · made with ♡ and matcha</footer>
+  <div class="footer-card"><strong>Thank you for stopping by ♡</strong><span>Semoga kamu menemukan digital treats yang kamu cari. Have a lovely day! 🍵</span></div>
+  <footer class="foot">Mitcha Store · made with ♡, berries & matcha</footer>
 </div>
 
 <div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="box">
-    <div class="modal-head"><h2 id="modalTitle">Pesan produk 🍓</h2><button class="close" id="close" type="button">Tutup</button></div>
+    <div class="modal-head"><h2 id="modalTitle">Your little order 🍓</h2><button class="close" id="close" type="button">Tutup ✕</button></div>
     <form id="orderForm">
       <div class="field"><label for="chosenProduct">Produk</label><input id="chosenProduct" readonly></div>
       <div class="field">
         <label>Pilih plan dan harga *</label>
-        <p class="plan-hint">Ketuk nama plan untuk membuka daftar harga, lalu pilih durasi yang kamu mau.</p>
+        <p class="plan-hint">Ketuk nama plan untuk membuka paket, lalu pilih yang kamu mau.</p>
         <div id="planChoices" class="plan-list"></div>
         <select id="chosenPlan" hidden></select>
         <select id="chosenPackage" hidden></select>
@@ -256,7 +298,16 @@ const rupiah = n => Number(n) > 0
 function esc(s){
   return String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
-
+function productIcon(name){
+  const n=String(name||'').toLowerCase();
+  if(/spotify|apple music|vidio|netflix|disney|youtube|dramawave/.test(n)) return '🎧';
+  if(/canva|adobe|capcut/.test(n)) return '🎨';
+  if(/google|getcontact/.test(n)) return '☁️';
+  if(/pulsa|kuota|data/.test(n)) return '📱';
+  if(/game|pubg|mobile legends|top up/.test(n)) return '🎮';
+  if(/listrik|token/.test(n)) return '⚡';
+  return '🎀';
+}
 function normalizeProduct(p){
   const packages = Array.isArray(p.packages) ? p.packages : [];
   return {
@@ -264,6 +315,7 @@ function normalizeProduct(p){
     desc:p.desc ?? p.description ?? '',
     note:p.note || '',
     packages:packages.map(x=>({
+      ...x,
       plan:String(x.plan || 'Umum'),
       name:String(x.name || 'Tanyakan paket tersedia'),
       price:Number(x.price) || 0
@@ -293,7 +345,8 @@ async function loadProductsFromDatabase(){
 }
 
 function render(){
-  const cats = CATEGORY_ORDER.filter(c=>PRODUCTS.some(p=>p.category===c));
+  const cats = [...new Set([...CATEGORY_ORDER,...PRODUCTS.map(p=>p.category).filter(Boolean)])]
+    .filter(c=>PRODUCTS.some(p=>p.category===c));
   const old = $('category').value;
   $('category').innerHTML = '<option value="">Semua kategori</option>' +
     cats.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
@@ -303,20 +356,20 @@ function render(){
   const cat = $('category').value;
   const filtered = PRODUCTS.filter(p=>(!cat || p.category===cat) &&
     (`${p.name} ${p.category} ${p.desc}`.toLowerCase().includes(q)));
-  const groups = CATEGORY_ORDER.filter(c=>filtered.some(p=>p.category===c));
+  const groups = cats.filter(c=>filtered.some(p=>p.category===c));
 
-  $('products').innerHTML = filtered.length ? groups.map(group=>{
+  $('products').innerHTML = filtered.length ? groups.map((group,gi)=>{
     const items = filtered.filter(p=>p.category===group)
       .sort((a,b)=>a.name.localeCompare(b.name,'id',{sensitivity:'base'}));
     return `<section class="catalog-group">
-      <div class="catalog-heading"><h3>${esc(group)}</h3></div>
+      <div class="catalog-heading"><span class="flower">${['✿','♡','✦','❀'][gi%4]}</span><h3>${esc(group)}</h3><span class="catalog-count">${items.length} produk</span><span class="rule"></span></div>
       <div class="grid">${items.map(p=>{
         const prices = p.packages.map(x=>x.price).filter(x=>x>0);
         const min = prices.length ? Math.min(...prices) : 0;
         const priceLabel = min ? `Mulai ${rupiah(min)}` : 'Harga tanya admin';
         const planCount = new Set(p.packages.map(x=>x.plan || 'Umum')).size;
         return `<article class="product">
-          <div class="product-top"><div><h3>${esc(p.name)}</h3></div></div>
+          <div class="product-top"><span class="product-icon" aria-hidden="true">${productIcon(p.name)}</span><div><h3>${esc(p.name)}</h3></div></div>
           <p class="desc">${esc(p.desc)}</p>
           ${p.note ? `<div class="product-note">${esc(p.note)}</div>` : ''}
           <div class="price">${priceLabel}</div>
@@ -325,7 +378,7 @@ function render(){
         </article>`;
       }).join('')}</div>
     </section>`;
-  }).join('') : '<div class="empty">Belum ada produk yang cocok. Coba kata kunci lain yaa 🍵</div>';
+  }).join('') : '<div class="empty">Belum ada produk yang cocok. Coba kata kunci lain yaa 🍵♡</div>';
 
   document.querySelectorAll('[data-product]').forEach(b=>
     b.addEventListener('click',()=>openProduct(b.dataset.product)));
@@ -345,6 +398,8 @@ function openProduct(name){
   $('customerNote').value = '';
   renderPlanChoices();
   $('modal').classList.remove('hidden');
+  document.body.style.overflow='hidden';
+  $('close').focus();
 }
 
 function renderPlanChoices(){
@@ -402,10 +457,13 @@ function getChosenPackage(){
   return packages[Number($('chosenPackage').value)] || null;
 }
 
-function closeModal(){ $('modal').classList.add('hidden'); }
+function closeModal(){
+  $('modal').classList.add('hidden');
+  document.body.style.overflow='';
+}
 $('close').addEventListener('click',closeModal);
 $('modal').addEventListener('click',e=>{if(e.target===$('modal')) closeModal();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape') closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape' && !$('modal').classList.contains('hidden')) closeModal();});
 $('search').addEventListener('input',render);
 $('category').addEventListener('change',render);
 
@@ -437,4 +495,4 @@ render();
 loadProductsFromDatabase();
 </script>
 </body>
-</html>
+          </html>
