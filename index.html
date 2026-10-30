@@ -118,10 +118,13 @@ a{color:inherit}
 /* PAKET HORIZONTAL */
 .package-list {
   display: flex;
-  gap: 9px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 3px 2px 10px;
+  padding: 4px 2px 12px;
   margin-top: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -129,30 +132,32 @@ a{color:inherit}
 
 .package-row {
   flex: 0 0 155px;
+  min-width: 155px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: space-between;
-  gap: 9px;
-  padding: 11px;
+  gap: 12px;
+  padding: 12px;
   background: #fff9fa;
   border: 1px solid #f2e4e7;
-  border-radius: 12px;
+  border-radius: 14px;
   scroll-snap-align: start;
 }
 
 .package-info {
-  width: 100%;
-  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
+  width: 100%;
+  min-width: 0;
 }
 
 .package-name {
   font-size: 11px;
   font-weight: 750;
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .package-price {
@@ -164,9 +169,11 @@ a{color:inherit}
 
 .package-buy {
   width: 100%;
+  margin-top: auto;
   padding: 8px;
   border-radius: 9px;
   font-size: 10px;
+  background: #91a184;
 }
 
 /* Scrollbar */
