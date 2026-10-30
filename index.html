@@ -10,13 +10,26 @@
   color: var(--matcha-dark);
   font-weight: 800;
   margin: 0 0 12px;
+}:root{
+ --berry:#D99AAA;
+ --berry-dark:#B9798C;
+ --pink:#FBECEF;
+ --pink-deep:#F3DCE2;
+
+ --matcha:#E5EBDD;
+ --matcha-dark:#829477;
+
+ --cream:#FFFAF8;
+ --paper:#FFFEFD;
+
+ --ink:#62565A;
+ --muted:#A39796;
+ --line:#F0E4E2;
+ --white:#fff;
+
+--shadow:0 12px 32px rgba(160,120,130,.07);
 }
-:root{
- --berry:#c94f70;--berry-dark:#a83b5b;--pink:#fff0f3;--pink-deep:#f7d8e0;
- --matcha:#e7eddc;--matcha-dark:#64794f;--cream:#fffaf4;--paper:#fffdfb;
- --ink:#39352f;--muted:#898176;--line:#eee5df;--white:#fff;
- --shadow:0 12px 32px rgba(91,64,54,.07)
-}
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:18px}
 body{
@@ -321,6 +334,40 @@ a{color:inherit}
 
 #agreeRules {
   margin-top: 12px;
+}/* SOFT PASTEL FINISH */
+.testi-button {
+  background: #fffafb;
+  border-color: #f1dfe4;
+}
+
+.package-row {
+  background: #fff9fa;
+  border-color: #f2e4e7;
+}
+
+.package-buy {
+  background: #91a184;
+}
+
+.package-buy:hover,
+.buy:hover {
+  background: #7d9070;
+}
+
+.primary {
+  background: #d99aaa;
+}
+
+.primary:hover {
+  background: #bd8495;
+}
+
+.modal {
+  background: rgba(90, 72, 76, .42);
+}
+
+.box {
+  background: #fffbf9;
 }
 </style>
 </head>
@@ -828,24 +875,18 @@ $('orderForm').addEventListener('submit',function(e){
  }
 
  const message = [
-  '♡ *ORDER MITCHA STORE* ♡',
+  '*୨୧ FORM ORDER MITCHA STORE ୨୧*',
   '',
-  '*Detail Pesanan*',
+  `Nama: ${customer}`,
   `Produk: ${selected.name}`,
   `Plan: ${plan}`,
-  `Paket: ${pack.name}`,
-  `Harga: ${pack.price > 0 ? rupiah(pack.price) : 'Tanyakan admin'}`,
-  '',
-  '*Data Customer*',
-  `Nama: ${customer}`,
+  `Paket/durasi: ${pack.name}`,
+  `Harga katalog: ${pack.price > 0 ? rupiah(pack.price) : 'Tanyakan admin'}`,
   `Device Login: ${device}`,
-  `Kota: ${city}`,
+  `Lokasi (Kota): ${city}`,
   '',
-  'Mohon bantu cek ketersediaan stok dan konfirmasi harga terlebih dahulu, yaa.',
-  'Pembayaran akan dilakukan setelah mendapat instruksi admin.',
-  '',
-  'Terima kasih! ♡'
- ].join('\n');
+  'haloo, kak cha! ^^ aku mau order nihh >< boleh bantu cek stocknya dulu? kalau masih ready, kabarin aku buat lanjut payment-nya, yaa. makasih banyak, kak! ♡'
+].join('\n');
 
  const url =
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
