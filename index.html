@@ -44,7 +44,7 @@ a{color:inherit}
 .testi-button{display:inline-flex;align-items:center;gap:6px;text-decoration:none;margin-top:9px;padding:7px 11px;border-radius:999px;background:#fff;border:1px solid #f1dce2;color:var(--berry-dark);font-size:11px;font-weight:750;transition:.2s}
 .testi-button:hover{background:var(--pink);transform:translateY(-1px)}
 .hero{
- position:relative;overflow:hidden;display:grid;grid-template-columns:1.25fr.75fr;align-items:center;gap:20px;
+ position:relative;overflow:hidden;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:20px;
  background:linear-gradient(112deg,#fff0f3 0%,#fff9f1 54%,#edf2e5 100%);
  border:1px solid #f0e2dc;border-radius:30px;padding:38px 36px;margin-bottom:30px;box-shadow:var(--shadow)
 }
@@ -102,6 +102,72 @@ a{color:inherit}
 .duration{font-size:10px;color:#938a7f;margin:4px 0 12px}
 .buy{background:var(--matcha-dark);color:#fff;width:100%;padding:10px 12px;border-radius:12px;font-size:11px;font-weight:850;transition: background .2s, transform .2s;}
 .buy:after{content:" ↗"}
+/* KATALOG PAKET */
+.package-list{
+ display:grid;
+ gap:8px;
+ margin-top:auto;
+}
+
+.package-row{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:8px;
+ padding:10px;
+ background:#fff7f8;
+ border:1px solid #f0dce1;
+ border-radius:12px;
+}
+
+.package-info{
+ min-width:0;
+ display:flex;
+ flex-direction:column;
+ gap:2px;
+}
+
+.package-name{
+ font-size:11px;
+ font-weight:750;
+ line-height:1.5;
+ overflow-wrap:anywhere;
+}
+
+.package-plan{
+ font-size:9px;
+ color:var(--muted);
+}
+
+.package-price{
+ font-size:12px;
+ font-weight:900;
+ color:var(--berry-dark);
+ white-space:nowrap;
+}
+
+.package-buy{
+ flex-shrink:0;
+ background:var(--matcha-dark);
+ color:white;
+ border:0;
+ border-radius:9px;
+ padding:7px 10px;
+ font-size:10px;
+ font-weight:850;
+}
+
+.package-buy:after{
+ content:" ↗";
+}
+
+.package-buy:hover{
+ background:#526740;
+}
+
+.product{
+ min-height:0;
+}
 .buy:hover{background:#526740;transform:translateY(-1px)}
 .empty{grid-column:1/-1;text-align:center;padding:32px 20px;line-height:1.8;color:var(--muted);background:#fff;border:1px dashed #e6d9d6;border-radius:18px}
 .how{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:17px}
@@ -156,6 +222,23 @@ a{color:inherit}
 .how{grid-template-columns:1fr}
 }
 @media(max-width:450px){
+    .package-row{
+ padding:8px;
+ gap:5px;
+}
+
+.package-name{
+ font-size:10px;
+}
+
+.package-price{
+ font-size:11px;
+}
+
+.package-buy{
+ padding:7px 8px;
+ font-size:9px;
+}
 .wrap{padding-left:11px;padding-right:11px}
 .brand{gap:9px}
 .logo{width:46px;height:46px;border-radius:15px;font-size:23px}
@@ -339,10 +422,11 @@ a{color:inherit}
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="./config.js"></script>
+
 <script>
 'use strict';
 
-const WHATSAPP_NUMBER = '628881780693';
+const WHATSAPP_NUMBER = '628881780693'; 
 
 const DEFAULT_PRODUCTS = [
  {name:'Adobe',category:'Aplikasi Premium',desc:'Tools kreatif untuk berbagai kebutuhan.',packages:[{name:'Tanyakan paket tersedia',price:0}]},
@@ -366,204 +450,417 @@ const DEFAULT_PRODUCTS = [
 
 let PRODUCTS = DEFAULT_PRODUCTS.map(normalizeProduct);
 const CATEGORY_ORDER = ['Aplikasi Premium','Pulsa & Kuota','Game','Token Listrik'];
+
 const $ = id => document.getElementById(id);
 let selected = null;
 
 const rupiah = n => Number(n) > 0
-? new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(Number(n))
+ ? new Intl.NumberFormat('id-ID',{
+     style:'currency',
+     currency:'IDR',
+     maximumFractionDigits:0
+   }).format(Number(n))
  : 'Tanya admin';
 
 function esc(s){
- return String(s?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ return String(s ?? '').replace(/[&<>"']/g,c=>({
+  '&':'&amp;',
+  '<':'&lt;',
+  '>':'&gt;',
+  '"':'&quot;',
+  "'":'&#39;'
+ }[c]));
 }
 function normalizeProduct(p){
- const packages = Array.isArray(p.packages)? p.packages : [];
+ const packages = Array.isArray(p.packages) && p.packages.length
+  ? p.packages
+  : [{name:'Tanyakan paket tersedia',price:0}];
+
  return {
-...p,
- desc:p.desc?? p.description?? '',
- note:p.note || '',
- packages:packages.map(x=>({
-...x,
- plan:String(x.plan || 'Umum'),
- name:String(x.name || 'Tanyakan paket tersedia'),
- price:Number(x.price) || 0
- }))
+  ...p,
+  desc:p.desc ?? p.description ?? '',
+  note:p.note || '',
+  packages:packages.map(x=>({
+   ...x,
+   plan:String(x.plan || 'Umum'),
+   name:String(x.name || 'Tanyakan paket tersedia'),
+   price:Number(x.price) || 0
+  }))
  };
 }
 
+/* MEMUAT KATALOG SUPABASE */
 async function loadProductsFromDatabase(){
  try{
- if(!window.CHANARRA_SUPABASE_URL ||!window.CHANARRA_SUPABASE_KEY) return;
- if(!window.supabase) throw new Error('Library Supabase belum termuat.');
- const client = window.supabase.createClient(window.CHANARRA_SUPABASE_URL,window.CHANARRA_SUPABASE_KEY);
- const {data,error} = await client.from('products')
-.select('name,category,description,note,packages,active').order('name');
- if(error) throw error;
- if(data){
- const activeProducts = data.filter(p=>p.active!== false);
- PRODUCTS = activeProducts.map(p=>normalizeProduct({
- name:p.name,category:p.category,desc:p.description || '',note:p.note || '',
- packages:p.packages?.length? p.packages : [{name:'Tanyakan paket tersedia',price:0}]
- }));
- render();
- }
+  if(
+   !window.CHANARRA_SUPABASE_URL ||
+   !window.CHANARRA_SUPABASE_KEY
+  ) return;
+
+  if(!window.supabase){
+   throw new Error('Library Supabase belum termuat.');
+  }
+
+  const client = window.supabase.createClient(
+   window.CHANARRA_SUPABASE_URL,
+   window.CHANARRA_SUPABASE_KEY
+  );
+
+  const {data,error} = await client
+   .from('products')
+   .select('name,category,description,note,packages,active')
+   .order('name');
+
+  if(error) throw error;
+
+  if(data){
+   PRODUCTS = data
+    .filter(p=>p.active !== false)
+    .map(p=>normalizeProduct({
+     name:p.name,
+     category:p.category,
+     desc:p.description || '',
+     note:p.note || '',
+     packages:p.packages?.length
+      ? p.packages
+      : [{name:'Tanyakan paket tersedia',price:0}]
+    }));
+
+   render();
+  }
+
  }catch(err){
- console.warn('Katalog database belum dapat dimuat; menggunakan katalog bawaan.',err);
+  console.warn('Katalog menggunakan data bawaan.',err);
  }
 }
 
+/* MENAMPILKAN KATALOG */
 function render(){
- const cats = [...new Set([...CATEGORY_ORDER,...PRODUCTS.map(p=>p.category).filter(Boolean)])]
-.filter(c=>PRODUCTS.some(p=>p.category===c));
+
+ const cats = [...new Set([
+  ...CATEGORY_ORDER,
+  ...PRODUCTS.map(p=>p.category).filter(Boolean)
+ ])].filter(c=>PRODUCTS.some(p=>p.category===c));
+
  const old = $('category').value;
- $('category').innerHTML = '<option value="">Semua kategori</option>' +
- cats.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
- $('category').value = cats.includes(old)? old : '';
+
+ $('category').innerHTML =
+  '<option value="">Semua kategori</option>' +
+  cats.map(c=>
+   `<option value="${esc(c)}">${esc(c)}</option>`
+  ).join('');
+
+ $('category').value = cats.includes(old) ? old : '';
 
  const q = $('search').value.toLowerCase().trim();
  const cat = $('category').value;
- const filtered = PRODUCTS.filter(p=>(!cat || p.category===cat) &&
- (`${p.name} ${p.category} ${p.desc}`.toLowerCase().includes(q)));
- const groups = cats.filter(c=>filtered.some(p=>p.category===c));
 
- $('products').innerHTML = filtered.length? groups.map((group,gi)=>{
- const items = filtered.filter(p=>p.category===group)
-.sort((a,b)=>a.name.localeCompare(b.name,'id',{sensitivity:'base'}));
- return `<section class="catalog-group">
- <div class="catalog-heading"><span class="flower">${['✿','♡','✦','❀'][gi%4]}</span><h3>${esc(group)}</h3><span class="catalog-count">${items.length} produk</span><span class="rule"></span></div>
- <div class="grid">${items.map(p=>{
- const prices = p.packages.map(x=>x.price).filter(x=>x>0);
- const min = prices.length? Math.min(...prices) : 0;
- const priceLabel = min? `Mulai ${rupiah(min)}` : 'Harga tanya admin';
- const planCount = new Set(p.packages.map(x=>x.plan || 'Umum')).size;
- return `<article class="product">
- <div class="product-top"><div><h3>${esc(p.name)}</h3></div></div>
- <p class="desc">${esc(p.desc)}</p>
- ${p.note? `<div class="product-note">${esc(p.note)}</div>` : ''}
- <div class="price">${priceLabel}</div>
- <div class="duration">${planCount} plan · ${p.packages.length} pilihan paket</div>
- <button class="buy" data-product="${esc(p.name)}" type="button">Order</button>
- </article>`;
- }).join('')}</div>
- </section>`;
- }).join('') : '<div class="empty">Belum ada produk yang cocok. Coba kata kunci lain yaa ♡</div>';
+ const filtered = PRODUCTS.filter(p=>
+  (!cat || p.category===cat) &&
+  (`${p.name} ${p.category} ${p.desc}`.toLowerCase().includes(q))
+ );
 
- document.querySelectorAll('[data-product]').forEach(b=>
- b.addEventListener('click',()=>openProduct(b.dataset.product)));
+ const groups = cats.filter(c=>
+  filtered.some(p=>p.category===c)
+ );
+
+ $('products').innerHTML = filtered.length
+ ? groups.map((group,gi)=>{
+
+  const items = filtered
+   .filter(p=>p.category===group)
+   .sort((a,b)=>a.name.localeCompare(b.name,'id',{
+    sensitivity:'base'
+   }));
+
+  return `
+   <section class="catalog-group">
+
+    <div class="catalog-heading">
+     <span class="flower">${['✿','♡','✦','❀'][gi%4]}</span>
+     <h3>${esc(group)}</h3>
+     <span class="catalog-count">${items.length} produk</span>
+     <span class="rule"></span>
+    </div>
+
+    <div class="grid">
+
+     ${items.map(p=>{
+      const productIndex = PRODUCTS.indexOf(p);
+
+      return `
+       <article class="product">
+
+        <div class="product-top">
+         <div><h3>${esc(p.name)}</h3></div>
+        </div>
+
+        <p class="desc">${esc(p.desc)}</p>
+
+        ${p.note
+         ? `<div class="product-note">${esc(p.note)}</div>`
+         : ''
+        }
+
+        <div class="package-list">
+
+         ${p.packages.map((pack,packageIndex)=>`
+          <div class="package-row">
+
+           <div class="package-info">
+
+            ${pack.plan && pack.plan !== 'Umum'
+             ? `<span class="package-plan">${esc(pack.plan)}</span>`
+             : ''
+            }
+
+            <span class="package-name">
+             ${esc(pack.name)}
+            </span>
+
+            <span class="package-price">
+             ${pack.price>0 ? rupiah(pack.price) : 'Tanya admin'}
+            </span>
+
+           </div>
+
+           <button
+            class="package-buy"
+            type="button"
+            data-order-product="${productIndex}"
+            data-order-package="${packageIndex}">
+            Order
+           </button>
+
+          </div>
+         `).join('')}
+
+        </div>
+       </article>
+      `;
+     }).join('')}
+
+    </div>
+   </section>
+  `;
+ }).join('')
+ : `
+  <div class="empty">
+   Belum ada produk yang cocok. Coba kata kunci lain yaa ♡
+  </div>
+ `;
+
+ document.querySelectorAll('[data-order-product]').forEach(button=>{
+  button.addEventListener('click',()=>{
+   openProduct(
+    Number(button.dataset.orderProduct),
+    Number(button.dataset.orderPackage)
+   );
+  });
+ });
 }
 
-function openProduct(name){
- selected = PRODUCTS.find(p=>p.name===name);
+/* MEMBUKA MODAL ORDER */
+function openProduct(productIndex,packageIndex){
+
+ selected = PRODUCTS[productIndex];
+
  if(!selected) return;
+
  $('chosenProduct').value = selected.name;
  $('chosenPlan').innerHTML = '';
  $('chosenPackage').innerHTML = '';
  $('chosenPrice').textContent = 'Pilih paket';
  $('chosenProductNote').textContent = selected.note || '';
- $('chosenProductNote').hidden =!selected.note;
- $('customer').value = '';
- $('customerDevice').value = '';
- $('customerCity').value = '';
- renderPlanChoices();
- $('modal').classList.remove('hidden');
- document.body.style.overflow='hidden';
- $('close').focus();
+$('chosenProductNote').hidden = !selected.note;
+
+$('customer').value = '';
+$('customerDevice').value = '';
+$('customerCity').value = '';
+
+renderPlanChoices();
+selectPackage(packageIndex);
+
+$('modal').classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+$('close').focus();
 }
 
 function renderPlanChoices(){
- if(!selected) return;
- const plans = [...new Set(selected.packages.map(p=>p.plan || 'Umum'))];
- $('planChoices').innerHTML = plans.map((plan,pi)=>{
- const packs = selected.packages.filter(p=>(p.plan || 'Umum')===plan);
- return `<div class="plan-card" data-plan-card="${pi}">
- <button type="button" class="plan-toggle" aria-expanded="false">
- <strong>${esc(plan)}</strong><span class="plus">＋</span>
- </button>
- <div class="plan-options">${packs.map(pack=>{
- const globalIndex = selected.packages.indexOf(pack);
- return `<button type="button" class="package-option" data-package-index="${globalIndex}">
- <span>${esc(pack.name)}</span><span>${pack.price>0? rupiah(pack.price) : 'Tanya admin'}</span>
- </button>`;
- }).join('')}</div>
- </div>`;
+ const plans = [...new Set(
+  selected.packages.map(p=>p.plan || 'Umum')
+ )];
+
+ $('planChoices').innerHTML = plans.map((plan,index)=>{
+  const packages = selected.packages
+   .map((p,i)=>({...p,originalIndex:i}))
+   .filter(p=>(p.plan || 'Umum')===plan);
+
+  return `
+   <div class="plan-card">
+    <button class="plan-toggle" type="button" aria-expanded="false">
+     <strong>${esc(plan)}</strong>
+     <span class="plus">+</span>
+    </button>
+    <div class="plan-options">
+     ${packages.map(p=>`
+      <button class="package-option"
+       type="button"
+       data-package-index="${p.originalIndex}">
+       <span>${esc(p.name)}</span>
+       <span>${p.price>0 ? rupiah(p.price) : 'Tanya admin'}</span>
+      </button>
+     `).join('')}
+    </div>
+   </div>
+  `;
  }).join('');
 
- document.querySelectorAll('[data-plan-card]').forEach(card=>{
- card.querySelector('.plan-toggle').addEventListener('click',()=>{
- const wasOpen = card.classList.contains('open');
- document.querySelectorAll('[data-plan-card]').forEach(c=>{
- c.classList.remove('open');
- c.querySelector('.plan-toggle').setAttribute('aria-expanded','false');
- c.querySelector('.plus').textContent='＋';
- });
- if(!wasOpen){
- card.classList.add('open');
- card.querySelector('.plan-toggle').setAttribute('aria-expanded','true');
- card.querySelector('.plus').textContent='−';
- }
- });
+ document.querySelectorAll('.plan-toggle').forEach(button=>{
+  button.addEventListener('click',()=>{
+   const card = button.closest('.plan-card');
+   card.classList.toggle('open');
+
+   const expanded = card.classList.contains('open');
+   button.setAttribute('aria-expanded',expanded);
+   card.querySelector('.plus').textContent = expanded ? '−' : '+';
+  });
  });
 
- document.querySelectorAll('[data-package-index]').forEach(button=>{
- button.addEventListener('click',()=>{
- const pack = selected.packages[Number(button.dataset.packageIndex)];
- $('chosenPlan').innerHTML = `<option value="${esc(pack.plan || 'Umum')}">${esc(pack.plan || 'Umum')}</option>`;
- const planPacks = selected.packages.filter(p=>(p.plan || 'Umum')===(pack.plan || 'Umum'));
- $('chosenPackage').innerHTML = planPacks.map((p,i)=>
- `<option value="${i}">${esc(p.name)}</option>`).join('');
- $('chosenPackage').value = String(planPacks.indexOf(pack));
- document.querySelectorAll('.package-option').forEach(b=>b.classList.toggle('selected',b===button));
- $('chosenPrice').textContent = pack.price>0? rupiah(pack.price) : 'Tanya admin';
- });
+ document.querySelectorAll('.package-option').forEach(button=>{
+  button.addEventListener('click',()=>{
+   selectPackage(Number(button.dataset.packageIndex));
+  });
  });
 }
 
-function getChosenPackage(){
- if(!selected || $('chosenPackage').value==='') return null;
- const plan = $('chosenPlan').value;
- const packages = selected.packages.filter(p=>(p.plan || 'Umum')===plan);
- return packages[Number($('chosenPackage').value)] || null;
-}
+function selectPackage(packageIndex){
+ const pack = selected.packages[packageIndex];
+ if(!pack) return;
 
-function closeModal(){
+ const plan = pack.plan || 'Umum';
+
+ $('chosenPlan').innerHTML =
+  `<option value="${esc(plan)}">${esc(plan)}</option>`;
+
+ const planPackages = selected.packages.filter(
+  p=>(p.plan || 'Umum')===plan
+ );
+
+ $('chosenPackage').innerHTML = planPackages.map((p,i)=>
+  `<option value="${i}">${esc(p.name)}</option>`
+ ).join('');
+
+ $('chosenPackage').value = String(
+  planPackages.indexOf(pack)
+ );
+
+ document.querySelectorAll('.plan-card').forEach(card=>{
+  const toggle = card.querySelector('.plan-toggle');
+  const isSelected = toggle.querySelector('strong').textContent===plan;
+
+  card.classList.toggle('open',isSelected);
+  toggle.setAttribute('aria-expanded',isSelected);
+  card.querySelector('.plus').textContent=isSelected?'−':'+';
+ });
+
+ document.querySelectorAll('.package-option').forEach(button=>{
+  button.classList.toggle(
+   'selected',
+   Number(button.dataset.packageIndex)===packageIndex
+  );
+ });
+
+ $('chosenPrice').textContent =
+  pack.price>0 ? rupiah(pack.price) : 'Tanya admin';
+}
+/* MENUTUP MODAL ORDER */
+function closeOrderModal(){
  $('modal').classList.add('hidden');
- document.body.style.overflow='';
+
+ document.body.style.overflow =
+  !$('rulesModal')?.classList.contains('hidden') ? 'hidden' : '';
 }
-$('close').addEventListener('click',closeModal);
-$('modal').addEventListener('click',e=>{if(e.target===$('modal')) closeModal();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape' &&!$('modal').classList.contains('hidden')) closeModal();});
+
+$('close').addEventListener('click',closeOrderModal);
+
+$('modal').addEventListener('click',function(e){
+ if(e.target === $('modal')){
+  closeOrderModal();
+ }
+});
+
+/* PENCARIAN DAN FILTER KATEGORI */
 $('search').addEventListener('input',render);
 $('category').addEventListener('change',render);
 
-$('orderForm').addEventListener('submit',e=>{
+/* MENGIRIM ORDER KE WHATSAPP */
+$('orderForm').addEventListener('submit',function(e){
  e.preventDefault();
- if(!selected) return;
- const pack = getChosenPackage();
- if(!pack){alert('Silakan pilih paket terlebih dahulu.');return;}
 
- const msg = [
- ' *୨୧ FORM ORDER MITCHA STORE ୨୧* ','',
- `Nama: ${$('customer').value.trim()}`,
- `Produk: ${selected.name}`,
- `Plan: ${$('chosenPlan').value}`,
- `Paket/durasi: ${pack.name}`,
- `Harga katalog: ${rupiah(pack.price)}`,
- `Device Login: ${$('customerDevice').value.trim()}`,
- `Lokasi (Kota): ${$('customerCity').value.trim()}`,
- '',
- 'haloo, kak cha! ^^ aku mau order nihh >< boleh bantu cek stocknya dulu? kalau masih ready, kabarin aku buat lanjut payment-nya, yaa. makasih banyak, kak! ♡'
-].join('\n');
- const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
- const waWindow = window.open(waUrl, '_blank');
-
-if (!waWindow) {
-  alert('WhatsApp tidak berhasil dibuka. Silakan izinkan pop-up atau coba lagi, yaa!');
+ if(!selected){
+  alert('Silakan pilih produk terlebih dahulu.');
   return;
-}
+ }
 
- closeModal();
+ const packageIndex = Number($('chosenPackage').value);
+
+ const plan = $('chosenPlan').value;
+
+ const planPackages = selected.packages.filter(
+  p=>(p.plan || 'Umum')===plan
+ );
+
+ const pack = planPackages[packageIndex];
+
+ if(!pack){
+  alert('Silakan pilih paket terlebih dahulu.');
+  return;
+ }
+
+ const customer = $('customer').value.trim();
+ const device = $('customerDevice').value.trim();
+ const city = $('customerCity').value.trim();
+
+ if(!customer || !device || !city){
+  alert('Mohon lengkapi semua data order, yaa!');
+  return;
+ }
+
+ const message = [
+  '♡ *ORDER MITCHA STORE* ♡',
+  '',
+  '*Detail Pesanan*',
+  `Produk: ${selected.name}`,
+  `Plan: ${plan}`,
+  `Paket: ${pack.name}`,
+  `Harga: ${pack.price > 0 ? rupiah(pack.price) : 'Tanyakan admin'}`,
+  '',
+  '*Data Customer*',
+  `Nama: ${customer}`,
+  `Device Login: ${device}`,
+  `Kota: ${city}`,
+  '',
+  'Mohon bantu cek ketersediaan stok dan konfirmasi harga terlebih dahulu, yaa.',
+  'Pembayaran akan dilakukan setelah mendapat instruksi admin.',
+  '',
+  'Terima kasih! ♡'
+ ].join('\n');
+
+ const url =
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+ window.open(url,'_blank','noopener,noreferrer');
 });
 
+/* TOMBOL ESCAPE */
+document.addEventListener('keydown',function(e){
+ if(e.key === 'Escape' && !$('modal').classList.contains('hidden')){
+  closeOrderModal();
+ }
+});
+
+/* TAMPILKAN KATALOG */
 render();
 loadProductsFromDatabase();
 </script>
@@ -637,8 +934,9 @@ function showRules() {
 
 function hideRules() {
   rulesModal.classList.add('hidden');
+
   document.body.style.overflow =
-  !$('modal').classList.contains('hidden') ? 'hidden' : '';
+    !$('modal').classList.contains('hidden') ? 'hidden' : '';
 
   if (openRules) {
     openRules.focus();
