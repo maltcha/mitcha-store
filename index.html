@@ -115,69 +115,69 @@ a{color:inherit}
 .duration{font-size:10px;color:#938a7f;margin:4px 0 12px}
 .buy{background:var(--matcha-dark);color:#fff;width:100%;padding:10px 12px;border-radius:12px;font-size:11px;font-weight:850;transition: background .2s, transform .2s;}
 .buy:after{content:" ↗"}
-/* KATALOG PAKET */
-.package-list{
- display:grid;
- gap:8px;
- margin-top:auto;
+/* PAKET HORIZONTAL */
+.package-list {
+  display: flex;
+  gap: 9px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 3px 2px 10px;
+  margin-top: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
-.package-row{
- display:flex;
- align-items:center;
- justify-content:space-between;
- gap:8px;
- padding:10px;
- background:#fff7f8;
- border:1px solid #f0dce1;
- border-radius:12px;
+.package-row {
+  flex: 0 0 155px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 9px;
+  padding: 11px;
+  background: #fff9fa;
+  border: 1px solid #f2e4e7;
+  border-radius: 12px;
+  scroll-snap-align: start;
 }
 
-.package-info{
- min-width:0;
- display:flex;
- flex-direction:column;
- gap:2px;
+.package-info {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.package-name{
- font-size:11px;
- font-weight:750;
- line-height:1.5;
- overflow-wrap:anywhere;
+.package-name {
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.5;
 }
 
-.package-plan{
- font-size:9px;
- color:var(--muted);
+.package-price {
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--berry-dark);
+  white-space: normal;
 }
 
-.package-price{
- font-size:12px;
- font-weight:900;
- color:var(--berry-dark);
- white-space:nowrap;
+.package-buy {
+  width: 100%;
+  padding: 8px;
+  border-radius: 9px;
+  font-size: 10px;
 }
 
-.package-buy{
- flex-shrink:0;
- background:var(--matcha-dark);
- color:white;
- border:0;
- border-radius:9px;
- padding:7px 10px;
- font-size:10px;
- font-weight:850;
+/* Scrollbar */
+.package-list::-webkit-scrollbar {
+  height: 4px;
 }
 
-.package-buy:after{
- content:" ↗";
+.package-list::-webkit-scrollbar-thumb {
+  background: #e8cbd2;
+  border-radius: 99px;
 }
-
-.package-buy:hover{
- background:#526740;
-}
-
 .product{
  min-height:0;
 }
@@ -235,9 +235,9 @@ a{color:inherit}
 .how{grid-template-columns:1fr}
 }
 @media(max-width:450px){
-    .package-row{
- padding:8px;
- gap:5px;
+  .package-row{
+    flex-basis: 135px;
+  }
 }
 
 .package-name{
