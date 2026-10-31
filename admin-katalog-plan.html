@@ -3,8 +3,16 @@
 </style></head><body><main class="wrap"><header class="head"><div class="brand"> Mitcha Store <small>Admin katalog produk · strawberry matcha</small></div><div><a href="./index.html" style="color:var(--dark);font-weight:700;margin-right:12px">Lihat website</a><button id="logout" class="secondary hidden">Keluar</button></div></header>
 <div id="status" class="status">Hubungkan halaman ini ke project Supabase kamu terlebih dahulu lewat file config.js.</div>
 <section id="loginPanel" class="panel"><h2>Login admin</h2><form id="loginForm"><div class="formgrid"><div class="field full"><label>Email admin</label><input id="email" type="email" required autocomplete="username" placeholder="Email akun admin Supabase"></div><div class="field full"><label>Password</label><input id="password" type="password" required autocomplete="current-password" placeholder="Password admin"></div></div><div class="actions"><button class="primary" type="submit">Login</button></div></form><p class="hint">Gunakan akun admin Supabase yang sudah kamu buat. Jangan bagikan password ke siapa pun.</p></section>
-<div id="appPanel" class="hidden"><section class="panel"><h2 id="formTitle">Tambah produk baru</h2><form id="productForm"><input id="productId" type="hidden"><div class="formgrid"><div class="field"><label>Nama produk *</label><input id="name" required maxlength="100" placeholder="Contoh: Canva"></div><div class="field"><label>Kategori *</label><select id="category" required><option>Aplikasi Premium</option><option>Pulsa & Kuota</option><option>Game</option><option>Token Listrik</option></select></div><div class="field full">
-<label>Deskripsi singkat</label>
+<div id="appPanel" class="hidden"><section class="panel"><h2 id="formTitle">Tambah produk baru</h2><form id="productForm"><input id="productId" type="hidden"><div class="formgrid"><div class="field"><label>Nama produk *</label><input id="name" required maxlength="100" placeholder="Contoh: Canva"></div><div class="field"><label>Kategori *</label><select id="category" required>
+  <option value="Streaming">Streaming</option>
+  <option value="Design & Editing">Design & Editing</option>
+  <option value="Education">Education</option>
+  <option value="Listening">Listening</option>
+  <option value="Top Up Game">Top Up Game</option>
+  <option value="Pulsa & Kuota">Pulsa & Kuota</option>
+  <option value="Token Listrik">Token Listrik</option>
+  <option value="Other">Other</option>
+</select>
 <input id="description" maxlength="200" placeholder="Contoh: Paket desain premium">
 </div>
 <div class="field full">
