@@ -2,480 +2,521 @@
 :root{--berry:#d99aaa;--dark:#b9798c;--green:#829477;--ink:#62565a;--muted:#a39796}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 0 10%,#f7d8e099,transparent 260px),radial-gradient(circle at 100% 42%,#e7eddcaa,transparent 300px),#fffaf8;color:var(--ink);font:14px/1.6 Inter,system-ui,sans-serif}.wrap{max-width:1120px;margin:auto;padding:16px 13px 35px}.top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}.brand{display:flex;align-items:center;gap:9px}.logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#ffe7ed,#fff6ef 60%,#e7eddc);font-size:22px}.brand h1{font-size:19px;margin:0;line-height:1.2}.brand p{font-size:10px;color:var(--muted);margin:3px 0 0}.links{display:flex;gap:7px;align-items:center}.links a,.links button{border:1px solid #f1dce2;background:#fffafb;color:var(--dark);border-radius:99px;padding:7px 10px;font-size:10px;font-weight:800;text-decoration:none;cursor:pointer}.intro{background:linear-gradient(112deg,#fff0f3,#fff9f1 54%,#edf2e5);border:1px solid #f0e2dc;border-radius:22px;padding:20px;margin-bottom:22px}.hours{font-size:10px;color:var(--green);font-weight:800;margin:0 0 7px}.intro h2{font-size:clamp(25px,4vw,34px);margin:6px 0;line-height:1.2}.intro p{font-size:11px;color:#777268;margin:0}.head{display:flex;align-items:end;justify-content:space-between;margin:20px 0 12px}.head h2{font-size:19px;margin:0}.head p{font-size:10px;color:var(--muted);margin:3px 0 0}.tools{display:grid;grid-template-columns:1fr 220px;gap:9px;padding:10px;border:1px solid #f0e4e2;border-radius:16px;background:#ffffffb8;margin-bottom:15px}.tools input,.tools select{width:100%;min-height:43px;border:1px solid #eee5df;border-radius:11px;padding:9px 12px;background:white;color:var(--ink);outline:none}.group{margin:22px 0}.heading{display:flex;align-items:center;gap:9px;margin-bottom:11px}.flower{width:29px;height:29px;border-radius:10px;display:grid;place-items:center;background:#fbecf0;color:var(--berry)}.heading h3{font-size:14px;margin:0;color:#535c49}.rule{height:1px;background:linear-gradient(90deg,#e9dfd6,transparent);flex:1}.count{font-size:10px;color:#989183}
 
 .grid{
-display:grid;
-grid-template-columns:1fr !important;
-gap:14px;
-width:100%;
+  display:grid;
+  grid-template-columns:1fr !important;
+  gap:14px;
+  width:100%;
 }
 
 .product{
-width:100%;
-min-width:0;
-background:#fffefd;
-border:1px solid #eee6df;
-border-radius:17px;
-padding:13px;
-display:flex;
-flex-direction:column;
-box-shadow:0 5px 16px #503c2d08;
+  width:100%;
+  min-width:0;
+  background:#fffefd;
+  border:1px solid #eee6df;
+  border-radius:17px;
+  padding:13px;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 5px 16px #503c2d08;
 }/* PRODUCT CARD */
 .product{
-width:100%;
-min-width:0;
-background:#fffefd;
-border:1px solid #eee6df;
-border-radius:20px;
-padding:18px;
-box-shadow:0 5px 16px #503c2d08;
+  width:100%;
+  min-width:0;
+  background:#fffefd;
+  border:1px solid #eee6df;
+  border-radius:20px;
+  padding:18px;
+  box-shadow:0 5px 16px #503c2d08;
 }
 
 .product h4{
-font-size:20px;
-font-weight:900;
-color:#62565a;
-margin:0 0 8px;
+  font-size:20px;
+  font-weight:900;
+  color:#62565a;
+  margin:0 0 8px;
 }
 
 .desc{
-font-size:12px;
-color:#918486;
-margin:0 0 12px;
+  font-size:12px;
+  color:#918486;
+  margin:0 0 12px;
 }
 
 /* PRODUCT NOTES - TETAP */
 .product-note{
-display:block;
-background:#fff3f5;
-border:1px solid #f2d5dd;
-color:#936071;
-padding:9px 12px;
-border-radius:11px;
-font-size:12px;
-margin:10px 0;
+  display:block;
+  background:#fff3f5;
+  border:1px solid #f2d5dd;
+  color:#936071;
+  padding:9px 12px;
+  border-radius:11px;
+  font-size:12px;
+  margin:10px 0;
 }
 
 /* PACKAGE GROUP */
 .package-group{
-margin-top:17px;
+  margin-top:17px;
 }
 
 .package-plan{
-font-size:13px;
-font-weight:900;
-color:#b9798c;
-margin:0 0 8px 4px;
+  font-size:13px;
+  font-weight:900;
+  color:#b9798c;
+  margin:0 0 8px 4px;
 }
 
 /* PACKAGE ROW */
 .package-list{
-display:grid;
-gap:9px;
+  display:grid;
+  gap:9px;
 }
 
 .package-row{
-display:grid;
-grid-template-columns:minmax(0,1fr) auto auto;
-align-items:center;
-gap:10px;
-width:100%;
-background:#fff0f3;
-border:1px solid #f1dce2;
-border-radius:14px;
-padding:11px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto auto;
+  align-items:center;
+  gap:10px;
+  width:100%;
+  background:#fff0f3;
+  border:1px solid #f1dce2;
+  border-radius:14px;
+  padding:11px;
 }
 
 .package-name{
-font-size:12px;
-font-weight:800;
-color:#62505a;
-min-width:0;
-overflow-wrap:anywhere;
+  font-size:12px;
+  font-weight:800;
+  color:#62505a;
+  min-width:0;
+  overflow-wrap:anywhere;
 }
 
 .package-price{
-font-size:13px;
-font-weight:900;
-color:#b45f78;
-white-space:nowrap;
+  font-size:13px;
+  font-weight:900;
+  color:#b45f78;
+  white-space:nowrap;
 }
 
 .package-buy{
-flex-shrink:0;
-border:1px solid #963b5b;
-background:#a94768;
-color:white;
-border-radius:11px;
-padding:10px 12px;
-min-width:68px;
-font-size:11px;
-font-weight:900;
-cursor:pointer;
-box-shadow:0 3px 7px #a9476826;
+  flex-shrink:0;
+  border:1px solid #963b5b;
+  background:#a94768;
+  color:white;
+  border-radius:11px;
+  padding:10px 12px;
+  min-width:68px;
+  font-size:11px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 3px 7px #a9476826;
 }
 
 .package-buy:hover{
-background:#873650;
+  background:#873650;
 }
 /* BUTTON */
 button{
-cursor:pointer;
+  cursor:pointer;
 }
 
 button:active{
-transform:scale(.97);
+  transform:scale(.97);
 }
 
 /* MODAL */
 .hidden{
-display:none!important;
+  display:none!important;
 }
 
 .modal{
-position:fixed;
-inset:0;
-z-index:999;
-background:#49343b88;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:15px;
-overflow-y:auto;
+  position:fixed;
+  inset:0;
+  z-index:999;
+  background:#49343b88;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+  overflow-y:auto;
 }
 
 .modal.hidden{
-display:none!important;
+  display:none!important;
 }
 
 .box{
-width:100%;
-max-width:480px;
-max-height:90vh;
-overflow-y:auto;
-background:#fffaf8;
-border-radius:20px;
-padding:18px;
-border:1px solid #f0dce1;
+  width:100%;
+  max-width:480px;
+  max-height:90vh;
+  overflow-y:auto;
+  background:#fffaf8;
+  border-radius:20px;
+  padding:18px;
+  border:1px solid #f0dce1;
 }
 
 .primary{
-width:100%;
-border:0;
-border-radius:12px;
-padding:13px;
-background:#b9798c;
-color:white;
-font-weight:800;
-cursor:pointer;
+  width:100%;
+  border:0;
+  border-radius:12px;
+  padding:13px;
+  background:#b9798c;
+  color:white;
+  font-weight:800;
+  cursor:pointer;
 }
 
 .close{
-border:1px solid #efd9df;
-background:#fff0f3;
-color:#a85e74;
-border-radius:10px;
-padding:8px 12px;
-cursor:pointer;
+  border:1px solid #efd9df;
+  background:#fff0f3;
+  color:#a85e74;
+  border-radius:10px;
+  padding:8px 12px;
+  cursor:pointer;
 }
 
 .modalhead{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-margin-bottom:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:15px;
 }
 
 .field{
-margin-bottom:14px;
+  margin-bottom:14px;
 }
 
 .field label{
-display:block;
-font-weight:800;
-margin-bottom:6px;
+  display:block;
+  font-weight:800;
+  margin-bottom:6px;
 }
 
 .field input{
-width:100%;
-padding:11px;
-border:1px solid #eadde0;
-border-radius:10px;
-background:white;
-color:#62565a;
+  width:100%;
+  padding:11px;
+  border:1px solid #eadde0;
+  border-radius:10px;
+  background:white;
+  color:#62565a;
 }
 
 .summary{
-background:#f9edf0;
-border-radius:12px;
-padding:12px;
-margin:14px 0;
+  background:#f9edf0;
+  border-radius:12px;
+  padding:12px;
+  margin:14px 0;
 }
 
 .summary strong{
-display:block;
-color:#b45f78;
+  display:block;
+  color:#b45f78;
 }
 
 .note{
-font-size:11px;
-color:#8b7b7d;
+  font-size:11px;
+  color:#8b7b7d;
 }
 
 .rules{
-max-height:55vh;
-overflow-y:auto;
-font-size:12px;
+  max-height:55vh;
+  overflow-y:auto;
+  font-size:12px;
 }
 
 .plan-card{
-border:1px solid #efdde1;
-border-radius:12px;
-margin:9px 0;
-overflow:hidden;
+  border:1px solid #efdde1;
+  border-radius:12px;
+  margin:9px 0;
+  overflow:hidden;
 }
 
 .plan-toggle{
-width:100%;
-display:flex;
-justify-content:space-between;
-padding:12px;
-border:0;
-background:#fff0f3;
-color:#a85e74;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:12px;
+  border:0;
+  background:#fff0f3;
+  color:#a85e74;
 }
 
 .plan-options{
-display:none;
-padding:8px;
+  display:none;
+  padding:8px;
 }
 
 .plan-card.open .plan-options{
-display:grid;
-gap:7px;
+  display:grid;
+  gap:7px;
 }
 
 .package-option{
-display:flex;
-justify-content:space-between;
-gap:8px;
-padding:10px;
-border:1px solid #f0dce1;
-border-radius:9px;
-background:white;
-color:#62565a;
-text-align:left;
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  padding:10px;
+  border:1px solid #f0dce1;
+  border-radius:9px;
+  background:white;
+  color:#62565a;
+  text-align:left;
 }
 
 .package-option.selected{
-background:#f8e3e9;
-border-color:#c87991;
+  background:#f8e3e9;
+  border-color:#c87991;
 }
 
 @media(max-width:600px){
-.tools{
-grid-template-columns:1fr;
-}
+  .tools{
+    grid-template-columns:1fr;
+  }
 
-.top{
-flex-wrap:wrap;
-}
+  .top{
+    flex-wrap:wrap;
+  }
 
-.links{
-flex-wrap:wrap;
-}
+  .links{
+    flex-wrap:wrap;
+  }
 }.package-buy{
-background:#a94768 !important;
-color:#ffffff !important;
-border:1px solid #963b5b;
-min-width:68px;
-box-shadow:0 3px 7px #a9476826;
+  background:#a94768 !important;
+  color:#ffffff !important;
+  border:1px solid #963b5b;
+  min-width:68px;
+  box-shadow:0 3px 7px #a9476826;
 }
 
 .package-buy:hover{
-background:#873650 !important;
+  background:#873650 !important;
 }
 
 .package-buy:active{
-transform:scale(.96);
+  transform:scale(.96);
 }
 
 .package-buy:active{
-transform:scale(.96);
+  transform:scale(.96);
 }
 /* RESPONSIVE PRODUCT */
 .product-packages{
-width:100%;
-min-width:0;
+  width:100%;
+  min-width:0;
 }
 
 .package-row{
-grid-template-columns:minmax(0,1fr) auto auto;
+  grid-template-columns:minmax(0,1fr) auto auto;
 }
 
 @media(max-width:380px){
-.product{
-padding:13px;
-}
+  .product{
+    padding:13px;
+  }
 
-.package-row{
-gap:7px;
-padding:9px;
-}
+  .package-row{
+    gap:7px;
+    padding:9px;
+  }
 
-.package-name{
-font-size:11px;
-}
+  .package-name{
+    font-size:11px;
+  }
 
-.package-price{
-font-size:11px;
-}
+  .package-price{
+    font-size:11px;
+  }
 
-.package-buy{
-min-width:58px;
-padding:9px 8px;
-font-size:10px;
-}
+  .package-buy{
+    min-width:58px;
+    padding:9px 8px;
+    font-size:10px;
+  }
 }.package-buy{
-position:relative;
-z-index:5;
-pointer-events:auto;
-background:#a94768 !important;
-color:#fff !important;
-border:1px solid #963b5b;
-min-width:68px;
-cursor:pointer;
+  position:relative;
+  z-index:5;
+  pointer-events:auto;
+  background:#a94768 !important;
+  color:#fff !important;
+  border:1px solid #963b5b;
+  min-width:68px;
+  cursor:pointer;
 }
 </style></head><body><main class="wrap"><header class="top"><div class="brand"><div class="logo">🐈</div><div><h1>Mitcha Store</h1><p>your tiny corner of digital happiness ♡</p></div></div><div class="links"><a href="./index.html">← Beranda</a><button id="openRules">♡ Regulasi & SNK</button></div></header><section class="intro"><p class="hours">Jam buka: 07.00–23.59</p><h2>Find your favorite ♡</h2><p>Pilih produk, cek paket, lalu pesan dengan mudah. Pastikan stok dan harga dikonfirmasi admin sebelum pembayaran.</p></section><div class="head"><div><h2>Daftar Harga & Produk</h2><p>Pilih paket yang sesuai dengan kebutuhanmu ♡</p></div></div><div class="tools"><input id="search" placeholder="⌕ Cari produk favoritmu…" aria-label="Cari produk"><select id="category"><option value="">Semua kategori</option></select></div><div id="products"></div><div class="footer">Thank you for shopping babe ♡<br><span style="color:#a39796">Have a lovely day!</span></div></main>
+<div class="modal hidden" id="modal" role="dialog" aria-modal="true"><div class="box"><div class="modalhead"><h2>Your little order ♡</h2><button class="close" id="close">Tutup ✕</button></div><form id="orderForm"><div class="field"><label>Produk</label><input id="chosenProduct" readonly></div><div class="field"><label>Pilih plan dan harga *</label><p class="plan-hint">Ketuk nama plan untuk membuka paket, lalu pilih yang kamu mau.</p><div id="planChoices"></div><select id="chosenPlan" hidden></select><select id="chosenPackage" hidden></select></div><div class="summary">Harga produk<strong id="chosenPrice">Pilih paket</strong><small>Harga dapat dikonfirmasi kembali oleh admin.</small></div><div class="field"><label>Nama *</label><input id="customer" required maxlength="80" placeholder="Nama kamu"></div><div class="field"><label>Device Login *</label><input id="customerDevice" required maxlength="100" placeholder="Android, iPhone, Laptop"></div><div class="field"><label>Lokasi (Kota) *</label><input id="customerCity" required maxlength="100" placeholder="Contoh: Semarang"></div><p class="note">WhatsApp akan terbuka dengan ringkasan pesanan. Pembayaran setelah mendapat instruksi admin.</p><button class="primary" type="submit">Lanjut ke WhatsApp ♡</button></form></div></div>
+<div class="modal hidden" id="rulesModal" role="dialog" aria-modal="true"><div class="box"><div class="modalhead"><h2>♡ Regulasi App Prem</h2><button class="close" id="closeRules">Tutup ✕</button></div><div class="rules"><p>˚₊·—̳͟͞͞♡ Web ini berisi pricelist produk. Kalau aplikasi yang kamu cari belum ada, boleh tanya admin dulu, yaa!</p><p>˚₊·—̳͟͞͞♡ <b>No rush & rude buyer!</b> Mohon bersabar dan tetap sopan selama transaksi.</p><p>˚₊·—̳͟͞͞♡ Budayakan tanya sebelum order untuk memastikan stok dan ketersediaan produk.</p><p>˚₊·—̳͟͞͞♡ Don't expect too much, <b>this is a blackmarket.</b> Pahami risiko sebelum membeli.</p><p>˚₊·—̳͟͞͞♡ Pastikan stok dan harga sudah dikonfirmasi admin sebelum melakukan pembayaran.</p><p>˚₊·—̳͟͞͞♡ Estimasi proses order sekitar <b>30–45 menit</b>. Beberapa produk bisa lebih cepat, sedangkan produk tertentu mungkin membutuhkan waktu lebih lama.</p><p>˚₊·—̳͟͞͞♡ <b>Full garansi</b> berlaku selama buyer mematuhi snk masing-masing aplikasi.</p><p>˚₊·—̳͟͞͞♡ Wajib mengirimkan bukti berhasil login jika buyer mau mendapatkan garansi.</p><p>˚₊·—̳͟͞͞♡ Estimasi proses garansi max 7 hari, bisa cepat dan bisa juga lambat.</p><p>˚₊·—̳͟͞͞♡ Garansi akun backfree atau logout sendiri berlaku sesuai snk. Kendala limit bawaan aplikasi tidak termasuk garansi.</p><p>˚₊·—̳͟͞͞♡ Khusus aplikasi AI seperti ChatGPT & Claude, kendala backfree mendapat garansi sesuai snk, sedangkan akun terkena banned/disable mendapat <b>garansi penggantian 1x</b>.</p><p>˚₊·—̳͟͞͞♡ Apabila terjadi kendala, segera hubungi admin dengan menyertakan bukti yang diperlukan untuk proses pengecekan dan klaim garansi.</p><p>˚₊·—̳͟͞͞♡ Pastikan produk yang dipesan sudah sesuai sebelum membayar. Kesalahan order akibat kelalaian buyer, tidak menjadi tanggung jawab seller.</p><p>˚₊·—̳͟͞͞♡ Jangan mengubah data akun atau melakukan aktivitas yang dilarang dalam snk produk karena dapat memengaruhi garansi.</p><p>˚₊·—̳͟͞͞♡ Setiap aplikasi memiliki snk berbeda. Pastikan membaca dan memahami ketentuan sebelum order, yaa!</p><p>˚₊·—̳͟͞͞♡ Melakukan order berarti buyer telah membaca dan menyetujui regulasi serta snk yang berlaku. 💗</p></div><button class="primary" id="agreeRules">Oke, aku mengerti ♡</button></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./config.js"></script><script>
+'use strict';const WA='628881780693',CATS=['Aplikasi Premium','Pulsa & Kuota','Game','Token Listrik'];const DEFAULT=[
+{name:'Adobe',category:CATS[0],desc:'Tools kreatif untuk berbagai kebutuhan.',packages:[{name:'Tanyakan paket tersedia',price:0}]},{name:'Apple Music',category:CATS[0],desc:'Dengarkan musik favoritmu.',packages:[{name:'Tanyakan paket tersedia',price:0}]},{name:'Canva',category:CATS[0],desc:'Bantu kebutuhan desain dan konten.',packages:[{name:'Tanyakan paket tersedia',price:0}]},{name:'CapCut',category:CATS[0],desc:'Edit video dan buat konten lebih mudah.',packages:[{name:'Standard · 1 bulan',price:24000},{name:'Pro · 1 bulan',price:45000}]},{name:'Disney+ Hotstar',category:CATS[0],desc:'Film, series, dan hiburan favorit.',packages:[{name:'Tanyakan paket tersedia',price:0}]},{name:'DramaWave',category:CATS[0],desc:'Pilihan hiburan drama pendek.',packages:[{name:'Tanyakan paket tersedia',price:0}]},{name:'Getcontact Premium',category:CATS[0],desc:'Fitur Premium aplikasi Getcontact.',packages:[{name:'1 bulan',price:0}]},{name:'Google One',category:CATS[0],desc:'Pilihan penyimpanan cloud tambahan.',packages:[{name:'Private · 1 bulan',price:25000},{name:'Private · 2 bulan',price:30000},{name:'Private · 3 bulan',price:40000},{name:'Private · 6 bulan',price:45000},{name:'Private · 1 tahun',price:95000}]},{name:'Netflix',category:CATS[0],desc:'Paket streaming film dan series.',packages:[{name:'Tanyakan paket tersedia',price:0}]},{name:'Spotify',category:CATS[0],desc:'Musik favorit untuk menemani harimu.',packages:[{plan:'Family Plan',name:'1 bulan',price:30000},{plan:'Individual Plan',name:'1 bulan',price:38000}]},{name:'Vidio',category:CATS[0],desc:'Hiburan dan tayangan pilihan.',packages:[{name:'Tanyakan paket tersedia',price:0}]},{name:'YouTube Premium',category:CATS[0],desc:'Nikmati video dengan pengalaman Premium.',packages:[{name:'Family Plan · 1 bulan',price:30000},{name:'Individual Plan · 1 bulan',price:38000}]},{name:'Pulsa',category:CATS[1],desc:'Tersedia berbagai operator dan nominal.',packages:[{name:'Tanyakan operator & nominal',price:0}]},{name:'Paket Data / Kuota',category:CATS[1],desc:'Pilih operator dan paket data.',packages:[{name:'Tanyakan operator & paket',price:0}]},{name:'Top Up Mobile Legends',category:CATS[2],desc:'Top up diamond. Tanyakan nominal yang tersedia.',packages:[{name:'Tanyakan nominal',price:0}]},{name:'Top Up PUBG Mobile',category:CATS[2],desc:'Top up UC game. Tanyakan nominal yang tersedia.',packages:[{name:'Tanyakan nominal',price:0}]},{name:'Token Listrik',category:CATS[3],desc:'Token listrik prabayar.',packages:[{name:'Tanyakan nominal',price:0}]}];
+const $=id=>document.getElementById(id);let PRODUCTS=DEFAULT.map(norm),selected=null;const rupiah=n=>Number(n)>0?new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n):'Tanya admin';function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}function norm(p){let packs=Array.isArray(p.packages)&&p.packages.length?p.packages:[{name:'Tanyakan paket tersedia',price:0}];return{...p,desc:p.desc??p.description??'',note:p.note||'',packages:packs.map(x=>({...x,plan:String(x.plan||'Umum'),name:String(x.name||'Tanyakan paket tersedia'),price:Number(x.price)||0}))};}
 
-<div class="modal hidden" id="modal" role="dialog" aria-modal="true"><div class="box"><div class="modalhead"><h2>Your little order ♡</h2><button class="close" id="close">Tutup ✕</button></div><form id="orderForm"><div class="field"><label>Produk</label><input id="chosenProduct" readonly></div><div class="field"><label>Pilih plan dan harga *</label><p class="plan-hint">Ketuk nama plan untuk membuka paket, lalu pilih yang kamu mau.</p><div id="planChoices"></div><select id="chosenPlan" hidden></select><select id="chosenPackage" hidden></select></div><div class="summary">Harga produk<strong id="chosenPrice">Pilih paket</strong><small>Harga dapat dikonfirmasi kembali oleh admin.</small></div><div class="field"><label>Nama *</label><input id="customer" required maxlength="80" placeholder="Nama kamu"></div><div class="field"><label>Device Login *</label><input id="customerDevice" required maxlength="100" placeholder="Android, iPhone, Laptop"></div><div class="field"><label>Lokasi (Kota) *</label><input id="customerCity" required maxlength="100" placeholder="Contoh: Semarang"></div><p class="note">WhatsApp akan terbuka dengan ringkasan pesanan. Pembayaran setelah mendapat instruksi admin.</p><button class="primary" type="submit">Lanjut ke WhatsApp ♡</button></form></div></div>  
-<div class="modal hidden" id="rulesModal" role="dialog" aria-modal="true"><div class="box"><div class="modalhead"><h2>♡ Regulasi App Prem</h2><button class="close" id="closeRules">Tutup ✕</button></div><div class="rules"><p>˚₊·—̳͟͞͞♡ Web ini berisi pricelist produk. Kalau aplikasi yang kamu cari belum ada, boleh tanya admin dulu, yaa!</p><p>˚₊·—̳͟͞͞♡ <b>No rush & rude buyer!</b> Mohon bersabar dan tetap sopan selama transaksi.</p><p>˚₊·—̳͟͞͞♡ Budayakan tanya sebelum order untuk memastikan stok dan ketersediaan produk.</p><p>˚₊·—̳͟͞͞♡ Don't expect too much, <b>this is a blackmarket.</b> Pahami risiko sebelum membeli.</p><p>˚₊·—̳͟͞͞♡ Pastikan stok dan harga sudah dikonfirmasi admin sebelum melakukan pembayaran.</p><p>˚₊·—̳͟͞͞♡ Estimasi proses order sekitar <b>30–45 menit</b>. Beberapa produk bisa lebih cepat, sedangkan produk tertentu mungkin membutuhkan waktu lebih lama.</p><p>˚₊·—̳͟͞͞♡ <b>Full garansi</b> berlaku selama buyer mematuhi snk masing-masing aplikasi.</p><p>˚₊·—̳͟͞͞♡ Wajib mengirimkan bukti berhasil login jika buyer mau mendapatkan garansi.</p><p>˚₊·—̳͟͞͞♡ Estimasi proses garansi max 7 hari, bisa cepat dan bisa juga lambat.</p><p>˚₊·—̳͟͞͞♡ Garansi akun backfree atau logout sendiri berlaku sesuai snk. Kendala limit bawaan aplikasi tidak termasuk garansi.</p><p>˚₊·—̳͟͞͞♡ Khusus aplikasi AI seperti ChatGPT & Claude, kendala backfree mendapat garansi sesuai snk, sedangkan akun terkena banned/disable mendapat <b>garansi penggantian 1x</b>.</p><p>˚₊·—̳͟͞͞♡ Apabila terjadi kendala, segera hubungi admin dengan menyertakan bukti yang diperlukan untuk proses pengecekan dan klaim garansi.</p><p>˚₊·—̳͟͞͞♡ Pastikan produk yang dipesan sudah sesuai sebelum membayar. Kesalahan order akibat kelalaian buyer, tidak menjadi tanggung jawab seller.</p><p>˚₊·—̳͟͞͞♡ Jangan mengubah data akun atau melakukan aktivitas yang dilarang dalam snk produk karena dapat memengaruhi garansi.</p><p>˚₊·—̳͟͞͞♡ Setiap aplikasi memiliki snk berbeda. Pastikan membaca dan memahami ketentuan sebelum order, yaa!</p><p>˚₊·—̳͟͞͞♡ Melakukan order berarti buyer telah membaca dan menyetujui regulasi serta snk yang berlaku. 💗</p></div><button class="primary" id="agreeRules">Oke, aku mengerti ♡</button></div></div>  
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./config.js"></script><script>  
-'use strict';const WA='628881780693',CATS=['Aplikasi Premium','Pulsa & Kuota','Game','Token Listrik'];const DEFAULT=[  
-{name:'Adobe',category:CATS[0],desc:'Tools kreatif untuk berbagai kebutuhan.',packages:[{name:'Tanyakan paket tersedia',price:0}]},{name:'Apple Music',category:CATS[0],desc:'Dengarkan musik favoritmu.',packages:[{name:'Tanyakan paket tersedia',price:0}]},{name:'Canva',category:CATS[0],desc:'Bantu kebutuhan desain dan konten.',packages:[{name:'Tanyakan paket tersedia',price:0}]},{name:'CapCut',category:CATS[0],desc:'Edit video dan buat konten lebih mudah.',packages:[{name:'Standard · 1 bulan',price:24000},{name:'Pro · 1 bulan',price:45000}]},{name:'Disney+ Hotstar',category:CATS[0],desc:'Film, series, dan hiburan favorit.',packages:[{name:'Tanyakan paket tersedia',price:0}]},{name:'DramaWave',category:CATS[0],desc:'Pilihan hiburan drama pendek.',packages:[{name:'Tanyakan paket tersedia',price:0}]},{name:'Getcontact Premium',category:CATS[0],desc:'Fitur Premium aplikasi Getcontact.',packages:[{name:'1 bulan',price:0}]},{name:'Google One',category:CATS[0],desc:'Pilihan penyimpanan cloud tambahan.',packages:[{name:'Private · 1 bulan',price:25000},{name:'Private · 2 bulan',price:30000},{name:'Private · 3 bulan',price:40000},{name:'Private · 6 bulan',price:45000},{name:'Private · 1 tahun',price:95000}]},{name:'Netflix',category:CATS[0],desc:'Paket streaming film dan series.',packages:[{name:'Tanyakan paket tersedia',price:0}]},{name:'Spotify',category:CATS[0],desc:'Musik favorit untuk menemani harimu.',packages:[{plan:'Family Plan',name:'1 bulan',price:30000},{plan:'Individual Plan',name:'1 bulan',price:38000}]},{name:'Vidio',category:CATS[0],desc:'Hiburan dan tayangan pilihan.',packages:[{name:'Tanyakan paket tersedia',price:0}]},{name:'YouTube Premium',category:CATS[0],desc:'Nikmati video dengan pengalaman Premium.',packages:[{name:'Family Plan · 1 bulan',price:30000},{name:'Individual Plan · 1 bulan',price:38000}]},{name:'Pulsa',category:CATS[1],desc:'Tersedia berbagai operator dan nominal.',packages:[{name:'Tanyakan operator & nominal',price:0}]},{name:'Paket Data / Kuota',category:CATS[1],desc:'Pilih operator dan paket data.',packages:[{name:'Tanyakan operator & paket',price:0}]},{name:'Top Up Mobile Legends',category:CATS[2],desc:'Top up diamond. Tanyakan nominal yang tersedia.',packages:[{name:'Tanyakan nominal',price:0}]},{name:'Top Up PUBG Mobile',category:CATS[2],desc:'Top up UC game. Tanyakan nominal yang tersedia.',packages:[{name:'Tanyakan nominal',price:0}]},{name:'Token Listrik',category:CATS[3],desc:'Token listrik prabayar.',packages:[{name:'Tanyakan nominal',price:0}]}];  
-const $=id=>document.getElementById(id);let PRODUCTS=DEFAULT.map(norm),selected=null;const rupiah=n=>Number(n)>0?new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n):'Tanya admin';function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}function norm(p){let packs=Array.isArray(p.packages)&&p.packages.length?p.packages:[{name:'Tanyakan paket tersedia',price:0}];return{...p,desc:p.desc??p.description??'',note:p.note||'',packages:packs.map(x=>({...x,plan:String(x.plan||'Umum'),name:String(x.name||'Tanyakan paket tersedia'),price:Number(x.price)||0}))};}  async function loadDB(){try{if(!window.CHANARRA_SUPABASE_URL||!window.CHANARRA_SUPABASE_KEY||!window.supabase)return;const db=window.supabase.createClient(window.CHANARRA_SUPABASE_URL,window.CHANARRA_SUPABASE_KEY);const{data,error}=await db.from('products').select('name,category,description,note,packages,active').order('name');if(error)throw error;if(data){PRODUCTS=data.filter(p=>p.active!==false).map(p=>norm({name:p.name,category:p.category,desc:p.description||'',note:p.note||'',packages:p.packages}));render();}}catch(e){console.warn('Katalog memakai data bawaan',e);}}
-function render(){
-let cats=[...new Set([
-...CATS,
-...PRODUCTS.map(p=>p.category).filter(Boolean)
-])].filter(c=>PRODUCTS.some(p=>p.category===c));
 
-let old=$('category').value;
 
-$('category').innerHTML=
-'<option value="">Semua kategori</option>'+
-cats.map(c=><option value="${esc(c)}">${esc(c)}</option>).join('');
+async function loadDB(){
+  try {
+    if(
+      !window.CHANARRA_SUPABASE_URL ||
+      !window.CHANARRA_SUPABASE_KEY ||
+      !window.supabase
+    ) return;
 
-$('category').value=cats.includes(old)?old:'';
+    const db = window.supabase.createClient(
+      window.CHANARRA_SUPABASE_URL,
+      window.CHANARRA_SUPABASE_KEY
+    );
 
-let q=$('search').value.toLowerCase().trim();
-let cat=$('category').value;
+    const {data, error} = await db
+      .from('products')
+      .select('name,category,description,note,packages,active')
+      .order('name');
 
-let filtered=PRODUCTS.filter(p=>
-(!cat||p.category===cat)&&
-(${p.name} ${p.category} ${p.desc} ${p.note}.toLowerCase().includes(q))
-);
+    if(error) throw error;
 
-let groups=cats.filter(c=>filtered.some(p=>p.category===c));
+    const activeProducts = (data || [])
+      .filter(p => p.active !== false);
 
-$('products').innerHTML=filtered.length
-?groups.map((g,gi)=>{
-let items=filtered
-.filter(p=>p.category===g)
-.sort((a,b)=>a.name.localeCompare(b.name,'id'));
+    if(activeProducts.length > 0){
+      PRODUCTS = activeProducts.map(p => norm({
+        name: p.name,
+        category: p.category,
+        desc: p.description || '',
+        note: p.note || '',
+        packages: p.packages
+      }));
+    }
 
-return `  
-    <section class="group">  
-      <div class="heading">  
-        <span class="flower">${['✿','♡','✦','❀'][gi%4]}</span>  
-        <h3>${esc(g)}</h3>  
-        <span class="count">${items.length} produk</span>  
-        <span class="rule"></span>  
-      </div>  
+    render();
 
-      <div class="grid">  
-        ${items.map(p=>{  
-          let pi=PRODUCTS.indexOf(p);  
-
-          let plans=[...new Set(  
-            p.packages.map(x=>x.plan||'Umum')  
-          )];  
-
-          return `  
-            <article class="product">  
-
-              <h4>${esc(p.name)}</h4>  
-
-              <p class="desc">${esc(p.desc)}</p>  
-
-              ${p.note?`  
-                <div class="product-note">  
-                  ${esc(p.note)}  
-                </div>  
-              `:''}  
-
-              <div class="product-packages">  
-
-                ${plans.map(plan=>{  
-                  let packs=p.packages  
-                    .map((x,i)=>({...x,i}))  
-                    .filter(x=>(x.plan||'Umum')===plan);  
-
-                  return `  
-                    <div class="package-group">  
-
-                      ${plan!=='Umum'?`  
-                        <div class="package-plan">  
-                          ${esc(plan)}  
-                        </div>  
-                      `:''}  
-
-                      <div class="package-list">  
-
-                        ${packs.map(x=>`  
-                          <div class="package-row">  
-
-                            <div class="package-name">  
-                              ${esc(x.name)}  
-                            </div>  
-
-                            <div class="package-price">  
-                              ${x.price>0?rupiah(x.price):'Tanya admin'}  
-                            </div>  
-
-                            <button  
-                              type="button"  
-                              class="package-buy"  
-                              data-p="${pi}"  
-                              data-k="${x.i}">  
-                              Order  
-                            </button>  
-
-                          </div>  
-                        `).join('')}  
-
-                      </div>  
-                    </div>  
-                  `;  
-                }).join('')}  
-
-              </div>  
-            </article>  
-          `;  
-        }).join('')}  
-      </div>  
-    </section>  
-  `;  
-}).join('')  
-:'<div class="empty">Belum ada produk yang cocok. Coba kata kunci lain yaa ♡</div>';
-
-$('products').querySelectorAll('.package-buy').forEach(b=>{
-b.onclick=()=>openProduct(+b.dataset.p,+b.dataset.k);
-});
+  } catch(e) {
+    console.warn('Katalog memakai data bawaan:', e);
+    render();
+  }
 }
-function openProduct(pi,ki){selected=PRODUCTS[pi];$('chosenProduct').value=selected.name;$('customer').value=$('customerDevice').value=$('customerCity').value='';$('chosenPlan').innerHTML='';$('chosenPackage').innerHTML='';$('chosenPrice').textContent='Pilih paket';renderPlans();choosePack(ki);$('modal').classList.remove('hidden');document.body.style.overflow='hidden';}function renderPlans(){let plans=[...new Set(selected.packages.map(p=>p.plan||'Umum'))];$('planChoices').innerHTML=plans.map(plan=>{let ps=selected.packages.map((p,i)=>({...p,i})).filter(p=>(p.plan||'Umum')===plan);return <div class="plan-card"><button class="plan-toggle"><strong>${esc(plan)}</strong><span>＋</span></button><div class="plan-options">${ps.map(p=><button type="button" class="package-option" data-k="${p.i}"><span>${esc(p.name)}</span><span>${p.price>0?rupiah(p.price):'Tanya admin'}</span></button>).join('')}</div></div>}).join('');document.querySelectorAll('.plan-toggle').forEach(b=>b.onclick=()=>{let c=b.closest('.plan-card');c.classList.toggle('open');b.lastElementChild.textContent=c.classList.contains('open')?'−':'＋'});document.querySelectorAll('.package-option').forEach(b=>b.onclick=()=>choosePack(+b.dataset.k));}function choosePack(i){let p=selected.packages[i];if(!p)return;let plan=p.plan||'Umum',ps=selected.packages.filter(x=>(x.plan||'Umum')===plan);$('chosenPlan').innerHTML=<option>${esc(plan)}</option>;$('chosenPlan').value=plan;$('chosenPackage').innerHTML=ps.map((x,j)=><option value="${j}">${esc(x.name)}</option>).join('');$('chosenPackage').value=ps.indexOf(p);document.querySelectorAll('.plan-card').forEach(c=>{let on=c.querySelector('strong').textContent===plan;c.classList.toggle('open',on);c.querySelector('.plan-toggle span').textContent=on?'−':'＋'});document.querySelectorAll('.package-option').forEach(b=>b.classList.toggle('selected',+b.dataset.k===i));$('chosenPrice').textContent=p.price>0?rupiah(p.price):'Tanya admin';}
-function closeOrder(){ $('modal').classList.add('hidden');document.body.style.overflow=$('rulesModal').classList.contains('hidden')?'':'hidden';}$('close').onclick=closeOrder;$('modal').onclick=e=>{if(e.target===$('modal'))closeOrder()};$('search').oninput=render;$('category').onchange=render;$('orderForm').onsubmit=e=>{e.preventDefault();let plan=$('chosenPlan').value,ps=selected.packages.filter(p=>(p.plan||'Umum')===plan),pack=ps[+$('chosenPackage').value],name=$('customer').value.trim(),device=$('customerDevice').value.trim(),city=$('customerCity').value.trim();if(!pack||!name||!device||!city){alert('Mohon lengkapi data dan pilih paket, yaa!');return;}let msg=['୨୧ FORM ORDER MITCHA STORE ୨୧','',Nama: ${name},Produk: ${selected.name},Plan: ${plan},Paket/durasi: ${pack.name},Harga katalog: ${pack.price>0?rupiah(pack.price):'Tanyakan admin'},Device Login: ${device},Lokasi (Kota): ${city},'','haloo, kak cha! ^^ aku mau order nihh >< boleh bantu cek stocknya dulu? kalau masih ready, kabarin aku buat lanjut payment-nya, yaa. makasih banyak, kak! ♡'].join('\n');window.open(https://wa.me/${WA}?text=${encodeURIComponent(msg)},'_blank','noopener,noreferrer')};
+function render(){
+  let cats=[...new Set([
+    ...CATS,
+    ...PRODUCTS.map(p=>p.category).filter(Boolean)
+  ])].filter(c=>PRODUCTS.some(p=>p.category===c));
+
+  let old=$('category').value;
+
+  $('category').innerHTML=
+    '<option value="">Semua kategori</option>'+
+    cats.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+
+  $('category').value=cats.includes(old)?old:'';
+
+  let q=$('search').value.toLowerCase().trim();
+  let cat=$('category').value;
+
+  let filtered=PRODUCTS.filter(p=>
+    (!cat||p.category===cat)&&
+    (`${p.name} ${p.category} ${p.desc} ${p.note}`.toLowerCase().includes(q))
+  );
+
+  let groups=cats.filter(c=>filtered.some(p=>p.category===c));
+
+  $('products').innerHTML=filtered.length
+    ?groups.map((g,gi)=>{
+      let items=filtered
+        .filter(p=>p.category===g)
+        .sort((a,b)=>a.name.localeCompare(b.name,'id'));
+
+      return `
+        <section class="group">
+          <div class="heading">
+            <span class="flower">${['✿','♡','✦','❀'][gi%4]}</span>
+            <h3>${esc(g)}</h3>
+            <span class="count">${items.length} produk</span>
+            <span class="rule"></span>
+          </div>
+
+          <div class="grid">
+            ${items.map(p=>{
+              let pi=PRODUCTS.indexOf(p);
+
+              let plans=[...new Set(
+                p.packages.map(x=>x.plan||'Umum')
+              )];
+
+              return `
+                <article class="product">
+
+                  <h4>${esc(p.name)}</h4>
+
+                  <p class="desc">${esc(p.desc)}</p>
+
+                  ${p.note?`
+                    <div class="product-note">
+                      ${esc(p.note)}
+                    </div>
+                  `:''}
+
+                  <div class="product-packages">
+
+                    ${plans.map(plan=>{
+                      let packs=p.packages
+                        .map((x,i)=>({...x,i}))
+                        .filter(x=>(x.plan||'Umum')===plan);
+
+                      return `
+                        <div class="package-group">
+
+                          ${plan!=='Umum'?`
+                            <div class="package-plan">
+                              ${esc(plan)}
+                            </div>
+                          `:''}
+
+                          <div class="package-list">
+
+                            ${packs.map(x=>`
+                              <div class="package-row">
+
+                                <div class="package-name">
+                                  ${esc(x.name)}
+                                </div>
+
+                                <div class="package-price">
+                                  ${x.price>0?rupiah(x.price):'Tanya admin'}
+                                </div>
+
+                                <button
+                                  type="button"
+                                  class="package-buy"
+                                  data-p="${pi}"
+                                  data-k="${x.i}">
+                                  Order
+                                </button>
+
+                              </div>
+                            `).join('')}
+
+                          </div>
+                        </div>
+                      `;
+                    }).join('')}
+
+                  </div>
+                </article>
+              `;
+            }).join('')}
+          </div>
+        </section>
+      `;
+    }).join('')
+    :'<div class="empty">Belum ada produk yang cocok. Coba kata kunci lain yaa ♡</div>';
+
+  $('products').querySelectorAll('.package-buy').forEach(b=>{
+    b.onclick=()=>openProduct(+b.dataset.p,+b.dataset.k);
+  });
+}
+function openProduct(pi,ki){selected=PRODUCTS[pi];$('chosenProduct').value=selected.name;$('customer').value=$('customerDevice').value=$('customerCity').value='';$('chosenPlan').innerHTML='';$('chosenPackage').innerHTML='';$('chosenPrice').textContent='Pilih paket';renderPlans();choosePack(ki);$('modal').classList.remove('hidden');document.body.style.overflow='hidden';}function renderPlans(){let plans=[...new Set(selected.packages.map(p=>p.plan||'Umum'))];$('planChoices').innerHTML=plans.map(plan=>{let ps=selected.packages.map((p,i)=>({...p,i})).filter(p=>(p.plan||'Umum')===plan);return `<div class="plan-card"><button class="plan-toggle"><strong>${esc(plan)}</strong><span>＋</span></button><div class="plan-options">${ps.map(p=>`<button type="button" class="package-option" data-k="${p.i}"><span>${esc(p.name)}</span><span>${p.price>0?rupiah(p.price):'Tanya admin'}</span></button>`).join('')}</div></div>`}).join('');document.querySelectorAll('.plan-toggle').forEach(b=>b.onclick=()=>{let c=b.closest('.plan-card');c.classList.toggle('open');b.lastElementChild.textContent=c.classList.contains('open')?'−':'＋'});document.querySelectorAll('.package-option').forEach(b=>b.onclick=()=>choosePack(+b.dataset.k));}function choosePack(i){let p=selected.packages[i];if(!p)return;let plan=p.plan||'Umum',ps=selected.packages.filter(x=>(x.plan||'Umum')===plan);$('chosenPlan').innerHTML=`<option>${esc(plan)}</option>`;$('chosenPlan').value=plan;$('chosenPackage').innerHTML=ps.map((x,j)=>`<option value="${j}">${esc(x.name)}</option>`).join('');$('chosenPackage').value=ps.indexOf(p);document.querySelectorAll('.plan-card').forEach(c=>{let on=c.querySelector('strong').textContent===plan;c.classList.toggle('open',on);c.querySelector('.plan-toggle span').textContent=on?'−':'＋'});document.querySelectorAll('.package-option').forEach(b=>b.classList.toggle('selected',+b.dataset.k===i));$('chosenPrice').textContent=p.price>0?rupiah(p.price):'Tanya admin';}
+function closeOrder(){ $('modal').classList.add('hidden');document.body.style.overflow=$('rulesModal').classList.contains('hidden')?'':'hidden';}$('close').onclick=closeOrder;$('modal').onclick=e=>{if(e.target===$('modal'))closeOrder()};$('search').oninput=render;$('category').onchange=render;$('orderForm').onsubmit=e=>{e.preventDefault();let plan=$('chosenPlan').value,ps=selected.packages.filter(p=>(p.plan||'Umum')===plan),pack=ps[+$('chosenPackage').value],name=$('customer').value.trim(),device=$('customerDevice').value.trim(),city=$('customerCity').value.trim();if(!pack||!name||!device||!city){alert('Mohon lengkapi data dan pilih paket, yaa!');return;}let msg=['*୨୧ FORM ORDER MITCHA STORE ୨୧*','',`Nama: ${name}`,`Produk: ${selected.name}`,`Plan: ${plan}`,`Paket/durasi: ${pack.name}`,`Harga katalog: ${pack.price>0?rupiah(pack.price):'Tanyakan admin'}`,`Device Login: ${device}`,`Lokasi (Kota): ${city}`,'','haloo, kak cha! ^^ aku mau order nihh >< boleh bantu cek stocknya dulu? kalau masih ready, kabarin aku buat lanjut payment-nya, yaa. makasih banyak, kak! ♡'].join('\n');window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank','noopener,noreferrer')};
 $('openRules').onclick=()=>{$('rulesModal').classList.remove('hidden');document.body.style.overflow='hidden'};function hideRules(){$('rulesModal').classList.add('hidden');document.body.style.overflow=$('modal').classList.contains('hidden')?'':'hidden'}$('closeRules').onclick=hideRules;$('agreeRules').onclick=hideRules;$('rulesModal').onclick=e=>{if(e.target===$('rulesModal'))hideRules()};document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('rulesModal').classList.contains('hidden'))hideRules();else if(!$('modal').classList.contains('hidden'))closeOrder()}});render();loadDB();
 </script>
-
-</body>  
+</body>
 </html>
