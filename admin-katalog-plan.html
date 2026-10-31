@@ -3,28 +3,56 @@
 </style></head><body><main class="wrap"><header class="head"><div class="brand"> Mitcha Store <small>Admin katalog produk · strawberry matcha</small></div><div><a href="./index.html" style="color:var(--dark);font-weight:700;margin-right:12px">Lihat website</a><button id="logout" class="secondary hidden">Keluar</button></div></header>
 <div id="status" class="status">Hubungkan halaman ini ke project Supabase kamu terlebih dahulu lewat file config.js.</div>
 <section id="loginPanel" class="panel"><h2>Login admin</h2><form id="loginForm"><div class="formgrid"><div class="field full"><label>Email admin</label><input id="email" type="email" required autocomplete="username" placeholder="Email akun admin Supabase"></div><div class="field full"><label>Password</label><input id="password" type="password" required autocomplete="current-password" placeholder="Password admin"></div></div><div class="actions"><button class="primary" type="submit">Login</button></div></form><p class="hint">Gunakan akun admin Supabase yang sudah kamu buat. Jangan bagikan password ke siapa pun.</p></section>
-<div id="appPanel" class="hidden"><section class="panel"><h2 id="formTitle">Tambah produk baru</h2><form id="productForm"><input id="productId" type="hidden"><div class="formgrid"><div class="field"><label>Nama produk *</label><input id="name" required maxlength="100" placeholder="Contoh: Canva"></div><div class="field"><label>Kategori *</label><select id="category" required>
-  <option value="Streaming">Streaming</option>
-  <option value="Design & Editing">Design & Editing</option>
-  <option value="Education">Education</option>
-  <option value="Listening">Listening</option>
-  <option value="Top Up Game">Top Up Game</option>
-  <option value="Pulsa & Kuota">Pulsa & Kuota</option>
-  <option value="Token Listrik">Token Listrik</option>
-  <option value="Other">Other</option>
-</select>
-<input id="description" maxlength="200" placeholder="Contoh: Paket desain premium">
-</div>
-<div class="field full">
-<label>Note Produk</label>
-<textarea id="note" maxlength="3000" placeholder="Contoh:
+<div id="appPanel" class="hidden"><section class="panel"><h2 id="formTitle">Tambah produk baru</h2><form id="productForm"><input id="productId" type="hidden"><div class="formgrid">
+
+  <div class="field">
+    <label>Nama produk *</label>
+    <input id="name" required maxlength="100" placeholder="Contoh: Canva">
+  </div>
+
+  <div class="field">
+    <label>Kategori *</label>
+    <select id="category" required>
+      <option value="Streaming">Streaming</option>
+      <option value="Design & Editing">Design & Editing</option>
+      <option value="Education">Education</option>
+      <option value="Listening">Listening</option>
+      <option value="Top Up Game">Top Up Game</option>
+      <option value="Pulsa & Kuota">Pulsa & Kuota</option>
+      <option value="Token Listrik">Token Listrik</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div class="field full">
+    <label>Deskripsi singkat</label>
+    <input id="description" maxlength="200" placeholder="Contoh: Paket desain premium">
+  </div>
+
+  <div class="field full">
+    <label>Note Produk</label>
+    <textarea id="note" maxlength="3000" placeholder="Contoh:
 ⌗ Family plan menggunakan sistem renewal.
 ⌗ Gmail maksimal 1–2 kali join.
 ⌗ Email sendiri wajib fresh."></textarea>
-<p class="hint">Note ini akan ditampilkan kepada pembeli pada detail produk.</p>
-</div>
-<div class="field full">
-<label>Daftar plan dan harga *</label><textarea id="packages" required placeholder="Famplan | 1 bulan | 30000&#10;Famplan | 2 bulan | 53000&#10;Famplan | 3 bulan | 75000&#10;Indplan | 1 bulan | 38000&#10;Indplan | 2 bulan | 60000"></textarea><p class="hint">Tambahkan satu harga per baris dengan format <b>Nama plan | durasi | harga</b>. Nama plan yang sama akan dikelompokkan menjadi satu tombol di Web Order. Contoh: Famplan | 1 bulan | 30000, lalu Famplan | 3 bulan | 75000. Untuk plan lain, tulis nama berbeda, misalnya Indplan | 1 bulan | 38000. Harga gunakan angka saja tanpa titik/koma. Setelah selesai, tekan <b>Simpan produk</b>.</p></div><div class="field"><label>Status produk</label><select id="active"><option value="true">Tampil di katalog</option><option value="false">Sembunyikan dari katalog</option></select></div></div><div class="actions"><button class="primary" type="submit">Simpan produk</button><button class="secondary" type="button" id="resetForm">Batal / kosongkan</button></div></form></section><section class="panel"><h2>Daftar produk</h2><div class="field" style="margin-bottom:12px"><label>Cari produk</label><input id="filter" placeholder="Cari nama produk..."></div><div id="items" class="items"></div></section></div>
+    <p class="hint">Note ini akan ditampilkan kepada pembeli pada detail produk.</p>
+  </div>
+
+  <div class="field full">
+    <label>Daftar plan dan harga *</label>
+    <textarea id="packages" required placeholder="Famplan | 1 bulan | 30000&#10;Famplan | 2 bulan | 53000&#10;Famplan | 3 bulan | 75000&#10;Indplan | 1 bulan | 38000&#10;Indplan | 2 bulan | 60000"></textarea>
+    <p class="hint">Tambahkan satu harga per baris dengan format <b>Nama plan | durasi | harga</b>. Nama plan yang sama akan dikelompokkan menjadi satu tombol di Web Order. Harga gunakan angka saja tanpa titik/koma.</p>
+  </div>
+
+  <div class="field">
+    <label>Status produk</label>
+    <select id="active">
+      <option value="true">Tampil di katalog</option>
+      <option value="false">Sembunyikan dari katalog</option>
+    </select>
+  </div>
+
+</div><div class="actions"><button class="primary" type="submit">Simpan produk</button><button class="secondary" type="button" id="resetForm">Batal / kosongkan</button></div></form></section><section class="panel"><h2>Daftar produk</h2><div class="field" style="margin-bottom:12px"><label>Cari produk</label><input id="filter" placeholder="Cari nama produk..."></div><div id="items" class="items"></div></section></div>
 </main><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./config.js"></script><script>
 const $=id=>document.getElementById(id);let db=null,allProducts=[];function msg(t,err=false){$('status').textContent=t;$('status').classList.toggle('error',err)}function ready(){return window.CHANARRA_SUPABASE_URL&&window.CHANARRA_SUPABASE_KEY&&!window.CHANARRA_SUPABASE_URL.includes('ISI_SUPABASE')&&!window.CHANARRA_SUPABASE_KEY.includes('ISI_SUPABASE')}
 function parsePackages(raw){return raw.split('\n').map(line=>line.trim()).filter(Boolean).map(line=>{const parts=line.split('|').map(x=>x.trim());if(parts.length===2){const priceText=parts[1];if(!parts[0])throw Error('Nama paket tidak boleh kosong.');if(!/^\d+$/.test(priceText))throw Error('Harga harus angka tanpa titik/koma, contoh 30000.');return{plan:'Umum',name:parts[0],price:Number(priceText)}}if(parts.length===3){const[plan,name,priceText]=parts;if(!plan||!name)throw Error('Nama plan dan durasi/paket tidak boleh kosong.');if(!/^\d+$/.test(priceText))throw Error('Harga harus angka tanpa titik/koma, contoh 30000.');return{plan,name,price:Number(priceText)}}throw Error('Format salah. Gunakan Nama plan | durasi/paket | harga.')} )}function packText(packages){return(packages||[]).map(p=>`${p.plan||'Umum'} | ${p.name||''} | ${Number(p.price)||0}`).join('\n')}
