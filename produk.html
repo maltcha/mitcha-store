@@ -1,649 +1,1246 @@
 <!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fff8f6">
+<meta name="description" content="Jelajahi katalog produk Mitcha Store.">
+<title>Products — Mitcha Store</title>
 
-<html lang="id">      
-<head>      
-<meta charset="utf-8">      
-<meta name="viewport" content="width=device-width,initial-scale=1">      
-<meta name="theme-color" content="#fff8f6">      
-<meta name="description" content="Jelajahi katalog produk Mitcha Store.">      
-<title>Products — Mitcha Store</title>      
-<link rel="preconnect" href="https://fonts.googleapis.com">      
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>      
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">      
-<style>    
-.app-icon img{    
-  width:30px;    
-  height:30px;    
-  object-fit:contain;    
-  display:block;    
-}  .app-icon .logo-fallback{  
-font:700 15px 'Fredoka',sans-serif;  
-color:var(--dark);  
-}  
-:root{--berry:#d99aaa;--dark:#b9798c;--green:#829477;--ink:#62565a;--muted:#a39796;--cream:#fffaf6;--line:#f0e2dc;--pink:#fff0f3;--matcha:#edf2e5}  
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 0 8%,#f7d8e077,transparent 280px),radial-gradient(circle at 100% 45%,#e7eddc88,transparent 300px),var(--cream);color:var(--ink);font:14px/1.65 'Nunito',sans-serif}  
-a{color:inherit;text-decoration:none}button,input,select{font:inherit}.container{width:min(1120px,calc(100% - 30px));margin:auto}  
-.announcement{background:var(--matcha);color:#647653;text-align:center;padding:7px 10px;font-size:10px;font-weight:900}  
-header{position:sticky;top:0;z-index:10;background:#fffaf6ed;backdrop-filter:blur(12px);border-bottom:1px solid #f0e5e0}  
-.top{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:10px}.logo{width:43px;height:43px;border-radius:14px;object-fit:cover;background:linear-gradient(145deg,#ffe7ed,#fff6ef 60%,#e7eddc)}.brand h1{font:600 21px 'Fredoka',sans-serif;color:var(--dark);margin:0}.brand p{font-size:9px;color:var(--muted);margin:1px 0 0}  
-.actions{display:flex;gap:8px;align-items:center}.chip{border:1px solid var(--line);background:white;border-radius:99px;padding:8px 12px;font-size:10px;font-weight:900;color:var(--dark)}.cart{border:1px solid var(--line);background:white;border-radius:13px;padding:9px 12px;font-weight:900;font-size:12px}.count{display:inline-grid;place-items:center;min-width:19px;height:19px;border-radius:99px;background:var(--berry);color:white;font-size:10px;margin-left:3px}  
-.hero{margin:23px 0 18px;padding:25px clamp(18px,4vw,35px);border:1px solid var(--line);border-radius:24px;background:linear-gradient(112deg,#fff0f3,#fff9f1 55%,#edf2e5)}.eyebrow{font-size:10px;letter-spacing:1px;color:#a45e70;font-weight:1000}.hero h2{font:600 clamp(27px,5vw,39px)/1.15 'Fredoka',sans-serif;color:#80616a;margin:7px 0}.hero h2 em{font-style:normal;color:var(--dark)}.hero p{font-size:11px;color:#817779;margin:0;max-width:650px}  
-.toolbar{display:grid;grid-template-columns:1fr 220px;gap:10px;padding:10px;border:1px solid var(--line);border-radius:17px;background:#ffffffc9;margin:18px 0}.toolbar input,.toolbar select{width:100%;height:44px;border:1px solid #eee5df;border-radius:12px;padding:9px 13px;background:white;color:var(--ink);outline:none}.toolbar input:focus,.toolbar select:focus{border-color:var(--berry);box-shadow:0 0 0 3px #f7d8e055}  
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:10px;margin:25px 0 13px}.section-head h3{font:500 22px 'Fredoka',sans-serif;color:#80616a;margin:0}.section-head p{font-size:10px;color:var(--muted);margin:2px 0 0}  
-.product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.product{min-width:0;background:#fffefd;border:1px solid #eee6df;border-radius:19px;padding:15px;box-shadow:0 5px 18px #503c2d08;display:flex;flex-direction:column;transition:.2s}.product:hover{transform:translateY(-3px);box-shadow:0 12px 26px #9d6c7614;border-color:#e8c4cd}  
-.product-top{display:flex;align-items:center;gap:11px;margin-bottom:10px}.app-icon{width:49px;height:49px;flex:0 0 49px;border-radius:16px;background:linear-gradient(145deg,#fff0f3,#edf2e5);display:grid;place-items:center;font-size:24px}.product h4{font:500 17px 'Fredoka',sans-serif;color:#80616a;margin:0;line-height:1.2}.category-label{display:inline-block;font-size:9px;font-weight:900;color:var(--green);margin-top:4px}.desc{font-size:10px;color:#898277;margin:0 0 10px;min-height:34px}.note{white-space:pre-line;background:#fff4e5;color:#7a5520;padding:8px 9px;border-radius:10px;font-size:10px;margin:0 0 10px}  
-.price-line{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:10px;border-top:1px solid #f3ece8}.price-line small{font-size:9px;color:var(--muted)}.price-line strong{font-size:13px;color:var(--dark);font-weight:1000}.view-btn{width:100%;border:0;border-radius:11px;background:var(--berry);color:white;padding:10px;margin-top:11px;font-size:11px;font-weight:1000;cursor:pointer}.view-btn:hover{background:var(--dark)}  
-.empty{padding:35px 15px;text-align:center;background:white;border:1px dashed #e6d9d6;border-radius:17px;color:var(--muted);grid-column:1/-1}.loading{padding:25px;text-align:center;color:var(--muted)}  
-.footer{margin:30px 0 100px;padding:20px;text-align:center;border-radius:18px;background:linear-gradient(110deg,#fff0f3,#fffaf4 55%,#edf2e5);font:500 14px 'Fredoka',sans-serif;color:#80616a}  
-.modal{position:fixed;inset:0;z-index:30;background:#5a484c70;backdrop-filter:blur(4px);display:grid;place-items:center;padding:12px}.hidden{display:none!important}.box{width:min(540px,100%);max-height:92vh;overflow:auto;background:#fffbf9;border-radius:23px;padding:19px;box-shadow:0 20px 70px #49323b30}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:13px}.modal-head h2{font:500 21px 'Fredoka',sans-serif;color:#80616a;margin:0}.close{border:1px solid #f2dce1;border-radius:10px;background:#fcebef;color:var(--dark);padding:7px 10px;cursor:pointer}  
-.detail-intro{display:flex;align-items:center;gap:12px;padding:12px;border-radius:15px;background:linear-gradient(120deg,#fff0f3,#edf2e5);margin-bottom:14px}.detail-intro .app-icon{width:55px;height:55px}.detail-intro h3{font:500 18px 'Fredoka',sans-serif;margin:0;color:#80616a}.detail-intro p{font-size:10px;margin:2px 0 0;color:#827779}  
-.label{font-size:11px;font-weight:1000;display:block;margin:12px 0 7px}.plan-card{border:1px solid #eee4df;border-radius:12px;background:white;margin-bottom:8px;overflow:hidden}.plan-toggle{width:100%;display:flex;justify-content:space-between;padding:11px 12px;border:0;background:white;text-align:left;color:var(--ink);font-weight:1000;cursor:pointer}.plan-options{display:none;padding:0 8px 8px;gap:7px}.plan-card.open .plan-options{display:grid}.package-option{display:flex;justify-content:space-between;align-items:center;gap:8px;text-align:left;border:1px solid #f0dce1;background:#fff7f8;padding:10px;border-radius:10px;font-size:11px;cursor:pointer;color:var(--ink)}.package-option span:last-child{font-weight:1000;color:var(--dark);white-space:nowrap}.package-option.selected{background:#edf2e5;border-color:#cbd8bd}  
-.quantity-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px 0}.qty{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;padding:5px;background:white}.qty button{border:0;background:#fff0f3;color:var(--dark);border-radius:8px;width:30px;height:30px;font-weight:1000;cursor:pointer}.qty strong{min-width:16px;text-align:center}.total{padding:12px;border-radius:13px;background:linear-gradient(120deg,#edf2e5,#fff0f3);margin:12px 0;font-size:10px}.total strong{display:block;font-size:21px;color:var(--dark)}.add-btn{width:100%;padding:13px;border:0;border-radius:12px;background:var(--berry);color:white;font-weight:1000;cursor:pointer}.add-btn:disabled{opacity:.5;cursor:not-allowed}  
-.rules{font-size:11px;line-height:1.8}.rules p{background:white;border:1px solid #f0e5e2;border-radius:11px;padding:9px;margin:0 0 8px}.rules b{color:var(--dark)}  
-.mobile-nav{display:none}  
-@media(max-width:850px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}  
-@media(max-width:560px){.container{width:calc(100% - 22px)}.top{min-height:64px}.brand h1{font-size:18px}.brand p{font-size:8px}.chip{display:none}.toolbar{grid-template-columns:1fr}.product-grid{grid-template-columns:1fr 1fr;gap:9px}.product{padding:11px;border-radius:16px}.product-top{gap:8px}.app-icon{width:42px;height:42px;flex-basis:42px;border-radius:13px;font-size:21px}.product h4{font-size:15px}.desc{font-size:9px;min-height:48px}.price-line{align-items:flex-start;flex-direction:column;gap:1px}.price-line strong{font-size:12px}.view-btn{font-size:10px;padding:9px 5px}.mobile-nav{position:fixed;z-index:25;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(4,1fr);padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:#fffdf9ed;backdrop-filter:blur(14px);border-top:1px solid #f0e5e0}.mobile-nav a{text-align:center;font-size:9px;font-weight:900;color:#95888a}.mobile-nav a span{display:block;font-size:19px;line-height:1.4}.mobile-nav a.active{color:var(--dark)}.footer{margin-bottom:105px}}  
-</style>  </head>      
-<body>      
-<div class="announcement">♡ Mitcha Store · Open daily 07.00–23.59 WIB ♡</div>      
-<header><div class="container top">      
-  <a class="brand" href="./index.html">      
-    <img class="logo" src="assets/logo-mitcha.png" alt="Mitcha Store" onerror="this.outerHTML='<span class=&quot;logo&quot; style=&quot;display:grid;place-items:center;font-size:22px&quot;>🐈</span>'">      
-    <span><h1>Mitcha Store</h1><p>your tiny corner of digital happiness ♡</p></span>      
-  </a>      
-  <div class="actions"><a class="chip" href="./index.html">← Home</a><button class="chip" id="openRules" type="button">♡ Regulasi & SNK</button><a class="cart" href="./cart.html">🛒 <span data-cart-count class="count">0</span></a></div>      
-</div></header>  <main class="container">      
-  <section class="hero"><span class="eyebrow">✿ FIND YOUR FAVORITE</span><h2>Little treats for your<br><em>digital days.</em></h2><p>Pilih produk dan paket yang kamu suka. Tambahkan ke keranjang, lalu checkout setelah admin mengonfirmasi stok dan harga. ♡</p></section>    <div class="section-head"><div><h3>Explore our products ♡</h3><p id="resultInfo">Pilih produk favoritmu dari katalog Mitcha Store.</p></div></div>      
-  <div class="toolbar">      
-    <input id="search" type="search" placeholder="⌕ Cari produk favoritmu…" aria-label="Cari produk">      
-    <select id="category" aria-label="Filter kategori"><option value="">Semua kategori</option></select>      
-  </div>      
-  <div id="products" class="product-grid"><div class="loading">Menyiapkan katalog Mitcha Store... ♡</div></div>      
-  <div class="footer">Thank you for shopping babe ♡<br><span style="font:11px 'Nunito',sans-serif;color:#a39796">Have a lovely day!</span></div>      
-</main>  <nav class="mobile-nav" aria-label="Navigasi bawah">      
-  <a href="./index.html"><span>⌂</span>Home</a>      
-  <a class="active" href="./produk.html"><span>♡</span>Products</a>      
-  <a href="./cart.html"><span>🛒</span>Cart <b data-cart-count>0</b></a>      
-  <a href="./pesanan.html"><span>📦</span>Orders</a>      
-</nav>  <div class="modal hidden" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle">      
- <div class="box">      
-  <div class="modal-head"><h2 id="detailTitle">Product details ♡</h2><button class="close" type="button" data-close="detailModal">Tutup ✕</button></div>      
-  <div id="detailContent"></div>      
- </div>      
-</div>  <div class="modal hidden" id="rulesModal" role="dialog" aria-modal="true">      
- <div class="box">      
-  <div class="modal-head"><h2>♡ Regulasi App Prem</h2><button class="close" type="button" data-close="rulesModal">Tutup ✕</button></div>      
-  <div class="rules">      
-   <p>˚₊·—̳͟͞͞♡ Web ini berisi pricelist produk. Kalau aplikasi yang kamu cari belum ada, boleh tanya admin dulu, yaa!</p>      
-   <p>˚₊·—̳͟͞͞♡ <b>No rush & rude buyer!</b> Mohon bersabar dan tetap sopan selama transaksi.</p>      
-   <p>˚₊·—̳͟͞͞♡ Budayakan tanya sebelum order untuk memastikan stok dan ketersediaan produk.</p>      
-   <p>˚₊·—̳͟͞͞♡ Pahami risiko produk sebelum membeli dan pastikan stok serta harga dikonfirmasi admin sebelum pembayaran.</p>      
-   <p>˚₊·—̳͟͞͞♡ Estimasi proses order sekitar <b>30–45 menit</b>. Beberapa produk bisa lebih cepat, sedangkan produk tertentu mungkin membutuhkan waktu lebih lama.</p>      
-   <p>˚₊·—̳͟͞͞♡ Garansi mengikuti ketentuan masing-masing aplikasi dan supplier. Wajib mengirimkan bukti berhasil login untuk klaim garansi.</p>      
-   <p>˚₊·—̳͟͞͞♡ Estimasi proses garansi maksimal 7 hari. Kendala limit bawaan aplikasi tidak termasuk garansi.</p>      
-   <p>˚₊·—̳͟͞͞♡ Khusus aplikasi AI seperti ChatGPT & Claude, kendala backfree mendapat penanganan sesuai ketentuan, sedangkan akun banned/disable mendapat satu kali upaya penggantian.</p>      
-   <p>˚₊·—̳͟͞͞♡ Apabila terjadi kendala, segera hubungi admin dengan menyertakan bukti yang diperlukan.</p>      
-   <p>˚₊·—̳͟͞͞♡ Melakukan order berarti buyer telah membaca dan menyetujui regulasi serta SNK yang berlaku. 💗</p>      
-  </div>      
- </div>      
-</div>  
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>  
-<script src="./config.js"></script>  <script>  
-'use strict';  
-  
-const CATS = [  
-  'Streaming',  
-  'Design & Editing',  
-  'Education',  
-  'Listening',  
-  'Top Up Game',  
-  'Pulsa & Kuota',  
-  'Token Listrik',  
-  'Reading',  
-  'Other'  
-];  
-  
-/* LOGO PRODUK — hanya untuk mencocokkan ikon */  
-const CATALOG = [  
-  ['ADOBE CREATIVE','Design & Editing','adobecreativecloud'],  
-  ['ADOBE','Design & Editing','adobecreativecloud'],  
-  ['ALIGHT MOTION','Design & Editing',''],  
-  ['APPLE MUSIC','Listening','applemusic'],  
-  ['APPLE TV','Streaming','appletv'],  
-  ['BEAUTY PLUS','Design & Editing',''],  
-  ['BLACKBOX AI','Education',''],  
-  ['BSTATION','Streaming',''],  
-  ['CAMSCANNER','Education',''],  
-  ['CANVA','Design & Editing','canva'],  
-  ['CAPCUT PRO','Design & Editing','capcut'],  
-  ['CAPCUT STANDARD','Design & Editing','capcut'],  
-  ['CHATGPT GO','Education','openai'],  
-  ['CHATGPT PLUS','Education','openai'],  
-  ['CHATGPT TEAM','Education','openai'],  
-  ['CLAUDE AI','Education','anthropic'],  
-  ['CRUNCHYROLL','Streaming','crunchyroll'],  
-  ['DEEPL','Education','deepl'],  
-  ['DISCORD','Other','discord'],  
-  ['DISNEY','Streaming','disneyplus'],  
-  ['DUOLINGO','Education','duolingo'],  
-  ['EXPRESS VPN','Other','expressvpn'],  
-  ['FIGMA PRO','Design & Editing','figma'],  
-  ['GMEET','Education','googlemeet'],  
-  ['GOOGLE FLOW','Design & Editing','google'],  
-  ['GOOGLE ONE','Other','googleone'],  
-  ['GRAMMARLY','Education','grammarly'],  
-  ['GROK AI','Education','x'],  
-  ['HBO','Streaming','hbo'],  
-  ['IQIYI','Streaming','iqiyi'],  
-  ['KAHOOT','Education','kahoot'],  
-  ['LIGHTROOM','Design & Editing','adobelightroom'],  
-  ['MS365','Education','microsoft365'],  
-  ['NETFLIX','Streaming','netflix'],  
-  ['NORD VPN','Other','nordvpn'],  
-  ['PERPLEXITY AI','Education','perplexity'],  
-  ['PRIME VIDEO','Streaming','primevideo'],  
-  ['SCRIBD','Reading','scribd'],  
-  ['SPOTIFY','Listening','spotify'],  
-  ['VIDIO PLATINUM','Streaming','vidio'],  
-  ['VIDIO ULTIMATE','Streaming','vidio'],  
-  ['VIKI','Streaming','viki'],  
-  ['VSCO','Design & Editing','vsco'],  
-  ['WATTPAD','Reading','wattpad'],  
-  ['WETV','Streaming','wetv'],  
-  ['YOUKU','Streaming','youku'],  
-  ['YOUTUBE','Streaming','youtube'],  
-  ['ZOOM','Education','zoom']  
-];  
-  
-const LOGO_COLORS = {  
-  ADOBE:'#ed1c24',  
-  CANVA:'#00c4cc',  
-  SPOTIFY:'#1db954',  
-  NETFLIX:'#e50914',  
-  YOUTUBE:'#ff0033',  
-  DISCORD:'#5865f2',  
-  DUOLINGO:'#58cc02',  
-  FIGMA:'#f24e1e',  
-  CHATGPT:'#10a37f',  
-  CLAUDE:'#c47b54',  
-  GOOGLE:'#4285f4'  
-};  
-  
-const $ = id => document.getElementById(id);  
-  
-const rupiah = n =>  
-  Number(n) > 0  
-    ? new Intl.NumberFormat('id-ID', {  
-        style:'currency',  
-        currency:'IDR',  
-        maximumFractionDigits:0  
-      }).format(n)  
-    : 'Tanya admin';  
-  
-function esc(s) {  
-  return String(s ?? '').replace(/[&<>"']/g, c => ({  
-    '&':'&amp;',  
-    '<':'&lt;',  
-    '>':'&gt;',  
-    '"':'&quot;',  
-    "'":'&#39;'  
-  }[c]));  
-}  
-  
-function initials(name) {  
-  return String(name)  
-    .replace(/[^a-zA-Z0-9 ]/g, ' ')  
-    .trim()  
-    .split(/\s+/)  
-    .slice(0, 2)  
-    .map(x => x[0])  
-    .join('')  
-    .toUpperCase();  
-}  
-  
-/* MENCARI LOGO */  
-function iconFor(name) {  
-  const cleanName = String(name).toUpperCase();  
-  
-  const item = CATALOG.find(x => x[0] === cleanName);  
-  const slug = item?.[2] || '';  
-  const color = LOGO_COLORS[cleanName] || '#b9798c';  
-  const fallback = initials(name);  
-  
-  if (!slug) {  
-    return `<span class="logo-fallback" style="color:${color}">${fallback}</span>`;  
-  }  
-  
-  const url = `https://cdn.simpleicons.org/${slug}`;  
-  
-  return `  
-    <img  
-      src="${url}"  
-      alt="${esc(name)} logo"  
-      loading="lazy"  
-      onerror="this.outerHTML='<span class=&quot;logo-fallback&quot;>${fallback}</span>'"  
-    >  
-  `;  
-}  
-  
-/* DATA PRODUK DARI SUPABASE */  
-let PRODUCTS = [];  
-let activeProduct = null;  
-let selectedPackage = 0;  
-let quantity = 1;  
-  
-function normalize(p) {  
-  const category = ({  
-    'Aplikasi Premium':'Streaming',  
-    'Game':'Top Up Game'  
-  }[p.category] || p.category || 'Other');  
-  
-  const packages =  
-    Array.isArray(p.packages) && p.packages.length  
-      ? p.packages  
-      : [{ name:'Tanyakan paket tersedia', price:0 }];  
-  
-  return {  
-    ...p,  
-    name: String(p.name || ''),  
-    category,  
-    desc: p.desc ?? p.description ?? '',  
-    note: p.note || '',  
-    packages: packages.map(x => ({  
-      ...x,  
-      plan: String(x.plan || 'Umum'),  
-      name: String(x.name || 'Tanyakan paket tersedia'),  
-      price: Number(x.price) || 0  
-    }))  
-  };  
-}  
-  
-/* JUMLAH PRODUK DI KERANJANG */  
-function updateCartCount() {  
-  let cart = [];  
-  
-  try {  
-    cart = JSON.parse(localStorage.getItem('mitcha_cart') || '[]');  
-  } catch (_) {}  
-  
-  const count = Array.isArray(cart)  
-    ? cart.reduce((s, x) => s + (Number(x.qty) || 1), 0)  
-    : 0;  
-  
-  document.querySelectorAll('[data-cart-count]').forEach(el => {  
-    el.textContent = count;  
-  });  
-}  
-  
-/* HARGA TERMURAH */  
-function startingPrice(p) {  
-  const prices = p.packages  
-    .map(x => x.price)  
-    .filter(x => x > 0);  
-  
-  return prices.length ? Math.min(...prices) : 0;  
-}  
-  
-/* TAMPILKAN KATALOG */  
-function render() {  
-  const cats = [  
-    ...new Set([  
-      ...CATS,  
-      ...PRODUCTS.map(p => p.category).filter(Boolean)  
-    ])  
-  ];  
-  
-  const old = $('category').value;  
-  
-  $('category').innerHTML =  
-    '<option value="">Semua kategori</option>' +  
-    cats.map(c =>  
-      `<option value="${esc(c)}">${esc(c)}</option>`  
-    ).join('');  
-  
-  $('category').value = cats.includes(old) ? old : '';  
-  
-  const q = $('search').value.toLowerCase().trim();  
-  const cat = $('category').value;  
-  
-  const filtered = PRODUCTS  
-    .filter(p => {  
-      const matchesCategory = !cat || p.category === cat;  
-  
-      const searchable =  
-        `${p.name} ${p.category} ${p.desc}`.toLowerCase();  
-  
-      return matchesCategory && searchable.includes(q);  
-    })  
-    .sort((a, b) => a.name.localeCompare(b.name, 'id'));  
-  
-  $('resultInfo').textContent =  
-    `Menampilkan ${filtered.length} dari ${PRODUCTS.length} produk. Pilih produk untuk melihat pilihan paket.`;  
-  
-  $('products').innerHTML = filtered.length  
-    ? filtered.map(p => {  
-        const i = PRODUCTS.indexOf(p);  
-        const price = startingPrice(p);  
-  
-        return `  
-          <article class="product">  
-            <div class="product-top">  
-              <span class="app-icon">${iconFor(p.name)}</span>  
-              <div>  
-                <h4>${esc(p.name)}</h4>  
-                <span class="category-label">${esc(p.category)}</span>  
-              </div>  
-            </div>  
-  
-            <p class="desc">${esc(p.desc)}</p>  
-  
-            ${p.note  
-              ? `<p class="note">${esc(p.note)}</p>`  
-              : ''  
-            }  
-  
-            <div class="price-line">  
-              <small>Harga mulai dari</small>  
-              <strong>${price ? rupiah(price) : 'Tanya admin'}</strong>  
-            </div>  
-  
-            <button  
-              class="view-btn"  
-              type="button"  
-              data-detail="${i}"  
-            >  
-              Lihat pilihan paket ♡  
-            </button>  
-          </article>  
-        `;  
-      }).join('')  
-    : `  
-      <div class="empty">  
-        Belum ada produk yang cocok.<br>  
-        Coba kata kunci lain yaa ♡  
-      </div>  
-    `;  
-  
-  document.querySelectorAll('[data-detail]').forEach(b => {  
-    b.addEventListener('click', () => {  
-      openDetail(Number(b.dataset.detail));  
-    });  
-  });  
-}  
-  
-/* AMBIL PRODUK DARI DATABASE ADMIN */  
-async function loadDB() {  
-  PRODUCTS = [];  
-  render();  
-  
-  try {  
-    if (  
-      !window.CHANARRA_SUPABASE_URL ||  
-      !window.CHANARRA_SUPABASE_KEY ||  
-      !window.supabase  
-    ) {  
-      throw new Error('Konfigurasi Supabase tidak ditemukan.');  
-    }  
-  
-    const db = window.supabase.createClient(  
-      window.CHANARRA_SUPABASE_URL,  
-      window.CHANARRA_SUPABASE_KEY  
-    );  
-  
-    const { data, error } = await db  
-      .from('products')  
-      .select('name,category,description,note,packages,active')  
-      .eq('active', true)  
-      .order('name');  
-  
-    if (error) throw error;  
-  
-    PRODUCTS = (data || []).map(p => normalize({  
-      name: p.name,  
-      category: p.category,  
-      desc: p.description || '',  
-      note: p.note || '',  
-      packages: p.packages  
-    }));  
-  
-    render();  
-  
-  } catch (error) {  
-    console.error('Gagal memuat produk:', error);  
-  
-    PRODUCTS = [];  
-  
-    $('products').innerHTML = `  
-      <div class="empty">  
-        Katalog belum dapat dimuat.<br>  
-        Silakan coba lagi nanti yaa ♡  
-      </div>  
-    `;  
-  
-    $('resultInfo').textContent = 'Katalog belum tersedia.';  
-  }  
-}  
-  
-/* DETAIL PRODUK */  
-function openDetail(index) {  
-  activeProduct = PRODUCTS[index];  
-  
-  if (!activeProduct) return;  
-  
-  selectedPackage = 0;  
-  quantity = 1;  
-  
-  $('detailTitle').textContent = 'Product details ♡';  
-  
-  renderDetail();  
-  
-  $('detailModal').classList.remove('hidden');  
-  document.body.style.overflow = 'hidden';  
-}  
-  
-/* TAMPILKAN PILIHAN PAKET */  
-function renderDetail() {  
-  const p = activeProduct;  
-  if (!p) return;  
-  
-  const plans = [  
-    ...new Set(p.packages.map(x => x.plan || 'Umum'))  
-  ];  
-  
-  const selected = p.packages[selectedPackage] || p.packages[0];  
-  
-  $('detailContent').innerHTML = `  
-    <div class="detail-intro">  
-      <span class="app-icon">${iconFor(p.name)}</span>  
-      <div>  
-        <h3>${esc(p.name)}</h3>  
-        <p>${esc(p.desc)}</p>  
-      </div>  
-    </div>  
-  
-    ${p.note ? `<p class="note">${esc(p.note)}</p>` : ''}  
-  
-    <span class="label">Pilih plan dan paket</span>  
-  
-    <div id="planList">  
-      ${plans.map(plan => {  
-        const options = p.packages  
-          .map((x, i) => ({ ...x, i }))  
-          .filter(x => (x.plan || 'Umum') === plan);  
-  
-        const isOpen = options.some(x => x.i === selectedPackage);  
-  
-        return `  
-          <div class="plan-card ${isOpen ? 'open' : ''}">  
-            <button type="button" class="plan-toggle">  
-              <span>${esc(plan)}</span>  
-              <span>${isOpen ? '−' : '＋'}</span>  
-            </button>  
-  
-            <div class="plan-options">  
-              ${options.map(x => `  
-                <button  
-                  type="button"  
-                  class="package-option ${x.i === selectedPackage ? 'selected' : ''}"  
-                  data-pack="${x.i}"  
-                >  
-                  <span>${esc(x.name)}</span>  
-                  <span>${x.price ? rupiah(x.price) : 'Tanya admin'}</span>  
-                </button>  
-              `).join('')}  
-            </div>  
-          </div>  
-        `;  
-      }).join('')}  
-    </div>  
-  
-    <div class="quantity-row">  
-      <div>  
-        <b style="font-size:11px">Jumlah</b>  
-        <div style="font-size:9px;color:var(--muted)">  
-          Pilih jumlah pesanan  
-        </div>  
-      </div>  
-  
-      <div class="qty">  
-        <button type="button" id="minusQty">−</button>  
-        <strong id="qtyValue">${quantity}</strong>  
-        <button type="button" id="plusQty">＋</button>  
-      </div>  
-    </div>  
-  
-    <div class="total">  
-      Estimasi subtotal  
-      <strong id="subtotal">${rupiah(selected.price * quantity)}</strong>  
-      <span>Harga akhir dan ketersediaan dikonfirmasi admin.</span>  
-    </div>  
-  
-    <button class="add-btn" id="addToCart" type="button">  
-      🛒 Tambahkan ke keranjang  
-    </button>  
-  `;  
-  
-  document.querySelectorAll('.plan-toggle').forEach(b => {  
-    b.addEventListener('click', () => {  
-      const card = b.closest('.plan-card');  
-      card.classList.toggle('open');  
-  
-      b.lastElementChild.textContent =  
-        card.classList.contains('open') ? '−' : '＋';  
-    });  
-  });  
-  
-  document.querySelectorAll('[data-pack]').forEach(b => {  
-    b.addEventListener('click', () => {  
-      selectedPackage = Number(b.dataset.pack);  
-      renderDetail();  
-    });  
-  });  
-  
-  $('minusQty').onclick = () => {  
-    quantity = Math.max(1, quantity - 1);  
-    renderDetail();  
-  };  
-  
-  $('plusQty').onclick = () => {  
-    quantity = Math.min(99, quantity + 1);  
-    renderDetail();  
-  };  
-  
-  $('addToCart').onclick = addToCart;  
-}  
-  
-/* TAMBAHKAN KE KERANJANG */  
-function addToCart() {  
-  const p = activeProduct;  
-  const pack = p?.packages[selectedPackage];  
-  
-  if (!p || !pack) return;  
-  
-  let cart = [];  
-  
-  try {  
-    cart = JSON.parse(localStorage.getItem('mitcha_cart') || '[]');  
-  } catch (_) {}  
-  
-  if (!Array.isArray(cart)) cart = [];  
-  
-  const item = {  
-    id: `${p.name}__${pack.plan || 'Umum'}__${pack.name}`,  
-    product: p.name,  
-    category: p.category,  
-    plan: pack.plan || 'Umum',  
-    package: pack.name,  
-    price: Number(pack.price) || 0,  
-    qty: quantity  
-  };  
-  
-  const existing = cart.find(x => x.id === item.id);  
-  
-  if (existing) {  
-    existing.qty = (Number(existing.qty) || 1) + quantity;  
-  } else {  
-    cart.push(item);  
-  }  
-  
-  localStorage.setItem('mitcha_cart', JSON.stringify(cart));  
-  
-  updateCartCount();  
-  
-  $('addToCart').textContent = '✓ Berhasil ditambahkan!';  
-  
-  setTimeout(() => {  
-    $('detailModal').classList.add('hidden');  
-    document.body.style.overflow = '';  
-  }, 650);  
-}  
-  
-/* MODAL */  
-function closeModal(id) {  
-  $(id).classList.add('hidden');  
-  
-  if (document.querySelector('.modal:not(.hidden)')) {  
-    document.body.style.overflow = 'hidden';  
-  } else {  
-    document.body.style.overflow = '';  
-  }  
-}  
-  
-document.querySelectorAll('[data-close]').forEach(b => {  
-  b.addEventListener('click', () => {  
-    closeModal(b.dataset.close);  
-  });  
-});  
-  
-document.querySelectorAll('.modal').forEach(m => {  
-  m.addEventListener('click', e => {  
-    if (e.target === m) closeModal(m.id);  
-  });  
-});  
-  
-$('openRules').onclick = () => {  
-  $('rulesModal').classList.remove('hidden');  
-  document.body.style.overflow = 'hidden';  
-};  
-  
-/* SEARCH & FILTER */  
-$('search').addEventListener('input', render);  
-$('category').addEventListener('change', render);  
-  
-/* TOMBOL ESC */  
-document.addEventListener('keydown', e => {  
-  if (e.key === 'Escape') {  
-    document.querySelectorAll('.modal:not(.hidden)').forEach(m => {  
-      closeModal(m.id);  
-    });  
-  }  
-});  
-  
-/* MULAI */  
-updateCartCount();  
-loadDB();  
-  
-window.addEventListener('storage', updateCartCount);  
-  
-</script>  </body>  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --berry:#d99aaa;
+  --dark:#b9798c;
+  --green:#829477;
+  --ink:#62565a;
+  --muted:#a39796;
+  --cream:#fffaf6;
+  --line:#f0e2dc;
+  --pink:#fff0f3;
+  --matcha:#edf2e5;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 0 8%,#f7d8e077,transparent 280px),
+    radial-gradient(circle at 100% 45%,#e7eddc88,transparent 300px),
+    var(--cream);
+  color:var(--ink);
+  font:14px/1.65 'Nunito',sans-serif;
+}
+
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+.container{width:min(1120px,calc(100% - 30px));margin:auto}
+
+.announcement{
+  background:var(--matcha);
+  color:#647653;
+  text-align:center;
+  padding:7px 10px;
+  font-size:10px;
+  font-weight:900;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#fffaf6ed;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #f0e5e0;
+}
+
+.top{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.brand{display:flex;align-items:center;gap:10px}
+
+.logo{
+  width:43px;
+  height:43px;
+  border-radius:14px;
+  object-fit:cover;
+  background:linear-gradient(145deg,#ffe7ed,#fff6ef 60%,#e7eddc);
+}
+
+.brand h1{
+  font:600 21px 'Fredoka',sans-serif;
+  color:var(--dark);
+  margin:0;
+}
+
+.brand p{
+  font-size:9px;
+  color:var(--muted);
+  margin:1px 0 0;
+}
+
+.actions{display:flex;gap:8px;align-items:center}
+
+.chip{
+  border:1px solid var(--line);
+  background:white;
+  border-radius:99px;
+  padding:8px 12px;
+  font-size:10px;
+  font-weight:900;
+  color:var(--dark);
+}
+
+.cart{
+  border:1px solid var(--line);
+  background:white;
+  border-radius:13px;
+  padding:9px 12px;
+  font-weight:900;
+  font-size:12px;
+}
+
+.count{
+  display:inline-grid;
+  place-items:center;
+  min-width:19px;
+  height:19px;
+  border-radius:99px;
+  background:var(--berry);
+  color:white;
+  font-size:10px;
+  margin-left:3px;
+}
+
+.hero{
+  margin:23px 0 18px;
+  padding:25px clamp(18px,4vw,35px);
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:linear-gradient(112deg,#fff0f3,#fff9f1 55%,#edf2e5);
+}
+
+.eyebrow{
+  font-size:10px;
+  letter-spacing:1px;
+  color:#a45e70;
+  font-weight:1000;
+}
+
+.hero h2{
+  font:600 clamp(27px,5vw,39px)/1.15 'Fredoka',sans-serif;
+  color:#80616a;
+  margin:7px 0;
+}
+
+.hero h2 em{font-style:normal;color:var(--dark)}
+
+.hero p{
+  font-size:11px;
+  color:#817779;
+  margin:0;
+  max-width:650px;
+}
+
+.toolbar{
+  display:grid;
+  grid-template-columns:1fr 220px;
+  gap:10px;
+  padding:10px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:#ffffffc9;
+  margin:18px 0;
+}
+
+.toolbar input,.toolbar select{
+  width:100%;
+  height:44px;
+  border:1px solid #eee5df;
+  border-radius:12px;
+  padding:9px 13px;
+  background:white;
+  color:var(--ink);
+  outline:none;
+}
+
+.toolbar input:focus,.toolbar select:focus{
+  border-color:var(--berry);
+  box-shadow:0 0 0 3px #f7d8e055;
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:10px;
+  margin:25px 0 13px;
+}
+
+.section-head h3{
+  font:500 22px 'Fredoka',sans-serif;
+  color:#80616a;
+  margin:0;
+}
+
+.section-head p{
+  font-size:10px;
+  color:var(--muted);
+  margin:2px 0 0;
+}
+
+/* KARTU PRODUK */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+}
+
+.product{
+  min-width:0;
+  min-height:185px;
+  background:#fffefd;
+  border:1px solid #eee6df;
+  border-radius:19px;
+  padding:15px 12px;
+  box-shadow:0 5px 18px #503c2d08;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  transition:.2s;
+}
+
+.product:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 26px #9d6c7614;
+  border-color:#e8c4cd;
+}
+
+.product-top{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  margin:2px 0 12px;
+  width:100%;
+}
+
+.app-icon{
+  width:55px;
+  height:55px;
+  flex:0 0 55px;
+  border-radius:17px;
+  background:linear-gradient(145deg,#fff0f3,#edf2e5);
+  display:grid;
+  place-items:center;
+  font-size:24px;
+  overflow:hidden;
+}
+
+.app-icon img{
+  width:32px;
+  height:32px;
+  object-fit:contain;
+  display:block;
+}
+
+.app-icon .logo-fallback{
+  font:700 15px 'Fredoka',sans-serif;
+  color:var(--dark);
+}
+
+.product h4{
+  font:500 16px 'Fredoka',sans-serif;
+  color:#80616a;
+  margin:0;
+  line-height:1.25;
+  overflow-wrap:anywhere;
+}
+
+.price-line{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1px;
+  margin-top:auto;
+  padding-top:10px;
+  border-top:1px solid #f3ece8;
+}
+
+.price-line small{
+  font-size:9px;
+  color:var(--muted);
+}
+
+.price-line strong{
+  font-size:13px;
+  color:var(--dark);
+  font-weight:1000;
+}
+
+.view-btn{
+  width:100%;
+  border:0;
+  border-radius:11px;
+  background:var(--berry);
+  color:white;
+  padding:10px 6px;
+  margin-top:11px;
+  font-size:10px;
+  font-weight:1000;
+  cursor:pointer;
+}
+
+.view-btn:hover{background:var(--dark)}
+
+.empty{
+  padding:35px 15px;
+  text-align:center;
+  background:white;
+  border:1px dashed #e6d9d6;
+  border-radius:17px;
+  color:var(--muted);
+  grid-column:1/-1;
+}
+
+.loading{
+  padding:25px;
+  text-align:center;
+  color:var(--muted);
+}
+
+.footer{
+  margin:30px 0 100px;
+  padding:20px;
+  text-align:center;
+  border-radius:18px;
+  background:linear-gradient(110deg,#fff0f3,#fffaf4 55%,#edf2e5);
+  font:500 14px 'Fredoka',sans-serif;
+  color:#80616a;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:30;
+  background:#5a484c70;
+  backdrop-filter:blur(4px);
+  display:grid;
+  place-items:center;
+  padding:12px;
+}
+
+.hidden{display:none!important}
+
+.box{
+  width:min(760px,100%);
+  max-height:92vh;
+  overflow:auto;
+  background:#fffbf9;
+  border-radius:23px;
+  padding:22px;
+  box-shadow:0 20px 70px #49323b30;
+}
+
+.modal-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:13px;
+}
+
+.modal-head h2{
+  font:500 21px 'Fredoka',sans-serif;
+  color:#80616a;
+  margin:0;
+}
+
+.close{
+  border:1px solid #f2dce1;
+  border-radius:10px;
+  background:#fcebef;
+  color:var(--dark);
+  padding:7px 10px;
+  cursor:pointer;
+}
+
+.detail-intro{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+  border-radius:15px;
+  background:linear-gradient(120deg,#fff0f3,#edf2e5);
+  margin-bottom:14px;
+}
+
+.detail-intro .app-icon{
+  width:58px;
+  height:58px;
+  flex-basis:58px;
+}
+
+.detail-intro h3{
+  font:500 19px 'Fredoka',sans-serif;
+  margin:0;
+  color:#80616a;
+}
+
+.detail-intro p{
+  font-size:10px;
+  margin:2px 0 0;
+  color:#827779;
+}
+
+.note{
+  white-space:pre-line;
+  background:#fff4e5;
+  color:#7a5520;
+  padding:10px 12px;
+  border-radius:10px;
+  font-size:11px;
+  margin:0 0 12px;
+}
+
+.label{
+  font-size:11px;
+  font-weight:1000;
+  display:block;
+  margin:12px 0 7px;
+}
+
+.plan-card{
+  border:1px solid #eee4df;
+  border-radius:12px;
+  background:white;
+  margin-bottom:8px;
+  overflow:hidden;
+}
+
+.plan-toggle{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:11px 12px;
+  border:0;
+  background:white;
+  text-align:left;
+  color:var(--ink);
+  font-weight:1000;
+  cursor:pointer;
+}
+
+.plan-options{
+  display:none;
+  padding:0 8px 8px;
+  gap:7px;
+}
+
+.plan-card.open .plan-options{display:grid}
+
+.package-option{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  text-align:left;
+  border:1px solid #f0dce1;
+  background:#fff7f8;
+  padding:10px;
+  border-radius:10px;
+  font-size:11px;
+  cursor:pointer;
+  color:var(--ink);
+}
+
+.package-option span:last-child{
+  font-weight:1000;
+  color:var(--dark);
+  white-space:nowrap;
+}
+
+.package-option.selected{
+  background:#edf2e5;
+  border-color:#cbd8bd;
+}
+
+.quantity-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:14px 0;
+}
+
+.qty{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:5px;
+  background:white;
+}
+
+.qty button{
+  border:0;
+  background:#fff0f3;
+  color:var(--dark);
+  border-radius:8px;
+  width:30px;
+  height:30px;
+  font-weight:1000;
+  cursor:pointer;
+}
+
+.qty strong{min-width:16px;text-align:center}
+
+.total{
+  padding:12px;
+  border-radius:13px;
+  background:linear-gradient(120deg,#edf2e5,#fff0f3);
+  margin:12px 0;
+  font-size:10px;
+}
+
+.total strong{
+  display:block;
+  font-size:21px;
+  color:var(--dark);
+}
+
+.add-btn{
+  width:100%;
+  padding:13px;
+  border:0;
+  border-radius:12px;
+  background:var(--berry);
+  color:white;
+  font-weight:1000;
+  cursor:pointer;
+}
+
+.add-btn:disabled{opacity:.5;cursor:not-allowed}
+
+.rules{font-size:11px;line-height:1.8}
+
+.rules p{
+  background:white;
+  border:1px solid #f0e5e2;
+  border-radius:11px;
+  padding:9px;
+  margin:0 0 8px;
+}
+
+.rules b{color:var(--dark)}
+
+.mobile-nav{display:none}
+
+@media(max-width:900px){
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:560px){
+  .container{width:calc(100% - 22px)}
+  .top{min-height:64px}
+  .brand h1{font-size:18px}
+  .brand p{font-size:8px}
+  .chip{display:none}
+  .toolbar{grid-template-columns:1fr}
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .product{min-height:170px;padding:12px 9px;border-radius:16px}
+  .app-icon{width:49px;height:49px;flex-basis:49px}
+  .product h4{font-size:14px}
+  .price-line strong{font-size:12px}
+  .view-btn{font-size:9px;padding:9px 4px}
+  .box{padding:15px;border-radius:19px}
+  .mobile-nav{
+    position:fixed;
+    z-index:25;
+    bottom:0;
+    left:0;
+    right:0;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    padding:8px 8px calc(8px + env(safe-area-inset-bottom));
+    background:#fffdf9ed;
+    backdrop-filter:blur(14px);
+    border-top:1px solid #f0e5e0;
+  }
+  .mobile-nav a{
+    text-align:center;
+    font-size:9px;
+    font-weight:900;
+    color:#95888a;
+  }
+  .mobile-nav a span{
+    display:block;
+    font-size:19px;
+    line-height:1.4;
+  }
+  .mobile-nav a.active{color:var(--dark)}
+  .footer{margin-bottom:105px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="announcement">♡ Mitcha Store · Open daily 07.00–23.59 WIB ♡</div>
+
+<header>
+  <div class="container top">
+    <a class="brand" href="./index.html">
+      <img class="logo" src="assets/logo-mitcha.png" alt="Mitcha Store"
+      onerror="this.outerHTML='<span class=&quot;logo&quot; style=&quot;display:grid;place-items:center;font-size:22px&quot;>🐈</span>'">
+      <span>
+        <h1>Mitcha Store</h1>
+        <p>your tiny corner of digital happiness ♡</p>
+      </span>
+    </a>
+
+    <div class="actions">
+      <a class="chip" href="./index.html">← Home</a>
+      <button class="chip" id="openRules" type="button">♡ Regulasi & SNK</button>
+      <a class="cart" href="./cart.html">🛒 <span data-cart-count class="count">0</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <span class="eyebrow">✿ FIND YOUR FAVORITE</span>
+    <h2>Little treats for your<br><em>digital days.</em></h2>
+    <p>Pilih produk dan paket yang kamu suka. Tambahkan ke keranjang, lalu checkout setelah admin mengonfirmasi stok dan harga. ♡</p>
+  </section>
+
+  <div class="section-head">
+    <div>
+      <h3>Explore our products ♡</h3>
+      <p id="resultInfo">Pilih produk favoritmu dari katalog Mitcha Store.</p>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="⌕ Cari produk favoritmu…" aria-label="Cari produk">
+    <select id="category" aria-label="Filter kategori">
+      <option value="">Semua kategori</option>
+    </select>
+  </div>
+
+  <div id="products" class="product-grid">
+    <div class="loading">Menyiapkan katalog Mitcha Store... ♡</div>
+  </div>
+
+  <div class="footer">
+    Thank you for shopping babe ♡<br>
+    <span style="font:11px 'Nunito',sans-serif;color:#a39796">Have a lovely day!</span>
+  </div>
+
+</main>
+
+<nav class="mobile-nav" aria-label="Navigasi bawah">
+  <a href="./index.html"><span>⌂</span>Home</a>
+  <a class="active" href="./produk.html"><span>♡</span>Products</a>
+  <a href="./cart.html"><span>🛒</span>Cart <b data-cart-count>0</b></a>
+  <a href="./pesanan.html"><span>📦</span>Orders</a>
+</nav>
+
+<div class="modal hidden" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+  <div class="box">
+    <div class="modal-head">
+      <h2 id="detailTitle">Product details ♡</h2>
+      <button class="close" type="button" data-close="detailModal">Tutup ✕</button>
+    </div>
+    <div id="detailContent"></div>
+  </div>
+</div>
+
+<div class="modal hidden" id="rulesModal" role="dialog" aria-modal="true">
+  <div class="box">
+    <div class="modal-head">
+      <h2>♡ Regulasi App Prem</h2>
+      <button class="close" type="button" data-close="rulesModal">Tutup ✕</button>
+    </div>
+
+    <div class="rules">
+      <p>˚₊·—̳͟͞͞♡ Web ini berisi pricelist produk. Kalau aplikasi yang kamu cari belum ada, boleh tanya admin dulu, yaa!</p>
+      <p>˚₊·—̳͟͞͞♡ <b>No rush & rude buyer!</b> Mohon bersabar dan tetap sopan selama transaksi.</p>
+      <p>˚₊·—̳͟͞͞♡ Budayakan tanya sebelum order untuk memastikan stok dan ketersediaan produk.</p>
+      <p>˚₊·—̳͟͞͞♡ Pahami risiko produk sebelum membeli dan pastikan stok serta harga dikonfirmasi admin sebelum pembayaran.</p>
+      <p>˚₊·—̳͟͞͞♡ Estimasi proses order sekitar <b>30–45 menit</b>. Beberapa produk bisa lebih cepat, sedangkan produk tertentu mungkin membutuhkan waktu lebih lama.</p>
+      <p>˚₊·—̳͟͞͞♡ Garansi mengikuti ketentuan masing-masing aplikasi dan supplier. Wajib mengirimkan bukti berhasil login untuk klaim garansi.</p>
+      <p>˚₊·—̳͟͞͞♡ Estimasi proses garansi maksimal 7 hari. Kendala limit bawaan aplikasi tidak termasuk garansi.</p>
+      <p>˚₊·—̳͟͞͞♡ Khusus aplikasi AI seperti ChatGPT & Claude, kendala backfree mendapat penanganan sesuai ketentuan, sedangkan akun banned/disable mendapat satu kali upaya penggantian.</p>
+      <p>˚₊·—̳͟͞͞♡ Apabila terjadi kendala, segera hubungi admin dengan menyertakan bukti yang diperlukan.</p>
+      <p>˚₊·—̳͟͞͞♡ Melakukan order berarti buyer telah membaca dan menyetujui regulasi serta SNK yang berlaku. 💗</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./config.js"></script>
+
+<script>
+'use strict';
+
+const CATS = [
+  'Streaming',
+  'Design & Editing',
+  'Education',
+  'Listening',
+  'Top Up Game',
+  'Pulsa & Kuota',
+  'Token Listrik',
+  'Reading',
+  'Other'
+];
+
+/* LOGO PRODUK */
+const CATALOG = [
+  ['ADOBE CREATIVE','Design & Editing','adobecreativecloud'],
+  ['ADOBE','Design & Editing','adobecreativecloud'],
+  ['ALIGHT MOTION','Design & Editing',''],
+  ['APPLE MUSIC','Listening','applemusic'],
+  ['APPLE TV','Streaming','appletv'],
+  ['BEAUTY PLUS','Design & Editing',''],
+  ['BLACKBOX AI','Education',''],
+  ['BSTATION','Streaming',''],
+  ['CAMSCANNER','Education',''],
+  ['CANVA','Design & Editing','canva'],
+  ['CAPCUT PRO','Design & Editing','capcut'],
+  ['CAPCUT STANDARD','Design & Editing','capcut'],
+  ['CHATGPT GO','Education','openai'],
+  ['CHATGPT PLUS','Education','openai'],
+  ['CHATGPT TEAM','Education','openai'],
+  ['CLAUDE AI','Education','anthropic'],
+  ['CRUNCHYROLL','Streaming','crunchyroll'],
+  ['DEEPL','Education','deepl'],
+  ['DISCORD','Other','discord'],
+  ['DISNEY','Streaming','disneyplus'],
+  ['DUOLINGO','Education','duolingo'],
+  ['EXPRESS VPN','Other','expressvpn'],
+  ['FIGMA PRO','Design & Editing','figma'],
+  ['GMEET','Education','googlemeet'],
+  ['GOOGLE FLOW','Design & Editing','google'],
+  ['GOOGLE ONE','Other','googleone'],
+  ['GRAMMARLY','Education','grammarly'],
+  ['GROK AI','Education','x'],
+  ['HBO','Streaming','hbo'],
+  ['IQIYI','Streaming','iqiyi'],
+  ['KAHOOT','Education','kahoot'],
+  ['LIGHTROOM','Design & Editing','adobelightroom'],
+  ['MS365','Education','microsoft365'],
+  ['NETFLIX','Streaming','netflix'],
+  ['NORD VPN','Other','nordvpn'],
+  ['PERPLEXITY AI','Education','perplexity'],
+  ['PRIME VIDEO','Streaming','primevideo'],
+  ['SCRIBD','Reading','scribd'],
+  ['SPOTIFY','Listening','spotify'],
+  ['VIDIO PLATINUM','Streaming','vidio'],
+  ['VIDIO ULTIMATE','Streaming','vidio'],
+  ['VIKI','Streaming','viki'],
+  ['VSCO','Design & Editing','vsco'],
+  ['WATTPAD','Reading','wattpad'],
+  ['WETV','Streaming','wetv'],
+  ['YOUKU','Streaming','youku'],
+  ['YOUTUBE','Streaming','youtube'],
+  ['ZOOM','Education','zoom']
+];
+
+const LOGO_COLORS = {
+  ADOBE:'#ed1c24',
+  CANVA:'#00c4cc',
+  SPOTIFY:'#1db954',
+  NETFLIX:'#e50914',
+  YOUTUBE:'#ff0033',
+  DISCORD:'#5865f2',
+  DUOLINGO:'#58cc02',
+  FIGMA:'#f24e1e',
+  CHATGPT:'#10a37f',
+  CLAUDE:'#c47b54',
+  GOOGLE:'#4285f4'
+};
+
+const $ = id => document.getElementById(id);
+
+const rupiah = n =>
+  Number(n) > 0
+    ? new Intl.NumberFormat('id-ID',{
+        style:'currency',
+        currency:'IDR',
+        maximumFractionDigits:0
+      }).format(n)
+    : 'Tanya admin';
+
+function esc(s){
+  return String(s ?? '').replace(/[&<>"']/g,c=>({
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    "'":'&#39;'
+  }[c]));
+}
+
+function initials(name){
+  return String(name)
+    .replace(/[^a-zA-Z0-9 ]/g,' ')
+    .trim()
+    .split(/\s+/)
+    .slice(0,2)
+    .map(x=>x[0])
+    .join('')
+    .toUpperCase();
+}
+
+/* LOGO PRODUK */
+function iconFor(name){
+  const cleanName=String(name).toUpperCase();
+  const item=CATALOG.find(x=>x[0]===cleanName);
+  const slug=item?.[2] || '';
+  const color=LOGO_COLORS[cleanName] || '#b9798c';
+  const fallback=initials(name);
+
+  if(!slug){
+    return `<span class="logo-fallback" style="color:${color}">${esc(fallback)}</span>`;
+  }
+
+  const url=`https://cdn.simpleicons.org/${slug}`;
+
+  return `
+    <img
+      src="${url}"
+      alt="${esc(name)} logo"
+      loading="lazy"
+      onerror="this.outerHTML='<span class=&quot;logo-fallback&quot;>${esc(fallback)}</span>'"
+    >
+  `;
+}
+
+/* DATA PRODUK */
+let PRODUCTS=[];
+let activeProduct=null;
+let selectedPackage=0;
+let quantity=1;
+
+/* NORMALISASI DATA */
+function normalize(p){
+  const category=({
+    'Aplikasi Premium':'Streaming',
+    'Game':'Top Up Game'
+  }[p.category] || p.category || 'Other');
+
+  const packages=
+    Array.isArray(p.packages) && p.packages.length
+      ? p.packages
+      : [{name:'Tanyakan paket tersedia',price:0}];
+
+  return {
+    ...p,
+    name:String(p.name || ''),
+    category,
+    desc:p.desc ?? p.description ?? '',
+    note:p.note || '',
+    packages:packages.map(x=>({
+      ...x,
+      plan:String(x.plan || 'Umum'),
+      name:String(x.name || 'Tanyakan paket tersedia'),
+      price:Number(x.price) || 0
+    }))
+  };
+}
+
+/* JUMLAH PRODUK DI KERANJANG */
+function updateCartCount(){
+  let cart=[];
+
+  try{
+    cart=JSON.parse(localStorage.getItem('mitcha_cart') || '[]');
+  }catch(_){}
+
+  const count=Array.isArray(cart)
+    ? cart.reduce((s,x)=>s+(Number(x.qty)||1),0)
+    : 0;
+
+  document.querySelectorAll('[data-cart-count]').forEach(el=>{
+    el.textContent=count;
+  });
+}
+
+/* HARGA TERMURAH */
+function startingPrice(p){
+  const prices=p.packages
+    .map(x=>x.price)
+    .filter(x=>x>0);
+
+  return prices.length ? Math.min(...prices) : 0;
+}
+
+/* TAMPILKAN KATALOG */
+function render(){
+  const cats=[
+    ...new Set([
+      ...CATS,
+      ...PRODUCTS.map(p=>p.category).filter(Boolean)
+    ])
+  ];
+
+  const old=$('category').value;
+
+  $('category').innerHTML=
+    '<option value="">Semua kategori</option>' +
+    cats.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+
+  $('category').value=cats.includes(old) ? old : '';
+
+  const q=$('search').value.toLowerCase().trim();
+  const cat=$('category').value;
+
+  const filtered=PRODUCTS
+    .filter(p=>{
+      const matchesCategory=!cat || p.category===cat;
+      const searchable=`${p.name} ${p.category} ${p.desc}`.toLowerCase();
+
+      return matchesCategory && searchable.includes(q);
+    })
+    .sort((a,b)=>a.name.localeCompare(b.name,'id'));
+
+  $('resultInfo').textContent=
+    `Menampilkan ${filtered.length} dari ${PRODUCTS.length} produk. Pilih produk untuk melihat pilihan paket.`;
+
+  $('products').innerHTML=filtered.length
+    ? filtered.map(p=>{
+        const i=PRODUCTS.indexOf(p);
+        const price=startingPrice(p);
+
+        return `
+          <article class="product">
+            <div class="product-top">
+              <span class="app-icon">${iconFor(p.name)}</span>
+              <div>
+                <h4>${esc(p.name)}</h4>
+              </div>
+            </div>
+
+            <div class="price-line">
+              <small>Harga mulai dari</small>
+              <strong>${price ? rupiah(price) : 'Tanya admin'}</strong>
+            </div>
+
+            <button
+              class="view-btn"
+              type="button"
+              data-detail="${i}"
+            >
+              Lihat pilihan paket ♡
+            </button>
+          </article>
+        `;
+      }).join('')
+    : `
+      <div class="empty">
+        Belum ada produk yang cocok.<br>
+        Coba kata kunci lain yaa ♡
+      </div>
+    `;
+
+  document.querySelectorAll('[data-detail]').forEach(b=>{
+    b.addEventListener('click',()=>{
+      openDetail(Number(b.dataset.detail));
+    });
+  });
+}
+
+/* AMBIL PRODUK DARI DATABASE ADMIN */
+async function loadDB(){
+  PRODUCTS=[];
+  render();
+
+  try{
+    if(
+      !window.CHANARRA_SUPABASE_URL ||
+      !window.CHANARRA_SUPABASE_KEY ||
+      !window.supabase
+    ){
+      throw new Error('Konfigurasi Supabase tidak ditemukan.');
+    }
+
+    const db=window.supabase.createClient(
+      window.CHANARRA_SUPABASE_URL,
+      window.CHANARRA_SUPABASE_KEY
+    );
+
+    const {data,error}=await db
+      .from('products')
+      .select('name,category,description,note,packages,active')
+      .eq('active',true)
+      .order('name');
+
+    if(error) throw error;
+
+    PRODUCTS=(data || []).map(p=>normalize({
+      name:p.name,
+      category:p.category,
+      desc:p.description || '',
+      note:p.note || '',
+      packages:p.packages
+    }));
+
+    render();
+
+  }catch(error){
+    console.error('Gagal memuat produk:',error);
+
+    PRODUCTS=[];
+
+    $('products').innerHTML=`
+      <div class="empty">
+        Katalog belum dapat dimuat.<br>
+        Silakan coba lagi nanti yaa ♡
+      </div>
+    `;
+
+    $('resultInfo').textContent='Katalog belum tersedia.';
+  }
+}
+
+/* DETAIL PRODUK */
+function openDetail(index){
+  activeProduct=PRODUCTS[index];
+
+  if(!activeProduct) return;
+
+  selectedPackage=0;
+  quantity=1;
+
+  $('detailTitle').textContent='Product details ♡';
+
+  renderDetail();
+
+  $('detailModal').classList.remove('hidden');
+  document.body.style.overflow='hidden';
+}
+
+/* TAMPILKAN PILIHAN PAKET */
+function renderDetail(){
+  const p=activeProduct;
+
+  if(!p) return;
+
+  const plans=[
+    ...new Set(p.packages.map(x=>x.plan || 'Umum'))
+  ];
+
+  const selected=p.packages[selectedPackage] || p.packages[0];
+
+  $('detailContent').innerHTML=`
+    <div class="detail-intro">
+      <span class="app-icon">${iconFor(p.name)}</span>
+      <div>
+        <h3>${esc(p.name)}</h3>
+        <p>${esc(p.desc)}</p>
+      </div>
+    </div>
+
+    ${p.note ? `<p class="note">${esc(p.note)}</p>` : ''}
+
+    <span class="label">Pilih plan dan paket</span>
+
+    <div id="planList">
+      ${plans.map(plan=>{
+        const options=p.packages
+          .map((x,i)=>({...x,i}))
+          .filter(x=>(x.plan || 'Umum')===plan);
+
+        const isOpen=options.some(x=>x.i===selectedPackage);
+
+        return `
+          <div class="plan-card ${isOpen?'open':''}">
+            <button type="button" class="plan-toggle">
+              <span>${esc(plan)}</span>
+              <span>${isOpen?'−':'＋'}</span>
+            </button>
+
+            <div class="plan-options">
+              ${options.map(x=>`
+                <button
+                  type="button"
+                  class="package-option ${x.i===selectedPackage?'selected':''}"
+                  data-pack="${x.i}"
+                >
+                  <span>${esc(x.name)}</span>
+                  <span>${x.price ? rupiah(x.price) : 'Tanya admin'}</span>
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+
+    <div class="quantity-row">
+      <div>
+        <b style="font-size:11px">Jumlah</b>
+        <div style="font-size:9px;color:var(--muted)">
+          Pilih jumlah pesanan
+        </div>
+      </div>
+
+      <div class="qty">
+        <button type="button" id="minusQty">−</button>
+        <strong id="qtyValue">${quantity}</strong>
+        <button type="button" id="plusQty">＋</button>
+      </div>
+    </div>
+
+    <div class="total">
+      Estimasi subtotal
+      <strong id="subtotal">${rupiah(selected.price*quantity)}</strong>
+      <span>Harga akhir dan ketersediaan dikonfirmasi admin.</span>
+    </div>
+
+    <button class="add-btn" id="addToCart" type="button">
+      🛒 Tambahkan ke keranjang
+    </button>
+  `;
+
+  document.querySelectorAll('.plan-toggle').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const card=b.closest('.plan-card');
+      card.classList.toggle('open');
+
+      b.lastElementChild.textContent=
+        card.classList.contains('open') ? '−' : '＋';
+    });
+  });
+
+  document.querySelectorAll('[data-pack]').forEach(b=>{
+    b.addEventListener('click',()=>{
+      selectedPackage=Number(b.dataset.pack);
+      renderDetail();
+    });
+  });
+
+  $('minusQty').onclick=()=>{
+    quantity=Math.max(1,quantity-1);
+    renderDetail();
+  };
+
+  $('plusQty').onclick=()=>{
+    quantity=Math.min(99,quantity+1);
+    renderDetail();
+  };
+
+  $('addToCart').onclick=addToCart;
+}
+
+/* TAMBAHKAN KE KERANJANG */
+function addToCart(){
+  const p=activeProduct;
+  const pack=p?.packages[selectedPackage];
+
+  if(!p || !pack) return;
+
+  let cart=[];
+
+  try{
+    cart=JSON.parse(localStorage.getItem('mitcha_cart') || '[]');
+  }catch(_){}
+
+  if(!Array.isArray(cart)) cart=[];
+
+  const item={
+    id:`${p.name}__${pack.plan || 'Umum'}__${pack.name}`,
+    product:p.name,
+    category:p.category,
+    plan:pack.plan || 'Umum',
+    package:pack.name,
+    price:Number(pack.price) || 0,
+    qty:quantity
+  };
+
+  const existing=cart.find(x=>x.id===item.id);
+
+  if(existing){
+    existing.qty=(Number(existing.qty)||1)+quantity;
+  }else{
+    cart.push(item);
+  }
+
+  localStorage.setItem('mitcha_cart',JSON.stringify(cart));
+
+  updateCartCount();
+
+  $('addToCart').textContent='✓ Berhasil ditambahkan!';
+
+  setTimeout(()=>{
+    $('detailModal').classList.add('hidden');
+    document.body.style.overflow='';
+  },650);
+}
+
+/* MODAL */
+function closeModal(id){
+  $(id).classList.add('hidden');
+
+  if(document.querySelector('.modal:not(.hidden)')){
+    document.body.style.overflow='hidden';
+  }else{
+    document.body.style.overflow='';
+  }
+}
+
+document.querySelectorAll('[data-close]').forEach(b=>{
+  b.addEventListener('click',()=>{
+    closeModal(b.dataset.close);
+  });
+});
+
+document.querySelectorAll('.modal').forEach(m=>{
+  m.addEventListener('click',e=>{
+    if(e.target===m) closeModal(m.id);
+  });
+});
+
+$('openRules').onclick=()=>{
+  $('rulesModal').classList.remove('hidden');
+  document.body.style.overflow='hidden';
+};
+
+/* SEARCH & FILTER */
+$('search').addEventListener('input',render);
+$('category').addEventListener('change',render);
+
+/* TOMBOL ESC */
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.querySelectorAll('.modal:not(.hidden)').forEach(m=>{
+      closeModal(m.id);
+    });
+  }
+});
+
+/* MULAI */
+updateCartCount();
+loadDB();
+
+window.addEventListener('storage',updateCartCount);
+</script>
+
+</body>
 </html>
