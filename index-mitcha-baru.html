@@ -1,262 +1,124 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#fff8f6">
-  <meta name="description" content="Mitcha Store — your tiny corner of digital happiness. Temukan kebutuhan digital favoritmu.">
-  <title>Mitcha Store — Chosen By You</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --berry:#d99aaa;--berry-dark:#b9798c;--pink:#fff0f3;--cream:#fffaf6;
-      --matcha:#829477;--matcha-light:#edf2e5;--ink:#62565a;--muted:#a39796;
-      --line:#f0e2dc;--white:#fffefd;--shadow:0 12px 35px #9d6c7612;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;background:
-        radial-gradient(circle at 0 5%,#f7d8e077,transparent 290px),
-        radial-gradient(circle at 100% 35%,#e7eddc99,transparent 330px),
-        var(--cream);
-      color:var(--ink);font:15px/1.65 'Nunito',sans-serif;
-    }
-    a{color:inherit}
-    button,input{font:inherit}
-    .container{width:min(1120px,calc(100% - 32px));margin:auto}
-    .announcement{background:#edf2e5;color:#647653;text-align:center;padding:7px 12px;font-size:11px;font-weight:900;letter-spacing:.25px}
-    .site-header{position:sticky;top:0;z-index:20;background:#fffaf6eF;backdrop-filter:blur(14px);border-bottom:1px solid #f1e7e2}
-    .header-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;min-width:0}
-    .logo{width:48px;height:48px;border-radius:16px;object-fit:cover;border:1px solid #f0dedc;background:linear-gradient(145deg,#ffe7ed,#fff6ef 60%,#e7eddc);flex-shrink:0}
-    .brand-name{font:600 22px/1.1 'Fredoka',sans-serif;color:var(--berry-dark);margin:0}
-    .brand-tag{font-size:10px;color:var(--muted);margin:4px 0 0}
-    .desktop-nav{display:flex;align-items:center;gap:23px}
-    .desktop-nav a{text-decoration:none;font-size:12px;font-weight:900;color:#827477;transition:.2s}
-    .desktop-nav a:hover,.desktop-nav a.active{color:var(--berry-dark)}
-    .header-actions{display:flex;align-items:center;gap:9px}
-    .icon-btn{height:41px;min-width:42px;padding:0 12px;border:1px solid var(--line);border-radius:14px;background:white;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;color:var(--ink);font-size:12px;font-weight:900}
-    .cart-count{display:inline-grid;place-items:center;min-width:19px;height:19px;padding:0 5px;border-radius:99px;background:var(--berry);color:white;font-size:10px}
-    .menu-toggle{display:none}
-    .hero{padding:38px 0 25px}
-    .hero-card{position:relative;overflow:hidden;min-height:350px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(112deg,#fff0f3 0%,#fff9f1 55%,#edf2e5 100%);box-shadow:var(--shadow);display:grid;grid-template-columns:1.2fr .8fr;align-items:center;padding:clamp(25px,5vw,55px)}
-    .hero-copy{position:relative;z-index:2;max-width:600px}
-    .eyebrow{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border:1px solid #f0dfe0;border-radius:99px;background:#ffffffb8;color:#a45e70;font-size:10px;font-weight:1000;letter-spacing:1px}
-    .hero h1{font:600 clamp(36px,6vw,62px)/1.05 'Fredoka',sans-serif;letter-spacing:-1.5px;color:#80616a;margin:17px 0 13px}
-    .hero h1 em{font-style:normal;color:var(--berry-dark)}
-    .hero-copy>p{max-width:500px;color:#807779;font-size:13px;line-height:1.9;margin:0}
-    .hero-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}
-    .btn{min-height:46px;padding:11px 18px;border-radius:14px;border:1px solid var(--line);background:white;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-size:12px;font-weight:1000;transition:.2s;cursor:pointer}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px #9d6c7620}
-    .btn-primary{background:var(--berry);border-color:var(--berry);color:white}
-    .hero-art{display:grid;place-items:center;min-height:250px;position:relative}
-    .art-orbit{width:min(260px,75%);aspect-ratio:1;border-radius:48% 52% 45% 55%;display:grid;place-items:center;background:linear-gradient(145deg,#fffdf8,#f9dce4);border:8px solid #ffffffa8;box-shadow:0 20px 50px #b66c7820;transform:rotate(7deg);font-size:clamp(78px,12vw,125px);position:relative}
-    .art-orbit:after{content:'MITCHA ♡';position:absolute;bottom:22px;font:700 10px 'Nunito',sans-serif;letter-spacing:3px;color:var(--berry-dark);transform:rotate(-7deg)}
-    .float{position:absolute;display:grid;place-items:center;width:53px;height:53px;border-radius:18px;background:#fffdf0;border:1px solid white;box-shadow:0 8px 22px #8c6d5c18;font-size:25px}
-    .float.one{top:12%;right:8%;transform:rotate(12deg)}
-    .float.two{bottom:9%;left:7%;transform:rotate(-12deg)}
-    .section{padding:27px 0}
-    .section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:16px}
-    .section-kicker{font-size:10px;color:var(--matcha);font-weight:1000;letter-spacing:1.4px;text-transform:uppercase}
-    .section-title{font:600 clamp(23px,4vw,30px)/1.2 'Fredoka',sans-serif;color:#80616a;margin:3px 0 0}
-    .section-sub{font-size:11px;color:var(--muted);margin:4px 0 0}
-    .text-link{font-size:11px;font-weight:1000;color:var(--berry-dark);text-decoration:none;white-space:nowrap}
-    .category-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
-    .category{min-height:120px;padding:16px 8px;border:1px solid var(--line);border-radius:19px;background:#fffefd;text-decoration:none;text-align:center;box-shadow:0 5px 18px #503c2d06;transition:.2s}
-    .category:hover{transform:translateY(-4px);border-color:#e7c1cb;box-shadow:var(--shadow)}
-    .category-icon{width:48px;height:48px;margin:0 auto 9px;border-radius:16px;background:linear-gradient(145deg,#fff0f3,#edf2e5);display:grid;place-items:center;font-size:23px}
-    .category strong{display:block;font-size:11px;line-height:1.3}
-    .category small{display:block;font-size:9px;color:var(--muted);margin-top:4px}
-    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .feature{border:1px solid var(--line);border-radius:20px;background:#fffefd;padding:18px;display:flex;gap:13px;align-items:flex-start;box-shadow:0 5px 18px #503c2d06}
-    .feature-icon{width:43px;height:43px;flex:0 0 43px;border-radius:14px;background:#fff0f3;display:grid;place-items:center;font-size:21px}
-    .feature h3{font:500 16px 'Fredoka',sans-serif;color:#80616a;margin:0 0 4px}
-    .feature p{font-size:10px;color:#928789;line-height:1.7;margin:0}
-    .promo{margin:25px 0 12px;padding:25px 28px;border:1px solid var(--line);border-radius:23px;background:linear-gradient(110deg,#edf2e5,#fff9f1 55%,#fff0f3);display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .promo h2{font:600 24px/1.2 'Fredoka',sans-serif;color:#80616a;margin:0 0 5px}
-    .promo p{font-size:11px;color:#827a75;margin:0}
-    .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-    .info-card{border:1px solid var(--line);border-radius:18px;background:#fffefd;padding:17px}
-    .info-card h3{font:500 16px 'Fredoka',sans-serif;color:#80616a;margin:0 0 6px}
-    .info-card p{font-size:11px;color:#8c8280;margin:0;line-height:1.8}
-    .info-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .info-links a{font-size:10px;font-weight:900;text-decoration:none;padding:7px 10px;border-radius:99px;background:#fff4f5;color:var(--berry-dark);border:1px solid #f2e1e5}
-    footer{margin-top:34px;padding:25px 0 95px;border-top:1px solid #f0e5e0;text-align:center;color:var(--muted);font-size:10px}
-    footer strong{font:500 17px 'Fredoka',sans-serif;color:var(--berry-dark)}
-    .mobile-nav{display:none}
-    @media(max-width:850px){.desktop-nav{gap:13px}.desktop-nav a{font-size:11px}.category-grid{grid-template-columns:repeat(3,1fr)}.hero-card{min-height:320px}}
-    @media(max-width:650px){
-      .container{width:min(100% - 24px,560px)}
-      .header-inner{min-height:66px}.logo{width:42px;height:42px;border-radius:14px}.brand-name{font-size:19px}.brand-tag{font-size:9px}
-      .desktop-nav{display:none}.menu-toggle{display:inline-flex}
-      .hero{padding:20px 0 13px}.hero-card{grid-template-columns:1fr;min-height:unset;padding:27px 21px 20px;border-radius:24px}
-      .hero h1{font-size:clamp(38px,10vw,52px)}.hero-copy>p{font-size:12px}
-      .hero-art{min-height:190px;margin-top:8px}.art-orbit{width:175px;font-size:83px}.float{width:43px;height:43px;font-size:20px}
-      .section{padding:22px 0}.section-head{align-items:center}.category-grid{gap:9px}.category{min-height:105px;padding:12px 5px}.category-icon{width:42px;height:42px;font-size:20px}.category strong{font-size:10px}
-      .feature-grid{grid-template-columns:1fr}.feature{padding:14px}
-      .promo{padding:20px;align-items:flex-start;flex-direction:column}.promo h2{font-size:22px}
-      .info-grid{grid-template-columns:1fr}
-      .mobile-nav{position:fixed;z-index:30;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(4,1fr);padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:#fffdf9ed;backdrop-filter:blur(14px);border-top:1px solid #f0e5e0}
-      .mobile-nav a{text-decoration:none;text-align:center;font-size:9px;font-weight:900;color:#95888a;padding:4px 2px}
-      .mobile-nav a span{display:block;font-size:19px;line-height:1.4}.mobile-nav a.active{color:var(--berry-dark)}
-      footer{padding-bottom:105px}
-    }
-    @media(max-width:360px){.brand-tag{display:none}.icon-btn.cart-label{font-size:0;gap:0}.icon-btn.cart-label .cart-count{font-size:10px}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fff8f6">
+<meta name="description" content="Mitcha Store — your tiny corner of digital happiness.">
+<title>Mitcha Store — Chosen By You</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#e4a6b5;--pink2:#fff0f3;--berry:#b96f83;--ink:#51464a;--muted:#96898b;--cream:#fffaf6;--green:#849476;--greenbg:#eff3e9;--line:#f0e4df;--shadow:0 12px 35px #77505c0c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:14px/1.6 'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.wrap{width:min(1160px,calc(100% - 36px));margin:auto}
+.topline{background:#eff2e8;color:#68785b;text-align:center;padding:7px 12px;font-size:10px;font-weight:800;letter-spacing:.3px}
+header{position:sticky;top:0;z-index:20;background:#fffaf6ed;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:11px;min-width:220px}.brand img,.brand .fallback{width:46px;height:46px;border-radius:15px;object-fit:cover;background:var(--pink2)}.brand .fallback{display:grid;place-items:center;font-size:24px}.brand-name{font:600 22px 'Fredoka',sans-serif;color:var(--berry);line-height:1.1}.brand-tag{font-size:9px;color:var(--muted);margin-top:3px}
+.navlinks{display:flex;align-items:center;gap:27px;font-size:12px;font-weight:700;color:#75686c}.navlinks a:hover{color:var(--berry)}.navright{display:flex;align-items:center;gap:9px}.nav-cta{background:var(--pink2);color:var(--berry);padding:10px 15px;border-radius:99px;font-size:11px;font-weight:800}.cartbtn{border:1px solid var(--line);background:white;padding:9px 13px;border-radius:13px;font-weight:800;color:var(--ink)}.badge{display:inline-grid;place-items:center;min-width:19px;height:19px;border-radius:50px;background:var(--pink);color:#8e5364;font-size:10px;margin-left:4px}
+.hero{padding:38px 0 28px}.hero-panel{position:relative;overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;min-height:410px;border-radius:30px;background:linear-gradient(112deg,#fff0f3 0%,#fff8f1 58%,#eef2e8 100%);border:1px solid #f1e4df;box-shadow:var(--shadow)}
+.hero-copy{padding:52px 0 48px 55px;position:relative;z-index:2}.eyebrow{display:inline-flex;align-items:center;gap:7px;background:#fff9f8;border:1px solid #f1dfe2;border-radius:99px;padding:7px 13px;color:var(--berry);font-size:10px;font-weight:800;letter-spacing:.5px}.hero h1{font:600 clamp(38px,5.2vw,61px)/1.05 'Fredoka',sans-serif;letter-spacing:-1.2px;color:#57494e;margin:20px 0 13px}.hero h1 span{color:var(--berry)}.hero-copy p{max-width:450px;color:#817579;font-size:13px;line-height:1.9;margin:0 0 24px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.primary{background:var(--pink);color:#fff;border:0;border-radius:12px;padding:13px 19px;font-size:12px;font-weight:800;box-shadow:0 7px 16px #d99aaa35}.secondary{background:#fff;border:1px solid #eddfdc;color:#76676b;border-radius:12px;padding:12px 17px;font-size:12px;font-weight:800}
+.hero-art{position:relative;display:grid;place-items:center;min-height:350px}.orb{width:min(300px,75%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 28%,#fff 0 5%,#ffe7ec 38%,#f5d5df 70%,#e7eddd 100%);border:1px solid #ffffffc9;box-shadow:0 25px 55px #bd829033;display:grid;place-items:center;transform:rotate(-7deg)}.berry-art{font-size:clamp(100px,15vw,165px);filter:drop-shadow(0 12px 10px #9b52602b);transform:rotate(7deg)}.orbit-label{position:absolute;bottom:43px;left:50%;transform:translateX(-50%);font:600 14px 'Fredoka',sans-serif;letter-spacing:4px;color:#a66d7c}.float-card{position:absolute;background:#fffdfb;border:1px solid #f0e3df;border-radius:15px;padding:10px 14px;box-shadow:var(--shadow);font-size:10px;font-weight:800;color:#796a6e}.float-one{top:62px;right:35px;transform:rotate(5deg)}.float-two{bottom:67px;left:17px;transform:rotate(-5deg)}
+.quickfacts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:17px 0 35px}.fact{display:flex;align-items:center;gap:11px;background:white;border:1px solid var(--line);border-radius:15px;padding:13px 16px}.fact-icon{width:38px;height:38px;display:grid;place-items:center;background:var(--greenbg);border-radius:12px;font-size:18px}.fact b{display:block;font-size:11px}.fact small{font-size:9px;color:var(--muted)}
+.section{padding:9px 0 34px}.section-title{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:17px}.section-title h2{font:600 27px 'Fredoka',sans-serif;color:#65535a;margin:0}.section-title p{font-size:10px;color:var(--muted);margin:3px 0 0}.text-link{font-size:11px;font-weight:800;color:var(--berry);white-space:nowrap}
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.cat{background:white;border:1px solid var(--line);border-radius:17px;padding:17px 9px;text-align:center;transition:.2s}.cat:hover{transform:translateY(-3px);border-color:#e6bdc8;box-shadow:var(--shadow)}.cat-icon{width:48px;height:48px;border-radius:16px;margin:0 auto 9px;display:grid;place-items:center;background:var(--pink2);font-size:23px}.cat:nth-child(even) .cat-icon{background:var(--greenbg)}.cat b{font-size:10px;display:block}
+.featured{background:#fff;border:1px solid var(--line);border-radius:22px;padding:21px;box-shadow:var(--shadow)}.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.product{border:1px solid #f0e7e3;border-radius:16px;padding:14px;background:#fffdfb;min-width:0}.product-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(140deg,var(--pink2),var(--greenbg));font-size:23px;margin-bottom:11px}.product h3{font:500 16px 'Fredoka',sans-serif;margin:0;color:#66545b}.product small{font-size:9px;color:var(--muted)}.product-price{font-weight:800;color:var(--berry);font-size:12px;margin-top:10px}.product a{display:block;text-align:center;background:var(--pink2);color:var(--berry);border-radius:9px;padding:8px;margin-top:10px;font-size:10px;font-weight:800}
+.promo{display:grid;grid-template-columns:1fr auto;align-items:center;gap:15px;margin:34px 0;background:linear-gradient(105deg,#f8e1e7,#fff4eb 58%,#edf2e7);border:1px solid #f0e2dc;border-radius:22px;padding:23px 27px}.promo h2{font:600 23px 'Fredoka',sans-serif;color:#715a62;margin:0 0 4px}.promo p{font-size:11px;color:#8a7c7d;margin:0}.promo a{background:#fff;border:1px solid #eddfdc;color:var(--berry);padding:11px 15px;border-radius:11px;font-size:11px;font-weight:800;white-space:nowrap}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:15px 0 45px}.about-card{border:1px solid var(--line);background:white;border-radius:20px;padding:22px}.about-card h3{font:600 21px 'Fredoka',sans-serif;color:#725b63;margin:0 0 8px}.about-card p{font-size:11px;line-height:1.8;color:#897d7f;margin:0}.socials{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:15px}.socials a{border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center;font-size:10px;font-weight:800;background:#fffaf8}.socials a:hover{background:var(--pink2);color:var(--berry)}
+footer{border-top:1px solid var(--line);padding:22px 0 95px;text-align:center;color:#a09595;font-size:10px}.footer-brand{font:600 17px 'Fredoka',sans-serif;color:var(--berry);margin-bottom:3px}
+.mobilebar{display:none}
+@media(max-width:850px){.navlinks{gap:15px}.hero-copy{padding-left:35px}.categories{grid-template-columns:repeat(3,1fr)}.product-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.wrap{width:calc(100% - 24px)}.nav{height:65px}.brand{min-width:0}.brand img,.brand .fallback{width:40px;height:40px}.brand-name{font-size:19px}.brand-tag{font-size:8px}.navlinks{display:none}.nav-cta{display:none}.hero{padding:17px 0 15px}.hero-panel{grid-template-columns:1fr;min-height:0;border-radius:23px}.hero-copy{padding:28px 22px 7px;text-align:center}.hero h1{font-size:43px;margin:15px 0 10px}.hero-copy p{font-size:11px;margin:0 auto 17px}.hero-actions{justify-content:center}.primary,.secondary{padding:11px 14px}.hero-art{min-height:225px}.orb{width:190px}.berry-art{font-size:110px}.orbit-label{bottom:19px;font-size:11px}.float-one{top:20px;right:16px}.float-two{bottom:30px;left:12px}.quickfacts{gap:7px;margin:11px 0 25px}.fact{padding:9px 7px;gap:6px;border-radius:12px}.fact-icon{width:30px;height:30px;font-size:15px;border-radius:9px}.fact b{font-size:9px}.fact small{font-size:7px}.section{padding-bottom:25px}.section-title h2{font-size:23px}.categories{grid-template-columns:repeat(3,1fr);gap:8px}.cat{padding:12px 5px;border-radius:14px}.cat-icon{width:41px;height:41px;font-size:20px}.cat b{font-size:9px}.featured{padding:12px;border-radius:17px}.product-grid{gap:8px}.product{padding:10px;border-radius:13px}.product-icon{width:39px;height:39px;font-size:19px}.product h3{font-size:14px}.product-price{font-size:10px}.promo{grid-template-columns:1fr;margin:22px 0;padding:18px}.promo h2{font-size:20px}.promo a{justify-self:start}.about{grid-template-columns:1fr;gap:10px;margin-bottom:25px}.about-card{padding:17px}.socials{grid-template-columns:1fr 1fr}.mobilebar{display:grid;position:fixed;z-index:30;bottom:0;left:0;right:0;grid-template-columns:repeat(4,1fr);padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:#fffdf9ed;backdrop-filter:blur(14px);border-top:1px solid var(--line)}.mobilebar a{text-align:center;font-size:9px;font-weight:800;color:#918487}.mobilebar a span{display:block;font-size:18px;line-height:1.4}.mobilebar a.active{color:var(--berry)}footer{padding-bottom:100px}}
+</style>
 </head>
 <body>
-  <div class="announcement">♡ Open daily · 07.00–23.59 WIB · Please check stock before payment ♡</div>
+<div class="topline">♡ OPEN DAILY · 07.00—23.59 WIB · THANK YOU FOR SHOPPING SMALL ♡</div>
+<header><div class="wrap nav">
+ <a class="brand" href="./index.html">
+  <img src="assets/logo-mitcha.png" alt="Mitcha Store" onerror="this.outerHTML='<span class=&quot;fallback&quot;>🐈</span>'">
+  <span><span class="brand-name">Mitcha Store</span><span class="brand-tag" style="display:block">your tiny corner of digital happiness ♡</span></span>
+ </a>
+ <nav class="navlinks"><a href="#home">Home</a><a href="#categories">Categories</a><a href="#popular">Popular</a><a href="#about">About us</a></nav>
+ <div class="navright"><a class="nav-cta" href="https://wa.me/628881780693" target="_blank" rel="noopener">Chat admin ♡</a><a class="cartbtn" href="./cart.html">🛒 Cart <span class="badge" data-cart-count>0</span></a></div>
+</div></header>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="./index.html" aria-label="Mitcha Store beranda">
-        <img class="logo" src="assets/logo-mitcha.png" alt="Logo Mitcha Store" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span class=&quot;logo&quot; style=&quot;display:grid;place-items:center;font-size:22px&quot;>🐈</span>')">
-        <span>
-          <span class="brand-name" style="display:block">Mitcha Store</span>
-          <span class="brand-tag" style="display:block">your tiny corner of digital happiness ♡</span>
-        </span>
-      </a>
+<main class="wrap">
+<section class="hero" id="home">
+ <div class="hero-panel">
+  <div class="hero-copy">
+   <span class="eyebrow">✿ A LITTLE TREAT FOR YOU</span>
+   <h1>Little things,<br><span>lovely digital</span> days.</h1>
+   <p>Temukan kebutuhan digital favoritmu di Mitcha Store. Pilih produk, cek pilihan paket, lalu masukkan ke keranjang. Simple, cute, and made for you!</p>
+   <div class="hero-actions"><a class="primary" href="./produk.html">Explore products ↗</a><a class="secondary" href="https://wa.me/628881780693" target="_blank" rel="noopener">💬 Chat admin</a></div>
+  </div>
+  <div class="hero-art"><div class="orb"><span class="berry-art">🍓</span></div><span class="orbit-label">MITCHA ♡</span><span class="float-card float-one">૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა cute finds</span><span class="float-card float-two">digital happiness ✿</span></div>
+ </div>
+</section>
 
-      <nav class="desktop-nav" aria-label="Navigasi utama">
-        <a class="active" href="./index.html">Home</a>
-        <a href="./produk.html">Products</a>
-        <a href="#categories">Categories</a>
-        <a href="#about">About us</a>
-      </nav>
+<section class="quickfacts" aria-label="Informasi toko">
+ <div class="fact"><span class="fact-icon">🕒</span><span><b>Open every day</b><small>07.00–23.59 WIB</small></span></div>
+ <div class="fact"><span class="fact-icon">💌</span><span><b>Easy ordering</b><small>Checkout via WhatsApp</small></span></div>
+ <div class="fact"><span class="fact-icon">🎀</span><span><b>Friendly support</b><small>Ask us before ordering</small></span></div>
+</section>
 
-      <div class="header-actions">
-        <a class="icon-btn cart-label" href="./cart.html" aria-label="Keranjang">🛒 <span class="cart-count" data-cart-count>0</span></a>
-        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Buka navigasi">☰</button>
-      </div>
-    </div>
-    <nav id="mobileMenu" class="container" style="display:none;padding:0 0 13px;gap:18px;font-size:12px;font-weight:900">
-      <a href="./index.html" style="text-decoration:none">Home</a>
-      <a href="./produk.html" style="text-decoration:none">Products</a>
-      <a href="#categories" style="text-decoration:none">Categories</a>
-      <a href="#about" style="text-decoration:none">About us</a>
-    </nav>
-  </header>
+<section class="section" id="categories">
+ <div class="section-title"><div><h2>Shop by category</h2><p>Find what makes your day a little better ♡</p></div><a class="text-link" href="./produk.html">View all products ↗</a></div>
+ <div class="categories">
+  <a class="cat" href="./produk.html?category=Streaming"><span class="cat-icon">📺</span><b>Streaming</b></a>
+  <a class="cat" href="./produk.html?category=Design%20%26%20Editing"><span class="cat-icon">🎨</span><b>Design & Editing</b></a>
+  <a class="cat" href="./produk.html?category=Education"><span class="cat-icon">📚</span><b>Education</b></a>
+  <a class="cat" href="./produk.html?category=Listening"><span class="cat-icon">🎧</span><b>Listening</b></a>
+  <a class="cat" href="./produk.html?category=Top%20Up%20Game"><span class="cat-icon">🎮</span><b>Top Up Game</b></a>
+  <a class="cat" href="./produk.html?category=Pulsa%20%26%20Kuota"><span class="cat-icon">📱</span><b>Pulsa & Kuota</b></a>
+ </div>
+</section>
 
-  <main class="container">
-    <section class="hero">
-      <div class="hero-card">
-        <div class="hero-copy">
-          <span class="eyebrow">✿ A LITTLE TREAT FOR YOU</span>
-          <h1>Little things,<br><em>lovely digital</em> days.</h1>
-          <p>Temukan kebutuhan digital favoritmu di Mitcha Store. Pilih produk yang kamu suka, cek pilihan paketnya, lalu order dengan mudah. Jangan lupa konfirmasi stok dan harga ke admin sebelum pembayaran, yaa! ♡</p>
-          <div class="hero-buttons">
-            <a class="btn btn-primary" href="./produk.html">🛍️ Explore products <span>↗</span></a>
-            <a class="btn" href="https://wa.me/628881780693" target="_blank" rel="noopener noreferrer">💬 Chat admin</a>
-          </div>
-        </div>
-        <div class="hero-art" aria-label="Dekorasi strawberry Mitcha Store">
-          <span class="float one">🍵</span>
-          <div class="art-orbit">🍓</div>
-          <span class="float two">🐈</span>
-        </div>
-      </div>
-    </section>
+<section class="section" id="popular">
+ <div class="section-title"><div><h2>Little popular picks ♡</h2><p>A few favorites from our catalog.</p></div><a class="text-link" href="./produk.html">See the catalog ↗</a></div>
+ <div class="featured"><div class="product-grid" id="featuredProducts">
+  <article class="product"><div class="product-icon">🎧</div><h3>Spotify</h3><small>Streaming</small><div class="product-price">Cek paket tersedia</div><a href="./produk.html">View details</a></article>
+  <article class="product"><div class="product-icon">🎨</div><h3>Canva</h3><small>Design & Editing</small><div class="product-price">Cek paket tersedia</div><a href="./produk.html">View details</a></article>
+  <article class="product"><div class="product-icon">✂️</div><h3>CapCut</h3><small>Design & Editing</small><div class="product-price">Cek paket tersedia</div><a href="./produk.html">View details</a></article>
+  <article class="product"><div class="product-icon">☁️</div><h3>Google One</h3><small>Storage</small><div class="product-price">Cek paket tersedia</div><a href="./produk.html">View details</a></article>
+ </div></div>
+</section>
 
-    <section class="section" id="categories">
-      <div class="section-head">
-        <div><div class="section-kicker">Find what you need</div><h2 class="section-title">Shop by category ♡</h2><p class="section-sub">Pilih kategori dan temukan produk favoritmu.</p></div>
-        <a class="text-link" href="./produk.html">View all products ↗</a>
-      </div>
-      <div class="category-grid">
-        <a class="category" href="./produk.html"><span class="category-icon">🎬</span><strong>Streaming</strong><small>Watch & chill</small></a>
-        <a class="category" href="./produk.html"><span class="category-icon">🎨</span><strong>Design & Editing</strong><small>Create something</small></a>
-        <a class="category" href="./produk.html"><span class="category-icon">📚</span><strong>Education</strong><small>Learn more</small></a>
-        <a class="category" href="./produk.html"><span class="category-icon">🎧</span><strong>Listening</strong><small>Good vibes</small></a>
-        <a class="category" href="./produk.html"><span class="category-icon">🎮</span><strong>Top Up Game</strong><small>Game time</small></a>
-        <a class="category" href="./produk.html"><span class="category-icon">📱</span><strong>Pulsa & Utility</strong><small>Stay connected</small></a>
-      </div>
-    </section>
+<section class="promo"><div><h2>Need a little help? 💗</h2><p>Tanya stok, paket, atau detail produk dulu juga boleh banget. Admin siap bantu!</p></div><a href="https://wa.me/628881780693" target="_blank" rel="noopener">Chat Mitcha Store ↗</a></section>
 
-    <section class="section">
-      <div class="section-head">
-        <div><div class="section-kicker">A little shop tour</div><h2 class="section-title">Why shop with us? 🌷</h2><p class="section-sub">Belanja digital dibuat simpel dan nyaman.</p></div>
-      </div>
-      <div class="feature-grid">
-        <article class="feature"><span class="feature-icon">🧺</span><div><h3>Easy shopping</h3><p>Pilih produk dan paket yang kamu mau melalui katalog Mitcha Store.</p></div></article>
-        <article class="feature"><span class="feature-icon">💌</span><div><h3>Friendly assistance</h3><p>Admin siap membantu mengecek ketersediaan dan detail pesanan.</p></div></article>
-        <article class="feature"><span class="feature-icon">🎀</span><div><h3>Clear information</h3><p>Baca regulasi dan ketentuan produk sebelum melanjutkan transaksi.</p></div></article>
-      </div>
-    </section>
+<section class="about" id="about">
+ <div class="about-card"><h3>A tiny store, lots of love.</h3><p>Mitcha Store hadir untuk bantu kamu menemukan kebutuhan digital favorit dengan proses order yang praktis. Sebelum melakukan pembayaran, pastikan ketersediaan produk sudah dikonfirmasi oleh admin, yaa. Thank you for choosing us! ♡</p></div>
+ <div class="about-card"><h3>Find us around ♡</h3><p>Lihat review, tanya admin, atau mampir ke akun sosial kami.</p><div class="socials">
+  <a href="https://t.me/chaxium" target="_blank" rel="noopener">💌 Testimoni pelanggan</a>
+  <a href="https://padlet.com/mitchastore/chosen-by-you-s023dhsyix7svmnco8vw" target="_blank" rel="noopener">🎀 Honest review</a>
+  <a href="https://x.com/seontuh" target="_blank" rel="noopener">𝕏 Akun X</a>
+  <a href="https://t.me/garcnet" target="_blank" rel="noopener">✈ Telegram admin</a>
+ </div></div>
+</section>
+</main>
+<footer><div class="wrap"><div class="footer-brand">Mitcha Store ♡</div>made with love & a little matcha · © Mitcha Store</div></footer>
+<nav class="mobilebar"><a class="active" href="./index.html"><span>⌂</span>Home</a><a href="./produk.html"><span>♡</span>Products</a><a href="./cart.html"><span>🛒</span>Cart <b data-cart-count>0</b></a><a href="./pesanan.html"><span>📦</span>Orders</a></nav>
 
-    <section class="promo">
-      <div><h2>Ready to find your favorite? ♡</h2><p>Jelajahi katalog dan temukan digital treats untuk menemani harimu.</p></div>
-      <a class="btn btn-primary" href="./produk.html">Browse the shop ↗</a>
-    </section>
-
-    <section class="section" id="about">
-      <div class="section-head">
-        <div><div class="section-kicker">A little note from us</div><h2 class="section-title">Stay connected ♡</h2><p class="section-sub">Temukan informasi, ulasan, dan kabar terbaru Mitcha Store.</p></div>
-      </div>
-      <div class="info-grid">
-        <article class="info-card">
-          <h3>Need a little help?</h3>
-          <p>Jam operasional setiap hari pukul <strong>07.00–23.59 WIB</strong>. Tanyakan stok dan harga terlebih dahulu sebelum melakukan pembayaran.</p>
-          <div class="info-links">
-            <a href="https://wa.me/628881780693" target="_blank" rel="noopener noreferrer">WhatsApp Admin ↗</a>
-            <a href="https://t.me/garcnet" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
-          </div>
-        </article>
-        <article class="info-card">
-          <h3>Get to know Mitcha</h3>
-          <p>Lihat testimoni dan honest review dari pelanggan, serta ikuti akun sosial media kami.</p>
-          <div class="info-links">
-            <a href="https://t.me/chaxium" target="_blank" rel="noopener noreferrer">Testimoni ↗</a>
-            <a href="https://padlet.com/mitchastore/chosen-by-you-s023dhsyix7svmnco8vw" target="_blank" rel="noopener noreferrer">Honest Review ↗</a>
-            <a href="https://x.com/seontuh" target="_blank" rel="noopener noreferrer">Akun X ↗</a>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="container">
-    <strong>Mitcha Store ♡</strong><br>
-    your tiny corner of digital happiness<br>
-    <span>made with love · Chosen By You 🍓</span>
-  </footer>
-
-  <nav class="mobile-nav" aria-label="Navigasi bawah">
-    <a class="active" href="./index.html"><span>⌂</span>Home</a>
-    <a href="./produk.html"><span>♡</span>Products</a>
-    <a href="./cart.html"><span>🛒</span>Cart <b data-cart-count>0</b></a>
-    <a href="./pesanan.html"><span>📦</span>Orders</a>
-  </nav>
-
-  <script>
-    'use strict';
-    // Count follows the cart structure planned for the next build step.
-    function updateCartCount(){
-      let count=0;
-      try{
-        const cart=JSON.parse(localStorage.getItem('mitcha_cart')||'[]');
-        count=Array.isArray(cart)?cart.reduce((sum,item)=>sum+(Number(item.qty)||1),0):0;
-      }catch(_){}
-      document.querySelectorAll('[data-cart-count]').forEach(el=>el.textContent=count);
-    }
-    updateCartCount();
-    window.addEventListener('storage',updateCartCount);
-
-    const menuToggle=document.getElementById('menuToggle');
-    const mobileMenu=document.getElementById('mobileMenu');
-    menuToggle?.addEventListener('click',()=>{
-      const open=mobileMenu.style.display==='flex';
-      mobileMenu.style.display=open?'none':'flex';
-      menuToggle.textContent=open?'☰':'✕';
-    });
-    mobileMenu?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
-      mobileMenu.style.display='none';
-      menuToggle.textContent='☰';
-    }));
-  </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./config.js"></script>
+<script>
+function updateCart(){let c=[];try{c=JSON.parse(localStorage.getItem('mitcha_cart')||'[]')}catch(e){}let n=Array.isArray(c)?c.reduce((s,x)=>s+(Number(x.qty)||1),0):0;document.querySelectorAll('[data-cart-count]').forEach(x=>x.textContent=n)}
+const iconMap=[['spotify','🎧'],['canva','🎨'],['capcut','✂️'],['google','☁️'],['netflix','🎬'],['youtube','▶️'],['disney','✨'],['adobe','🅰️'],['vidio','📺'],['game','🎮'],['pulsa','📱']];
+function getIcon(n){n=String(n).toLowerCase();for(const [k,v] of iconMap)if(n.includes(k))return v;return '♡'}
+function money(n){return n?new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n):'Cek paket tersedia'}
+async function loadFeatured(){
+ try{
+  if(!window.CHANARRA_SUPABASE_URL||!window.CHANARRA_SUPABASE_KEY||!window.supabase)return;
+  const db=window.supabase.createClient(window.CHANARRA_SUPABASE_URL,window.CHANARRA_SUPABASE_KEY);
+  const {data,error}=await db.from('products').select('name,category,packages,active').eq('active',true).limit(4);
+  if(error||!data?.length)return;
+  document.getElementById('featuredProducts').innerHTML=data.map(p=>{
+   const prices=(Array.isArray(p.packages)?p.packages:[]).map(x=>Number(x.price)||0).filter(x=>x>0);
+   const min=prices.length?Math.min(...prices):0;
+   return `<article class="product"><div class="product-icon">${getIcon(p.name)}</div><h3>${String(p.name).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}</h3><small>${String(p.category||'Other')}</small><div class="product-price">${money(min)}</div><a href="./produk.html">View details</a></article>`;
+  }).join('');
+ }catch(e){console.warn('Featured products fallback',e)}
+}
+updateCart();loadFeatured();window.addEventListener('storage',updateCart);
+</script>
 </body>
 </html>
