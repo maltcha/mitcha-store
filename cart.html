@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fffaf6">
+<title>Keranjang — Mitcha Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --berry:#d99aaa;--dark:#b9798c;--green:#829477;--ink:#62565a;
+  --muted:#a39796;--cream:#fffaf6;--line:#f0e2dc;--pink:#fff0f3;
+  --matcha:#edf2e5;--white:#fff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 8% 5%,#fff0f3 0,transparent 28%),radial-gradient(circle at 94% 25%,#edf2e5 0,transparent 25%),var(--cream);color:var(--ink);font-family:'Nunito',sans-serif;min-height:100vh}
+button,input{font:inherit}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:10;background:#fffaf6ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1080px;margin:auto;padding:13px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Fredoka',sans-serif;font-size:20px;font-weight:600}
+.logo{width:42px;height:42px;object-fit:contain;border-radius:14px;background:#fff0f3}
+.navlinks{display:flex;gap:9px;align-items:center}
+.navlinks a{font-size:13px;font-weight:800;padding:9px 13px;border-radius:999px}
+.navlinks a.active,.navlinks a:hover{background:var(--pink);color:var(--dark)}
+main{max-width:900px;margin:0 auto;padding:30px 18px 70px}
+.eyebrow{text-align:center;color:var(--dark);font-weight:800;font-size:12px;letter-spacing:.08em}
+h1{font-family:'Fredoka',sans-serif;text-align:center;font-size:clamp(30px,6vw,42px);margin:5px 0;color:var(--ink)}
+.subtitle{text-align:center;color:var(--muted);font-size:14px;margin:0 0 25px}
+.banner{background:linear-gradient(110deg,#fff0f3,#fffaf6 55%,#edf2e5);border:1px solid var(--line);border-radius:22px;padding:13px 17px;text-align:center;font-size:13px;font-weight:800;margin-bottom:18px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 10px 30px #9b6b7610;margin-bottom:17px}
+.panel-title{font-family:'Fredoka',sans-serif;font-size:20px;margin:0 0 15px}
+.cart-list{display:grid;gap:12px}
+.cart-item{display:grid;grid-template-columns:1fr auto;gap:12px;padding:14px;border:1px solid var(--line);border-radius:17px;background:#fffdfc}
+.item-name{font-weight:900;font-size:15px}
+.item-meta{font-size:12px;color:var(--muted);margin-top:3px}
+.item-price{font-size:13px;font-weight:900;color:var(--dark);margin-top:7px}
+.item-controls{display:flex;align-items:center;justify-content:flex-end;gap:7px;flex-wrap:wrap}
+.qty-btn,.remove-btn{border:1px solid var(--line);background:var(--cream);color:var(--ink);border-radius:10px;min-width:31px;height:31px;font-weight:900;cursor:pointer}
+.qty{min-width:20px;text-align:center;font-weight:900}
+.remove-btn{padding:0 10px;color:#b65d72;font-size:12px}
+.empty{text-align:center;padding:30px 12px;color:var(--muted)}
+.empty .emoji{font-size:40px}
+.empty p{margin:8px 0 16px}
+.primary,.secondary{display:inline-flex;justify-content:center;align-items:center;border:0;border-radius:999px;padding:12px 19px;font-weight:900;cursor:pointer;transition:.2s}
+.primary{background:var(--dark);color:white;box-shadow:0 5px 14px #b9798c30}
+.primary:hover{transform:translateY(-1px);filter:brightness(.98)}
+.secondary{background:var(--pink);color:var(--dark)}
+.full{width:100%}
+.summary-row{display:flex;justify-content:space-between;gap:12px;font-size:14px}
+.total{border-top:1px dashed var(--line);margin-top:13px;padding-top:14px;font-weight:900;font-size:18px}
+.total strong{color:var(--dark)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.fullrow{grid-column:1/-1}
+label{font-size:13px;font-weight:900}
+input{width:100%;border:1px solid var(--line);border-radius:13px;padding:12px 13px;background:#fffdfc;color:var(--ink);outline:none}
+input:focus{border-color:var(--berry);box-shadow:0 0 0 3px #d99aaa20}
+.hint{font-size:11px;color:var(--muted);line-height:1.5}
+.notice{font-size:12px;line-height:1.6;background:var(--matcha);border-radius:14px;padding:12px 14px;margin:14px 0 16px}
+.error{display:none;color:#b34c62;font-size:12px;font-weight:800;margin:0 0 12px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:0 15px 25px}
+@media(max-width:600px){
+ .nav{padding:10px 13px}.brand{font-size:17px}.logo{width:36px;height:36px}
+ .navlinks a{padding:8px 10px;font-size:12px}
+ main{padding:24px 13px 50px}.panel{padding:16px}
+ .form-grid{grid-template-columns:1fr}.field.fullrow{grid-column:auto}
+ .cart-item{grid-template-columns:1fr}.item-controls{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a class="brand" href="./index.html">
+      <img class="logo" src="./assets/logo-mitcha.png" alt="Mitcha Store" onerror="this.style.display='none'">
+      <span>MITCHA ♡</span>
+    </a>
+    <div class="navlinks">
+      <a href="./index.html">Home</a>
+      <a href="./produk.html">Produk</a>
+      <a class="active" href="./cart.html">Cart <span id="navCount">0</span></a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="eyebrow">A LITTLE BASKET OF HAPPINESS ♡</div>
+  <h1>Keranjang Belanja</h1>
+  <p class="subtitle">Cek dulu pilihanmu sebelum lanjut checkout, ya!</p>
+  <div class="banner">♡ Mitcha Store · Open daily 07.00–23.59 WIB ♡</div>
+
+  <section class="panel">
+    <h2 class="panel-title">🛒 Pesanan kamu</h2>
+    <div id="cartList" class="cart-list"></div>
+  </section>
+
+  <section class="panel" id="summaryPanel">
+    <h2 class="panel-title">♡ Ringkasan</h2>
+    <div class="summary-row"><span>Total item</span><strong id="totalQty">0</strong></div>
+    <div class="summary-row total"><span>Total pembayaran</span><strong id="grandTotal">Rp0</strong></div>
+  </section>
+
+  <section class="panel">
+    <h2 class="panel-title">🎀 Data pemesan</h2>
+    <p class="hint" style="margin-top:-8px;margin-bottom:16px">Semua kolom wajib diisi agar admin bisa memproses pesananmu.</p>
+    <form id="checkoutForm">
+      <div class="form-grid">
+        <div class="field fullrow">
+          <label for="customerName">Nama lengkap *</label>
+          <input id="customerName" name="customerName" autocomplete="name" placeholder="Masukkan nama kamu" required>
+        </div>
+        <div class="field fullrow">
+          <label for="device">Device login + merk *</label>
+          <input id="device" name="device" placeholder="Contoh: HP + POCO / Laptop + ASUS" required>
+          <span class="hint">Tulis jenis perangkat sekaligus merknya, ya.</span>
+        </div>
+        <div class="field fullrow">
+          <label for="city">Lokasi kota *</label>
+          <input id="city" name="city" placeholder="Contoh: Surakarta" required>
+        </div>
+      </div>
+      <div class="notice">♡ Pastikan nama produk, paket, dan data pemesan sudah benar. Setelah menekan tombol checkout, WhatsApp akan terbuka dengan format pesanan otomatis.</div>
+      <p class="error" id="formError">Keranjang masih kosong. Yuk pilih produk dulu! ♡</p>
+      <button class="primary full" type="submit">Checkout via WhatsApp ♡</button>
+    </form>
+  </section>
+</main>
+<footer>made with love by Mitcha Store ♡</footer>
+
+<script>
+/* Nomor WhatsApp admin: isi dengan format internasional tanpa tanda + atau spasi.
+   Contoh: 6281234567890 */
+const WHATSAPP_NUMBER = "GANTI_DENGAN_NOMOR_WA_ADMIN";
+
+const CART_KEY = "mitcha_cart";
+const rupiah = value => new Intl.NumberFormat("id-ID", {
+  style:"currency", currency:"IDR", maximumFractionDigits:0
+}).format(Number(value)||0);
+
+function getCart(){
+  try {
+    const data = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+    return Array.isArray(data) ? data : [];
+  } catch { return []; }
+}
+function saveCart(cart){
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  renderCart();
+}
+function itemTotal(item){
+  return (Number(item.price)||0) * (Number(item.qty)||1);
+}
+function renderCart(){
+  const cart = getCart();
+  const list = document.getElementById("cartList");
+  const qty = cart.reduce((sum,item)=>sum+(Number(item.qty)||1),0);
+  const total = cart.reduce((sum,item)=>sum+itemTotal(item),0);
+  document.getElementById("navCount").textContent = qty;
+  document.getElementById("totalQty").textContent = qty;
+  document.getElementById("grandTotal").textContent = rupiah(total);
+
+  if(!cart.length){
+    list.innerHTML = `<div class="empty"><div class="emoji">🐈</div><strong>Keranjangmu masih kosong</strong><p>Belum ada produk yang dipilih nih.</p><a class="secondary" href="./produk.html">Lihat produk ♡</a></div>`;
+    return;
+  }
+  list.innerHTML = cart.map((item,index)=>{
+    const product = escapeHtml(item.product || item.name || "Produk");
+    const plan = escapeHtml(item.plan || "Umum");
+    const pack = escapeHtml(item.package || item.name || "Paket");
+    const count = Math.max(1,Number(item.qty)||1);
+    return `<article class="cart-item">
+      <div>
+        <div class="item-name">${product}</div>
+        <div class="item-meta">${plan} · ${pack}</div>
+        <div class="item-price">${rupiah(item.price)} / item · Subtotal ${rupiah(itemTotal(item))}</div>
+      </div>
+      <div class="item-controls">
+        <button class="qty-btn" type="button" aria-label="Kurangi jumlah" onclick="changeQty(${index},-1)">−</button>
+        <span class="qty">${count}</span>
+        <button class="qty-btn" type="button" aria-label="Tambah jumlah" onclick="changeQty(${index},1)">+</button>
+        <button class="remove-btn" type="button" onclick="removeItem(${index})">Hapus</button>
+      </div>
+    </article>`;
+  }).join("");
+}
+function escapeHtml(value){
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[char]));
+}
+function changeQty(index,delta){
+  const cart=getCart();
+  if(!cart[index]) return;
+  cart[index].qty=(Number(cart[index].qty)||1)+delta;
+  if(cart[index].qty<=0) cart.splice(index,1);
+  saveCart(cart);
+}
+function removeItem(index){
+  const cart=getCart();
+  cart.splice(index,1);
+  saveCart(cart);
+}
+document.getElementById("checkoutForm").addEventListener("submit",event=>{
+  event.preventDefault();
+  const cart=getCart();
+  const error=document.getElementById("formError");
+  if(!cart.length){
+    error.style.display="block";
+    document.getElementById("cartList").scrollIntoView({behavior:"smooth",block:"center"});
+    return;
+  }
+  error.style.display="none";
+  const name=document.getElementById("customerName").value.trim();
+  const device=document.getElementById("device").value.trim();
+  const city=document.getElementById("city").value.trim();
+  if(!name||!device||!city) return;
+
+  if(!/^\d{9,15}$/.test(WHATSAPP_NUMBER)){
+    alert("Nomor WhatsApp admin belum diatur. Isi WHATSAPP_NUMBER di bagian script cart.html terlebih dahulu.");
+    return;
+  }
+  const total=cart.reduce((sum,item)=>sum+itemTotal(item),0);
+  const lines=cart.map((item,index)=>{
+    return `${index+1}. ${item.product || item.name || "Produk"}\n   Paket: ${item.plan || "Umum"} — ${item.package || item.name || "Paket"}\n   Harga: ${rupiah(item.price)} x ${Number(item.qty)||1}\n   Subtotal: ${rupiah(itemTotal(item))}`;
+  });
+  const message=[
+    "Halo admin Mitcha Store! ♡",
+    "",
+    "*Saya ingin checkout pesanan:*",
+    ...lines,
+    "",
+    `*Total: ${rupiah(total)}*`,
+    "",
+    "*Data Pemesan*",
+    `Nama: ${name}`,
+    `Device login + merk: ${device}`,
+    `Lokasi kota: ${city}`,
+    "",
+    "Mohon cek ketersediaan stoknya terlebih dahulu ya. Terima kasih! ♡"
+  ].join("\n");
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,"_blank","noopener");
+});
+renderCart();
+</script>
+</body>
+</html>
