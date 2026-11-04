@@ -558,7 +558,18 @@ header{
   .top{min-height:64px}
   .brand h1{font-size:18px}
   .brand p{font-size:8px}
-  .chip{display:none}
+  .chip:not(#openRules){display:none}
+
+#openRules{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+  padding:8px 9px;
+  font-size:9px;
+}
+
+.actions{gap:6px}
   .toolbar{grid-template-columns:1fr}
   .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
   .product{min-height:170px;padding:12px 9px;border-radius:16px}
