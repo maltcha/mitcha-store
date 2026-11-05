@@ -9,83 +9,398 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root{--pink:#e88fa7;--pink2:#fff0f3;--berry:#c95f7e;--ink:#654c52;--muted:#9b858a;--cream:#fffaf8;--green:#849476;--greenbg:#eff3e9;--line:#f7dfe4;--shadow:0 12px 30px #9f65720d}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 8% 12%,#fff0f3 0,transparent 30%),radial-gradient(ellipse at 95% 45%,#f0f3e9 0,transparent 28%),var(--cream);color:var(--ink);font:14px/1.6 'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.wrap{width:min(1180px,calc(100% - 38px));margin:auto}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 8% 12%,#fff0f3 0,transparent 30%),radial-gradient(ellipse at 95% 45%,#f0f3e9 0,transparent 28%),var(--cream);color:var(--ink);font:14px/1.6 'DM Sans',sans-serif}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(1180px,calc(100% - 38px));margin:auto}
+
 .topline{background:#f1f2e8;color:#6e795e;text-align:center;padding:7px 12px;font-size:10px;font-weight:800;letter-spacing:.3px}
 header{position:sticky;top:0;z-index:20;background:#fffaf8ed;backdrop-filter:blur(14px);border-bottom:1px solid #f5e6e7}
-.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;min-width:230px}.brand img{width:78px;height:65px;object-fit:contain}.brand-name{font:600 25px 'Fredoka',sans-serif;color:var(--berry);line-height:1.1}.brand-tag{font-size:10px;color:var(--muted);margin-top:4px}
-.navlinks{display:flex;align-items:center;gap:27px;font-size:12px;font-weight:800;color:#765e64}.navlinks a:hover{color:var(--berry)}.navright{display:flex;align-items:center;gap:9px}.nav-cta{background:var(--pink);color:white;padding:10px 16px;border-radius:99px;font-size:11px;font-weight:800}.cartbtn{border:1px solid var(--line);background:white;padding:9px 13px;border-radius:13px;font-weight:800;color:var(--ink)}.badge{display:inline-grid;place-items:center;min-width:19px;height:19px;border-radius:50px;background:var(--pink);color:white;font-size:10px;margin-left:4px}
-.hero{padding:25px 0 18px}.hero-panel{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:390px;border-radius:27px;background:linear-gradient(110deg,#ffe9ee 0%,#fff5f3 49%,#edf2e7 100%);border:1px solid #f7dce3;box-shadow:var(--shadow)}.hero-copy{padding:48px 0 42px 55px;position:relative;z-index:2;align-self:center}.eyebrow{display:inline-flex;align-items:center;gap:7px;background:#fff8f8;border:1px solid #f7d5df;border-radius:99px;padding:7px 13px;color:var(--berry);font-size:10px;font-weight:800;letter-spacing:.5px}.hero h1{font:600 clamp(39px,5.1vw,62px)/1.04 'Fredoka',sans-serif;letter-spacing:-1px;color:#684e55;margin:19px 0 13px}.hero h1 span{color:var(--berry)}.hero-copy p{max-width:455px;color:#806a70;font-size:13px;line-height:1.85;margin:0 0 23px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.primary{background:var(--pink);color:#fff;border:0;border-radius:99px;padding:13px 20px;font-size:12px;font-weight:800;box-shadow:0 7px 16px #d99aaa35}.secondary{background:#fff;border:1px solid #f3dce1;color:#765c63;border-radius:99px;padding:12px 18px;font-size:12px;font-weight:800}
-.hero-art{position:relative;display:grid;place-items:center;min-height:360px;background:radial-gradient(ellipse at 52% 55%,#ffffffa8 0 35%,transparent 67%)}.mascot-main{width:min(94%,440px);max-height:365px;object-fit:contain;filter:drop-shadow(0 14px 15px #9c6a7620);position:relative;z-index:1}.float-card{position:absolute;background:#fffdfb;border:1px solid #f4dfe3;border-radius:15px;padding:9px 13px;box-shadow:var(--shadow);font-size:10px;font-weight:800;color:#79636a;z-index:2}.float-one{top:34px;right:28px;transform:rotate(5deg)}.float-two{bottom:35px;left:12px;transform:rotate(-5deg)}.heart{position:absolute;color:#e99caf;font-size:25px}.heart.h1{top:25%;left:10%}.heart.h2{right:8%;bottom:22%;font-size:19px}
-.quickfacts{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin:0 0 31px}.fact{display:flex;align-items:center;gap:12px;background:#fffdfc;border:1px solid var(--line);border-radius:17px;padding:13px 17px;box-shadow:var(--shadow)}.fact-icon{width:42px;height:42px;display:grid;place-items:center;background:var(--pink2);border-radius:13px;font-size:21px}.fact b{display:block;font-size:12px}.fact small{font-size:10px;color:var(--muted)}
-.section{padding:8px 0 30px}.section-title{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:15px}.section-title h2{font:600 29px 'Fredoka',sans-serif;color:#704f59;margin:0}.section-title p{font-size:11px;color:var(--muted);margin:2px 0 0}.text-link{font-size:11px;font-weight:800;color:var(--berry);white-space:nowrap}
-.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.cat{background:#fffdfc;border:1px solid var(--line);border-radius:19px;padding:17px 9px;text-align:center;transition:.2s;box-shadow:var(--shadow)}.cat:hover{transform:translateY(-3px);border-color:#e6bdc8}.cat-icon{width:52px;height:52px;border-radius:17px;margin:0 auto 9px;display:grid;place-items:center;background:var(--pink2);font-size:26px}.cat:nth-child(even) .cat-icon{background:var(--greenbg)}.cat b{font-size:11px;display:block}
-.featured{background:#fffdfc;border:1px solid var(--line);border-radius:23px;padding:18px;box-shadow:var(--shadow)}.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.product{border:1px solid #f7e2e5;border-radius:18px;padding:15px;background:#fffdfc;min-width:0;text-align:center}.product-icon{width:53px;height:53px;display:grid;place-items:center;border-radius:17px;background:linear-gradient(140deg,var(--pink2),var(--greenbg));font-size:26px;margin:0 auto 10px}.product h3{font:500 17px 'Fredoka',sans-serif;margin:0;color:#70545d}.product small{font-size:10px;color:var(--muted)}.product-price{font-weight:800;color:var(--berry);font-size:12px;margin-top:9px}.product a{display:block;text-align:center;background:var(--pink);color:white;border-radius:99px;padding:9px;margin-top:10px;font-size:11px;font-weight:800}
-.promo{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;align-items:center;gap:15px;margin:30px 0;background:linear-gradient(105deg,#f7e1e7,#fff3ee 58%,#edf2e7);border:1px solid #f2dfe1;border-radius:22px;padding:22px 28px}.promo h2{font:600 25px 'Fredoka',sans-serif;color:#71545d;margin:0 0 4px}.promo p{font-size:11px;color:#8a7479;margin:0}.promo a{background:#fff;border:1px solid #eddfdc;color:var(--berry);padding:11px 16px;border-radius:99px;font-size:11px;font-weight:800;white-space:nowrap}.promo-mascot{width:100px;height:100px;object-fit:contain;position:absolute;right:170px;bottom:-25px;opacity:.9}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:17px;margin:15px 0 38px}.about-card{border:1px solid var(--line);background:#fffdfc;border-radius:21px;padding:22px;box-shadow:var(--shadow)}.about-card h3{font:600 22px 'Fredoka',sans-serif;color:#725b63;margin:0 0 8px}.about-card p{font-size:11px;line-height:1.8;color:#897d7f;margin:0}.socials{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:15px}.socials a{border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;font-size:10px;font-weight:800;background:#fffaf8}.socials a:hover{background:var(--pink2);color:var(--berry)}
-footer{position:relative;overflow:hidden;border-top:1px solid var(--line);padding:24px 0 95px;text-align:center;color:#987f86;font-size:10px;background:linear-gradient(180deg,#fffaf8,#ffeaf0)}.footer-brand{font:600 19px 'Fredoka',sans-serif;color:var(--berry);margin-bottom:3px}.footer-mascot{position:absolute;width:95px;height:95px;object-fit:contain;right:4%;bottom:-22px}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;min-width:230px}
+.brand img{width:78px;height:65px;object-fit:contain}
+.brand-name{font:600 25px 'Fredoka',sans-serif;color:var(--berry);line-height:1.1}
+.brand-tag{font-size:10px;color:var(--muted);margin-top:4px}
+.navlinks{display:flex;align-items:center;gap:27px;font-size:12px;font-weight:800;color:#765e64}
+.navlinks a:hover{color:var(--berry)}
+.navright{display:flex;align-items:center;gap:9px}
+.nav-cta{background:var(--pink);color:white;padding:10px 16px;border-radius:99px;font-size:11px;font-weight:800}
+.cartbtn{border:1px solid var(--line);background:white;padding:9px 13px;border-radius:13px;font-weight:800;color:var(--ink)}
+.badge{display:inline-grid;place-items:center;min-width:19px;height:19px;border-radius:50px;background:var(--pink);color:white;font-size:10px;margin-left:4px}
+
+.hero{padding:25px 0 18px}
+.hero-panel{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:390px;border-radius:27px;background:linear-gradient(110deg,#ffe9ee 0%,#fff5f3 49%,#edf2e7 100%);border:1px solid #f7dce3;box-shadow:var(--shadow)}
+.hero-copy{padding:48px 0 42px 55px;position:relative;z-index:2;align-self:center}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;background:#fff8f8;border:1px solid #f7d5df;border-radius:99px;padding:7px 13px;color:var(--berry);font-size:10px;font-weight:800;letter-spacing:.5px}
+.hero h1{font:600 clamp(39px,5.1vw,62px)/1.04 'Fredoka',sans-serif;letter-spacing:-1px;color:#684e55;margin:19px 0 13px}
+.hero h1 span{color:var(--berry)}
+.hero-copy p{max-width:455px;color:#806a70;font-size:13px;line-height:1.85;margin:0 0 23px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.primary{background:var(--pink);color:#fff;border:0;border-radius:99px;padding:13px 20px;font-size:12px;font-weight:800;box-shadow:0 7px 16px #d99aaa35}
+.secondary{background:#fff;border:1px solid #f3dce1;color:#765c63;border-radius:99px;padding:12px 18px;font-size:12px;font-weight:800}
+
+.hero-art{position:relative;display:grid;place-items:center;min-height:360px;background:radial-gradient(ellipse at 52% 55%,#ffffffa8 0 35%,transparent 67%)}
+.mascot-main{width:min(94%,440px);max-height:365px;object-fit:contain;filter:drop-shadow(0 14px 15px #9c6a7620);position:relative;z-index:1}
+.float-card{position:absolute;background:#fffdfb;border:1px solid #f4dfe3;border-radius:15px;padding:9px 13px;box-shadow:var(--shadow);font-size:10px;font-weight:800;color:#79636a;z-index:2}
+.float-one{top:34px;right:28px;transform:rotate(5deg)}
+.float-two{bottom:35px;left:12px;transform:rotate(-5deg)}
+.heart{position:absolute;color:#e99caf;font-size:25px}
+.heart.h1{top:25%;left:10%}
+.heart.h2{right:8%;bottom:22%;font-size:19px}
+
+.quickfacts{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin:0 0 31px}
+.fact{display:flex;align-items:center;gap:12px;background:#fffdfc;border:1px solid var(--line);border-radius:17px;padding:13px 17px;box-shadow:var(--shadow)}
+.fact-icon{width:42px;height:42px;display:grid;place-items:center;background:var(--pink2);border-radius:13px;font-size:21px}
+.fact b{display:block;font-size:12px}
+.fact small{font-size:10px;color:var(--muted)}
+
+.section{padding:8px 0 30px}
+.section-title{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:15px}
+.section-title h2{font:600 29px 'Fredoka',sans-serif;color:#704f59;margin:0}
+.section-title p{font-size:11px;color:var(--muted);margin:2px 0 0}
+.text-link{font-size:11px;font-weight:800;color:var(--berry);white-space:nowrap}
+
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.cat{background:#fffdfc;border:1px solid var(--line);border-radius:19px;padding:17px 9px;text-align:center;transition:.2s;box-shadow:var(--shadow)}
+.cat:hover{transform:translateY(-3px);border-color:#e6bdc8}
+.cat-icon{width:52px;height:52px;border-radius:17px;margin:0 auto 9px;display:grid;place-items:center;background:var(--pink2);font-size:26px}
+.cat:nth-child(even) .cat-icon{background:var(--greenbg)}
+.cat b{font-size:11px;display:block}
+
+.featured{background:#fffdfc;border:1px solid var(--line);border-radius:23px;padding:18px;box-shadow:var(--shadow)}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.product{border:1px solid #f7e2e5;border-radius:18px;padding:15px;background:#fffdfc;min-width:0;text-align:center}
+.product h3{font:500 17px 'Fredoka',sans-serif;margin:0;color:#70545d}
+.product small{font-size:10px;color:var(--muted)}
+.product-price{font-weight:800;color:var(--berry);font-size:12px;margin-top:9px}
+.product a{display:block;text-align:center;background:var(--pink);color:white;border-radius:99px;padding:9px;margin-top:10px;font-size:11px;font-weight:800}
+
+.promo{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;align-items:center;gap:15px;margin:30px 0;background:linear-gradient(105deg,#f7e1e7,#fff3ee 58%,#edf2e7);border:1px solid #f2dfe1;border-radius:22px;padding:22px 28px}
+.promo h2{font:600 25px 'Fredoka',sans-serif;color:#71545d;margin:0 0 4px}
+.promo p{font-size:11px;color:#8a7479;margin:0}
+.promo a{background:#fff;border:1px solid #eddfdc;color:var(--berry);padding:11px 16px;border-radius:99px;font-size:11px;font-weight:800;white-space:nowrap}
+.promo-mascot{width:100px;height:100px;object-fit:contain;position:absolute;right:170px;bottom:-25px;opacity:.9}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:17px;margin:15px 0 38px}
+.about-card{border:1px solid var(--line);background:#fffdfc;border-radius:21px;padding:22px;box-shadow:var(--shadow)}
+.about-card h3{font:600 22px 'Fredoka',sans-serif;color:#725b63;margin:0 0 8px}
+.about-card p{font-size:11px;line-height:1.8;color:#897d7f;margin:0}
+.socials{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:15px}
+.socials a{border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;font-size:10px;font-weight:800;background:#fffaf8}
+.socials a:hover{background:var(--pink2);color:var(--berry)}
+
+footer{position:relative;overflow:hidden;border-top:1px solid var(--line);padding:24px 0 95px;text-align:center;color:#987f86;font-size:10px;background:linear-gradient(180deg,#fffaf8,#ffeaf0)}
+.footer-brand{font:600 19px 'Fredoka',sans-serif;color:var(--berry);margin-bottom:3px}
+.footer-mascot{position:absolute;width:95px;height:95px;object-fit:contain;right:4%;bottom:-22px}
+
 .mobilebar{display:none}
-@media(max-width:850px){.navlinks{gap:14px}.hero-copy{padding-left:32px}.categories{grid-template-columns:repeat(3,1fr)}.product-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.wrap{width:calc(100% - 24px)}.topline{font-size:9px}.nav{min-height:64px}.brand{min-width:0;gap:7px}.brand img{width:48px;height:47px}.brand-name{font-size:19px}.brand-tag{font-size:8px}.navlinks{display:none}.nav-cta{display:none}.cartbtn{font-size:10px;padding:8px 9px}.hero{padding:15px 0 13px}.hero-panel{grid-template-columns:1fr;min-height:0;border-radius:22px}.hero-copy{padding:26px 19px 0;text-align:center}.hero h1{font-size:42px;margin:15px 0 9px}.hero-copy p{font-size:11px;margin:0 auto 16px;max-width:390px}.hero-actions{justify-content:center}.primary,.secondary{padding:10px 15px}.hero-art{min-height:225px}.mascot-main{width:min(88%,290px);max-height:225px}.float-one{top:9px;right:10px}.float-two{bottom:14px;left:8px}.heart.h1{top:13%;left:9%}.quickfacts{gap:7px;margin:9px 0 23px}.fact{padding:9px 7px;gap:6px;border-radius:12px}.fact-icon{width:30px;height:30px;font-size:15px;border-radius:9px}.fact b{font-size:9px}.fact small{font-size:7px}.section{padding-bottom:23px}.section-title h2{font-size:23px}.section-title p{font-size:9px}.categories{grid-template-columns:repeat(3,1fr);gap:8px}.cat{padding:12px 5px;border-radius:14px}.cat-icon{width:42px;height:42px;font-size:21px}.cat b{font-size:9px}.featured{padding:10px;border-radius:17px}.product-grid{gap:8px}.product{padding:10px;border-radius:13px}.product-icon{width:40px;height:40px;font-size:20px}.product h3{font-size:14px}.product-price{font-size:10px}.promo{grid-template-columns:1fr;margin:20px 0;padding:17px}.promo h2{font-size:21px}.promo a{justify-self:start}.promo-mascot{right:2px;bottom:-24px;width:80px;opacity:.25}.about{grid-template-columns:1fr;gap:9px;margin-bottom:24px}.about-card{padding:17px}.socials{grid-template-columns:1fr 1fr}.footer-mascot{width:75px;right:0}footer{padding-bottom:100px}.mobilebar{
-  display:grid;
-  position:fixed;
-  z-index:100;
-  bottom:calc(14px + env(safe-area-inset-bottom));
-  left:14px;
-  right:14px;
-  grid-template-columns:repeat(4,1fr);
-  padding:10px 7px;
-  background:rgba(255,253,250,.94);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  border:1px solid #f2dce2;
-  border-radius:22px;
-  box-shadow:0 8px 30px rgba(117,75,87,.16);
+
+@media(max-width:850px){
+.navlinks{gap:14px}
+.hero-copy{padding-left:32px}
+.categories{grid-template-columns:repeat(3,1fr)}
+.product-grid{grid-template-columns:repeat(2,1fr)}
 }
-.mobilebar a{
-  text-align:center;
-  font-size:9px;
-  font-weight:800;
-  color:#918487;
-  padding:3px 0;
+
+@media(max-width:600px){
+.wrap{width:calc(100% - 24px)}
+.topline{font-size:9px}
+.nav{min-height:64px}
+.brand{min-width:0;gap:7px}
+.brand img{width:48px;height:47px}
+.brand-name{font-size:19px}
+.brand-tag{font-size:8px}
+.navlinks{display:none}
+.nav-cta{display:none}
+.cartbtn{font-size:10px;padding:8px 9px}
+.hero{padding:15px 0 13px}
+.hero-panel{grid-template-columns:1fr;min-height:0;border-radius:22px}
+.hero-copy{padding:26px 19px 0;text-align:center}
+.hero h1{font-size:42px;margin:15px 0 9px}
+.hero-copy p{font-size:11px;margin:0 auto 16px;max-width:390px}
+.hero-actions{justify-content:center}
+.primary,.secondary{padding:10px 15px}
+.hero-art{min-height:225px}
+.mascot-main{width:min(88%,290px);max-height:225px}
+.float-one{top:9px;right:10px}
+.float-two{bottom:14px;left:8px}
+.heart.h1{top:13%;left:9%}
+.quickfacts{gap:7px;margin:9px 0 23px}
+.fact{padding:9px 7px;gap:6px;border-radius:12px}
+.fact-icon{width:30px;height:30px;font-size:15px;border-radius:9px}
+.fact b{font-size:9px}
+.fact small{font-size:7px}
+.section{padding-bottom:23px}
+.section-title h2{font-size:23px}
+.section-title p{font-size:9px}
+.categories{grid-template-columns:repeat(3,1fr);gap:8px}
+.cat{padding:12px 5px;border-radius:14px}
+.cat-icon{width:42px;height:42px;font-size:21px}
+.cat b{font-size:9px}
+.featured{padding:10px;border-radius:17px}
+.product-grid{gap:8px}
+.product{padding:10px;border-radius:13px}
+.product h3{font-size:14px}
+.product-price{font-size:10px}
+.promo{grid-template-columns:1fr;margin:20px 0;padding:17px}
+.promo h2{font-size:21px}
+.promo a{justify-self:start}
+.promo-mascot{right:2px;bottom:-24px;width:80px;opacity:.25}
+.about{grid-template-columns:1fr;gap:9px;margin-bottom:24px}
+.about-card{padding:17px}
+.socials{grid-template-columns:1fr 1fr}
+.footer-mascot{width:75px;right:0}
+footer{padding-bottom:100px}
+
+.mobilebar{
+display:grid;
+position:fixed;
+z-index:100;
+bottom:calc(14px + env(safe-area-inset-bottom));
+left:14px;
+right:14px;
+grid-template-columns:repeat(4,1fr);
+padding:10px 7px;
+background:rgba(255,253,250,.94);
+backdrop-filter:blur(16px);
+-webkit-backdrop-filter:blur(16px);
+border:1px solid #f2dce2;
+border-radius:22px;
+box-shadow:0 8px 30px rgba(117,75,87,.16);
 }
-.mobilebar a span{
-  display:block;
-  font-size:20px;
-  line-height:1.5;
+.mobilebar a{text-align:center;font-size:9px;font-weight:800;color:#918487;padding:3px 0}
+.mobilebar a span{display:block;font-size:20px;line-height:1.5}
+.mobilebar a.active{color:var(--berry)}
 }
-.mobilebar a.active{color:var(--berry)}z-index:30;bottom:0;left:0;right:0;grid-template-columns:repeat(4,1fr);padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:#fffdf9ed;backdrop-filter:blur(14px);border-top:1px solid var(--line)}.mobilebar a{text-align:center;font-size:9px;font-weight:800;color:#918487}.mobilebar a span{display:block;font-size:18px;line-height:1.4}.mobilebar a.active{color:var(--berry)}}
 </style>
 </head>
+
 <body>
 <div class="topline">♡ OPEN DAILY · 07.00—23.59 WIB · THANK YOU FOR SHOPPING SMALL ♡</div>
-<header><div class="wrap nav">
- <a class="brand" href="./index.html"><img src="assets/mascot.png" alt="Mitcha Store"><span><span class="brand-name">Mitcha Store</span><span class="brand-tag" style="display:block">your tiny corner of digital happiness ♡</span></span></a>
- <nav class="navlinks"><a href="#home">Home</a><a href="#categories">Categories</a><a href="#popular">Popular</a><a href="#about">About us</a></nav>
- <div class="navright"><a class="nav-cta" href="https://wa.me/628881780693" target="_blank" rel="noopener">Chat admin ♡</a><a class="cartbtn" href="./cart.html">🛒 Cart <span class="badge" data-cart-count>0</span></a></div>
-</div></header>
+
+<header>
+<div class="wrap nav">
+<a class="brand" href="./index.html">
+<img src="assets/mascot.png" alt="Mitcha Store">
+<span>
+<span class="brand-name">Mitcha Store</span>
+<span class="brand-tag" style="display:block">your tiny corner of digital happiness ♡</span>
+</span>
+</a>
+
+<nav class="navlinks">
+<a href="#home">Home</a>
+<a href="#categories">Categories</a>
+<a href="#popular">Popular</a>
+<a href="#about">About us</a>
+</nav>
+
+<div class="navright">
+<a class="nav-cta" href="https://wa.me/628881780693" target="_blank" rel="noopener">Chat admin ♡</a>
+<a class="cartbtn" href="./cart.html">🛒 Cart <span class="badge" data-cart-count>0</span></a>
+</div>
+</div>
+</header>
+
 <main class="wrap">
-<section class="hero" id="home"><div class="hero-panel">
- <div class="hero-copy"><span class="eyebrow">✿ A LITTLE TREAT FOR YOU</span><h1>Little things,<br><span>lovely digital</span> days. ♡</h1><p>Temukan kebutuhan digital favoritmu di Mitcha Store. Pilih produk, cek pilihan paket, lalu masukkan ke keranjang. Simple, cute, and made for you! ♡</p><div class="hero-actions"><a class="primary" href="./produk.html">Explore products ↗</a><a class="secondary" href="https://wa.me/628881780693" target="_blank" rel="noopener">☏ Chat admin</a></div></div>
- <div class="hero-art"><span class="heart h1">♥</span><img class="mascot-main" src="./assets/mascot.png" alt="Mitcha Store chibi mascot"><span class="heart h2">♥</span><span class="float-card float-one">૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა cute finds</span><span class="float-card float-two">digital happiness ✿</span></div>
-</div></section>
-<section class="quickfacts" aria-label="Informasi toko"><div class="fact"><span class="fact-icon">🕒</span><span><b>Full Warranty</b></span></div><div class="fact"><span class="fact-icon">💌</span><span><b>Sweet n fast respon<b></span></div><div class="fact"><span class="fact-icon">💸</span><span><b>Affordable Prices<b></b></span></div></section>
-<section class="section" id="categories"><div class="section-title"><div><h2>Shop by category</h2><p>Find what makes your day a little better ♡</p></div><a class="text-link" href="./produk.html">View all products ↗</a></div><div class="categories">
-<a class="cat" href="./produk.html?category=Streaming"><span class="cat-icon">📺</span><b>Streaming</b></a><a class="cat" href="./produk.html?category=Design%20%26%20Editing"><span class="cat-icon">🎨</span><b>Design & Editing</b></a><a class="cat" href="./produk.html?category=Education"><span class="cat-icon">📚</span><b>Education</b></a><a class="cat" href="./produk.html?category=Listening"><span class="cat-icon">🎧</span><b>Listening</b></a><a class="cat" href="./produk.html?category=Top%20Up%20Game"><span class="cat-icon">🎮</span><b>Top Up Game</b></a><a class="cat" href="./produk.html?category=Pulsa%20%26%20Kuota"><span class="cat-icon">📱</span><b>Pulsa & Kuota</b></a></div></section>
-<section class="section" id="popular"><div class="section-title"><div><h2>Little popular picks ♡</h2><p>A few favorites from our catalog.</p></div><a class="text-link" href="./produk.html">See the catalog ↗</a></div><div class="featured"><div class="product-grid" id="featuredProducts">
-<article class="product"><div class="product-icon">🎧</div><h3>Spotify</h3><small>Streaming</small><div class="product-price">Cek paket tersedia</div><a href="./produk.html">View details</a></article><article class="product"><div class="product-icon">🎨</div><h3>Canva</h3><small>Design & Editing</small><div class="product-price">Cek paket tersedia</div><a href="./produk.html">View details</a></article><article class="product"><div class="product-icon">✂️</div><h3>CapCut</h3><small>Design & Editing</small><div class="product-price">Cek paket tersedia</div><a href="./produk.html">View details</a></article><article class="product"><div class="product-icon">☁️</div><h3>Google One</h3><small>Storage</small><div class="product-price">Cek paket tersedia</div><a href="./produk.html">View details</a></article></div></div></section>
-<section class="promo"><div><h2>Need a little help? ♡</h2><p>Tanya stok, paket, atau detail produk dulu juga boleh banget. Admin siap bantu!</p></div><a href="https://wa.me/628881780693" target="_blank" rel="noopener">Chat Mitcha Store ↗</a><img class="promo-mascot" src="./assets/mascot.png" alt=""></section>
-<section class="about" id="about"><div class="about-card"><h3>A tiny store, lots of love.</h3><p>Mitcha Store hadir untuk bantu kamu menemukan kebutuhan digital favorit dengan proses order yang praktis. Sebelum melakukan pembayaran, pastikan ketersediaan produk sudah dikonfirmasi oleh admin, yaa. Thank you for choosing us! ♡</p></div><div class="about-card"><h3>Find us around ♡</h3><p>Lihat review, tanya admin, atau mampir ke akun sosial kami.</p><div class="socials"><a href="https://t.me/chaxium" target="_blank" rel="noopener">💌 Testimoni pelanggan</a><a href="https://padlet.com/mitchastore/chosen-by-you-s023dhsyix7svmnco8vw" target="_blank" rel="noopener">🎀 Honest review</a><a href="https://x.com/seontuh" target="_blank" rel="noopener">𝕏 Akun X</a><a href="https://t.me/garcnet" target="_blank" rel="noopener">✈ Telegram admin</a></div></div></section>
+
+<section class="hero" id="home">
+<div class="hero-panel">
+<div class="hero-copy">
+<span class="eyebrow">✿ A LITTLE TREAT FOR YOU</span>
+<h1>Little things,<br><span>lovely digital</span> days. ♡</h1>
+<p>Temukan kebutuhan digital favoritmu di Mitcha Store. Pilih produk, cek pilihan paket, lalu masukkan ke keranjang. Simple, cute, and made for you! ♡</p>
+<div class="hero-actions">
+<a class="primary" href="./produk.html">Explore products ↗</a>
+<a class="secondary" href="https://wa.me/628881780693" target="_blank" rel="noopener">☏ Chat admin</a>
+</div>
+</div>
+
+<div class="hero-art">
+<span class="heart h1">♥</span>
+<img class="mascot-main" src="./assets/mascot.png" alt="Mitcha Store chibi mascot">
+<span class="heart h2">♥</span>
+<span class="float-card float-one">૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა cute finds</span>
+<span class="float-card float-two">digital happiness ✿</span>
+</div>
+</div>
+</section>
+
+<section class="quickfacts" aria-label="Informasi toko">
+<div class="fact"><span class="fact-icon">🕒</span><span><b>Full Warranty</b></span></div>
+<div class="fact"><span class="fact-icon">💌</span><span><b>Sweet n fast respon</b></span></div>
+<div class="fact"><span class="fact-icon">💸</span><span><b>Affordable Prices</b></span></div>
+</section>
+
+<section class="section" id="categories">
+<div class="section-title">
+<div><h2>Shop by category</h2><p>Find what makes your day a little better ♡</p></div>
+<a class="text-link" href="./produk.html">View all products ↗</a>
+</div>
+
+<div class="categories">
+<a class="cat" href="./produk.html?category=Streaming"><span class="cat-icon">📺</span><b>Streaming</b></a>
+<a class="cat" href="./produk.html?category=Design%20%26%20Editing"><span class="cat-icon">🎨</span><b>Design & Editing</b></a>
+<a class="cat" href="./produk.html?category=Education"><span class="cat-icon">📚</span><b>Education</b></a>
+<a class="cat" href="./produk.html?category=Listening"><span class="cat-icon">🎧</span><b>Listening</b></a>
+<a class="cat" href="./produk.html?category=Top%20Up%20Game"><span class="cat-icon">🎮</span><b>Top Up Game</b></a>
+<a class="cat" href="./produk.html?category=Pulsa%20%26%20Kuota"><span class="cat-icon">📱</span><b>Pulsa & Kuota</b></a>
+</div>
+</section>
+
+<section class="section" id="popular">
+<div class="section-title">
+<div><h2>Little popular picks ♡</h2><p>A few favorites from our catalog.</p></div>
+<a class="text-link" href="./produk.html">See the catalog ↗</a>
+</div>
+
+<div class="featured">
+<div class="product-grid" id="featuredProducts">
+
+<article class="product">
+<h3>Spotify</h3>
+<small>Streaming</small>
+<div class="product-price">Cek paket tersedia</div>
+<a href="./produk.html">View details</a>
+</article>
+
+<article class="product">
+<h3>Canva</h3>
+<small>Design & Editing</small>
+<div class="product-price">Cek paket tersedia</div>
+<a href="./produk.html">View details</a>
+</article>
+
+<article class="product">
+<h3>CapCut</h3>
+<small>Design & Editing</small>
+<div class="product-price">Cek paket tersedia</div>
+<a href="./produk.html">View details</a>
+</article>
+
+<article class="product">
+<h3>Google One</h3>
+<small>Storage</small>
+<div class="product-price">Cek paket tersedia</div>
+<a href="./produk.html">View details</a>
+</article>
+
+</div>
+</div>
+</section>
+
+<section class="promo">
+<div>
+<h2>Need a little help? ♡</h2>
+<p>Tanya stok, paket, atau detail produk dulu juga boleh banget. Admin siap bantu!</p>
+</div>
+<a href="https://wa.me/628881780693" target="_blank" rel="noopener">Chat Mitcha Store ↗</a>
+<img class="promo-mascot" src="./assets/mascot.png" alt="">
+</section>
+
+<section class="about" id="about">
+<div class="about-card">
+<h3>A tiny store, lots of love.</h3>
+<p>Mitcha Store hadir untuk bantu kamu menemukan kebutuhan digital favorit dengan proses order yang praktis. Sebelum melakukan pembayaran, pastikan ketersediaan produk sudah dikonfirmasi oleh admin, yaa. Thank you for choosing us! ♡</p>
+</div>
+
+<div class="about-card">
+<h3>Find us around ♡</h3>
+<p>Lihat review, tanya admin, atau mampir ke akun sosial kami.</p>
+<div class="socials">
+<a href="https://t.me/chaxium" target="_blank" rel="noopener">💌 Testimoni pelanggan</a>
+<a href="https://padlet.com/mitchastore/chosen-by-you-s023dhsyix7svmnco8vw" target="_blank" rel="noopener">🎀 Honest review</a>
+<a href="https://x.com/seontuh" target="_blank" rel="noopener">𝕏 Akun X</a>
+<a href="https://t.me/garcnet" target="_blank" rel="noopener">✈ Telegram admin</a>
+</div>
+</div>
+</section>
+
 </main>
-<footer><div class="wrap"><div class="footer-brand">Mitcha Store ♡</div>made with love & a little matcha · © Mitcha Store</div><img class="footer-mascot" src="./assets/mascot.png" alt=""></footer>
-<nav class="mobilebar"><a class="active" href="./index.html"><span>⌂</span>Home</a><a href="./produk.html"><span>♡</span>Products</a><a href="./cart.html"><span>🛒</span>Cart <b data-cart-count>0</b></a><a href="./pesanan.html"><span>📦</span>Orders</a></nav>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./config.js"></script><script>
-function updateCart(){let c=[];try{c=JSON.parse(localStorage.getItem('mitcha_cart')||'[]')}catch(e){}let n=Array.isArray(c)?c.reduce((s,x)=>s+(Number(x.qty)||1),0):0;document.querySelectorAll('[data-cart-count]').forEach(x=>x.textContent=n)}
-const iconMap=[['spotify','🎧'],['canva','🎨'],['capcut','✂️'],['google','☁️'],['netflix','🎬'],['youtube','▶️'],['disney','✨'],['adobe','🅰️'],['vidio','📺'],['game','🎮'],['pulsa','📱']];
-function getIcon(n){n=String(n).toLowerCase();for(const [k,v] of iconMap)if(n.includes(k))return v;return '♡'}
-function money(n){return n?new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n):'Cek paket tersedia'}
-async function loadFeatured(){try{if(!window.CHANARRA_SUPABASE_URL||!window.CHANARRA_SUPABASE_KEY||!window.supabase)return;const db=window.supabase.createClient(window.CHANARRA_SUPABASE_URL,window.CHANARRA_SUPABASE_KEY);const {data,error}=await db.from('products').select('name,category,packages,active').eq('active',true).limit(4);if(error||!data?.length)return;document.getElementById('featuredProducts').innerHTML=data.map(p=>{const prices=(Array.isArray(p.packages)?p.packages:[]).map(x=>Number(x.price)||0).filter(x=>x>0);const min=prices.length?Math.min(...prices):0;const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));return `<article class="product"><div class="product-icon">${getIcon(p.name)}</div><h3>${safe(p.name)}</h3><small>${safe(p.category||'Other')}</small><div class="product-price">${money(min)}</div><a href="./produk.html">View details</a></article>`}).join('')}catch(e){console.warn('Featured products fallback',e)}}
-updateCart();loadFeatured();window.addEventListener('storage',updateCart);
+
+<footer>
+<div class="wrap">
+<div class="footer-brand">Mitcha Store ♡</div>
+made with love & a little matcha · © Mitcha Store
+</div>
+<img class="footer-mascot" src="./assets/mascot.png" alt="">
+</footer>
+
+<nav class="mobilebar">
+<a class="active" href="./index.html"><span>⌂</span>Home</a>
+<a href="./produk.html"><span>♡</span>Products</a>
+<a href="./cart.html"><span>🛒</span>Cart <b data-cart-count>0</b></a>
+<a href="./pesanan.html"><span>📦</span>Orders</a>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./config.js"></script>
+<script>
+function updateCart(){
+let c=[];
+try{c=JSON.parse(localStorage.getItem('mitcha_cart')||'[]')}catch(e){}
+let n=Array.isArray(c)?c.reduce((s,x)=>s+(Number(x.qty)||1),0):0;
+document.querySelectorAll('[data-cart-count]').forEach(x=>x.textContent=n);
+}
+
+function money(n){
+return n?new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n):'Cek paket tersedia';
+}
+
+async function loadFeatured(){
+try{
+if(!window.CHANARRA_SUPABASE_URL||!window.CHANARRA_SUPABASE_KEY||!window.supabase)return;
+
+const db=window.supabase.createClient(
+window.CHANARRA_SUPABASE_URL,
+window.CHANARRA_SUPABASE_KEY
+);
+
+const {data,error}=await db.from('products')
+.select('name,category,packages,active')
+.eq('active',true)
+.limit(4);
+
+if(error||!data?.length)return;
+
+document.getElementById('featuredProducts').innerHTML=data.map(p=>{
+const prices=(Array.isArray(p.packages)?p.packages:[])
+.map(x=>Number(x.price)||0)
+.filter(x=>x>0);
+
+const min=prices.length?Math.min(...prices):0;
+
+const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({
+'&':'&amp;',
+'<':'&lt;',
+'>':'&gt;',
+'"':'&quot;',
+"'":'&#39;'
+}[c]));
+
+return `
+<article class="product">
+<h3>${safe(p.name)}</h3>
+<small>${safe(p.category||'Other')}</small>
+<div class="product-price">${money(min)}</div>
+<a href="./produk.html">View details</a>
+</article>`;
+}).join('');
+
+}catch(e){
+console.warn('Featured products fallback',e);
+}
+}
+
+updateCart();
+loadFeatured();
+window.addEventListener('storage',updateCart);
 </script>
-</body></html>
+
+</body>
+  </html>
